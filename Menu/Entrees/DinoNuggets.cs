@@ -9,7 +9,8 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// Creates an entre and stores the price, calories, and number of nuggets,
+    /// Function that creates an entre and stores the price, calories, number of nuggets, and updates ingredients
+    /// depending on the customers requests.
     /// </summary>
     public class DinoNuggets
     {
@@ -33,7 +34,7 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public DinoNuggets()
         {
-            this.Price = 4.25 + .25*(nuggetCount - 6);
+            this.Price = 4.25;
             this.Calories = 59 * nuggetCount;
         }
 
@@ -54,11 +55,14 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Adds another nugget to the ingredients list for this instance
+        /// Adds another nugget to the ingredients list for this instance. Also updates the price
+        /// and calorie amounts
         /// </summary>
         public void AddNugget()
         {
             this.nuggetCount++;
+            this.Calories += 59;
+            this.Price += .25;
         }
     }
 }

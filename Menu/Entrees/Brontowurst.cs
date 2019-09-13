@@ -8,6 +8,10 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// Function that creates an entre and stores the price, calories, number of nuggets, and updates ingredients
+    /// depending on the customers requests.
+    /// </summary>
     public class Brontowurst
     {
         /// <summary>
