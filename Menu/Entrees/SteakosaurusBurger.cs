@@ -1,4 +1,4 @@
-﻿/*  Brontowurst.cs
+﻿/*  SteakosaurusBurger.cs
 *   Author: Jason Byrne
 */
 
@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class Brontowurst
+    public class SteakosaurusBurger
     {
         /// <summary>
         /// Keeps track of if the bun is included on the entre
@@ -16,14 +16,19 @@ namespace DinoDiner.Menu.Entrees
         private bool bun = true;
 
         /// <summary>
-        /// Keeps track of if peppers are included on the entre
+        /// Keeps track of if pickles are included on the entre
         /// </summary>
-        private bool peppers = true;
+        private bool pickle = true;
 
         /// <summary>
-        /// Keeps track of if onions are included on the entre
+        /// Keeps track of if ketchup is included on the entre
         /// </summary>
-        private bool onions = true;
+        private bool ketchup = true;
+
+        /// <summary>
+        /// Keeps track of if mustard is included on the entre
+        /// </summary>
+        private bool mustard = true;
 
         /// <summary>
         /// Keeps track of the price of the entre
@@ -38,10 +43,10 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Creates an instance of the entre and stores its price and calorie count
         /// </summary>
-        public Brontowurst()
+        public SteakosaurusBurger()
         {
-            this.Price = 5.36;
-            this.Calories = 498;
+            this.Price = 5.15;
+            this.Calories = 621;
         }
 
         /// <summary>
@@ -49,11 +54,13 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         public List<string> Ingredients
         {
-            get {
-                List<string> ingredients = new List<string>() { "Brautwurst" };
+            get
+            {
+                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
                 if (bun) ingredients.Add("Whole Wheat Bun");
-                if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onion");
+                if (pickle) ingredients.Add("Pickle");
+                if (ketchup) ingredients.Add("Ketchup");
+                if (mustard) ingredients.Add("Mustard");
                 return ingredients;
             }
         }
@@ -67,19 +74,27 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the peppers from the ingredients list for this instance
+        /// Removes the pickles from the ingredients list for this instance
         /// </summary>
-        public void HoldPeppers()
+        public void HoldPickle()
         {
-            this.peppers = false;
+            this.pickle = false;
         }
 
         /// <summary>
-        /// Removes the onions from the ingredients list for this instance
+        /// Removes the ketchup from the ingredients list for this instance
         /// </summary>
-        public void HoldOnion()
+        public void HoldKetchup()
         {
-            this.onions = false;
+            this.ketchup = false;
+        }
+
+        /// <summary>
+        /// Removes the mustard from the ingredients list for this instance
+        /// </summary>
+        public void HoldMustard()
+        {
+            this.mustard = false;
         }
     }
 }
