@@ -14,24 +14,10 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class SteakosaurusBurger
     {
-        /// <summary>
-        /// Keeps track of if the bun is included on the entre
-        /// </summary>
+        //backdrop properties
         private bool bun = true;
-
-        /// <summary>
-        /// Keeps track of if pickles are included on the entre
-        /// </summary>
         private bool pickle = true;
-
-        /// <summary>
-        /// Keeps track of if ketchup is included on the entre
-        /// </summary>
         private bool ketchup = true;
-
-        /// <summary>
-        /// Keeps track of if mustard is included on the entre
-        /// </summary>
         private bool mustard = true;
 
         /// <summary>

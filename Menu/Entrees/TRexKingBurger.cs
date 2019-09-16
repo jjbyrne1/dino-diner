@@ -14,44 +14,14 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class TRexKingBurger
     {
-        /// <summary>
-        /// Keeps track of if teh bun is included on the entre
-        /// </summary>
+        //backdrop properties
         private bool bun = true;
-
-        /// <summary>
-        /// Keeps track of if lettuce is included on the entre
-        /// </summary>
         private bool lettuce = true;
-
-        /// <summary>
-        /// Keeps track of if tomatoes are included on the entre
-        /// </summary>
         private bool tomato = true;
-
-        /// <summary>
-        /// Keeps track of if onions are included on the entre
-        /// </summary>
         private bool onion = true;
-
-        /// <summary>
-        /// Keeps track of if pickles are included on the entre
-        /// </summary>
         private bool pickle = true;
-
-        /// <summary>
-        /// Keeps track of if ketchup is included on the entre
-        /// </summary>
         private bool ketchup = true;
-
-        /// <summary>
-        /// Keeps track of if mustard is included on the entre
-        /// </summary>
         private bool mustard = true;
-
-        /// <summary>
-        /// Keeps track of if mayo is included on the entre
-        /// </summary>
         private bool mayo = true;
 
         /// <summary>

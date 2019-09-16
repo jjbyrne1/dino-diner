@@ -13,14 +13,8 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class PrehistoricPBJ
     {
-        /// <summary>
-        /// Keeps track of if peanut butter is on the entre
-        /// </summary>
+        //backdrop properties
         private bool peanutButter = true;
-
-        /// <summary>
-        /// Keeps track of if jelly is on the entre
-        /// </summary>
         private bool jelly = true;
 
         /// <summary>

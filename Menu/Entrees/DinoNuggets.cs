@@ -14,9 +14,7 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class DinoNuggets
     {
-        /// <summary>
-        /// Keeps track of how many nuggets are included in the entre
-        /// </summary>
+        //backdrop properties
         private uint nuggetCount = 6;
 
         /// <summary>

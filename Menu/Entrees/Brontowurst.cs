@@ -14,19 +14,9 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class Brontowurst
     {
-        /// <summary>
-        /// Keeps track of if the bun is included on the entre
-        /// </summary>
+        //backdrop properties
         private bool bun = true;
-
-        /// <summary>
-        /// Keeps track of if peppers are included on the entre
-        /// </summary>
         private bool peppers = true;
-
-        /// <summary>
-        /// Keeps track of if onions are included on the entre
-        /// </summary>
         private bool onions = true;
 
         /// <summary>
