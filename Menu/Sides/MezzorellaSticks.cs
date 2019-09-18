@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class MezzorellaSticks
+    public class MezzorellaSticks : Side
     {
+        
     }
 }

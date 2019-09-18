@@ -6,11 +6,6 @@ namespace DinoDiner.Menu.Sides
 {
     public class Fryceritops
     {
-        public double Price
-        {
-
-        }
-
         
     }
 }
