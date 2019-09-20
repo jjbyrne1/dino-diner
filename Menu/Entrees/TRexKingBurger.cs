@@ -1,6 +1,6 @@
 ﻿/*  TRexKingBurger.cs
-*   Author: Jason Byrne
-*/
+ *  Author: Jason Byrne
+ */
 
 using System;
 using System.Collections.Generic;
@@ -9,10 +9,10 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// Function that creates an entre and stores the price, calories, number of nuggets, and updates ingredients
-    /// depending on the customers requests.
+    /// Class that inherits from Entree and stores the price, calories, and 
+    /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
         //backdrop properties
         private bool bun = true;
@@ -25,17 +25,8 @@ namespace DinoDiner.Menu.Entrees
         private bool mayo = true;
 
         /// <summary>
-        /// Keeps track of the price of the entre
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Keeps track of the calories of the entre
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
-        /// Creates an instance of the entre and stores its price and calorie count
+        /// Creates an new instance of the TRexKingBurger Entree and stores its price and
+        /// calorie count.
         /// </summary>
         public TRexKingBurger()
         {
@@ -44,9 +35,10 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Checks what ingredients are included in the meal and puts them in a list
+        /// Overrides the ingredients property from Entree and checks what ingredients
+        /// are included in the meal and puts them in a list.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get {
                 List<string> ingredients = new List<string>() { "Steakburger Pattie" , "Steakburger Pattie" , "Steakburger Pattie" };
@@ -63,7 +55,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the bun from the ingredients list for this instance
+        /// Removes the bun from the ingredients list for this instance.
         /// </summary>
         public void HoldBun()
         {
@@ -71,7 +63,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the lettuce from the ingredients list for this instance
+        /// Removes the lettuce from the ingredients list for this instance.
         /// </summary>
         public void HoldLettuce()
         {
@@ -79,7 +71,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the tomatoes from the ingredients list for this instance
+        /// Removes the tomatoes from the ingredients list for this instance.
         /// </summary>
         public void HoldTomato()
         {
@@ -87,7 +79,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the onions from the ingredients list for this instance
+        /// Removes the onions from the ingredients list for this instance.
         /// </summary>
         public void HoldOnion()
         {
@@ -95,7 +87,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the pickles from the ingredients list for this instance
+        /// Removes the pickles from the ingredients list for this instance.
         /// </summary>
         public void HoldPickle()
         {
@@ -103,7 +95,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the ketchup from the ingredients list for this instance
+        /// Removes the ketchup from the ingredients list for this instance.
         /// </summary>
         public void HoldKetchup()
         {
@@ -111,7 +103,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the mustard from the ingredients list for this instance
+        /// Removes the mustard from the ingredients list for this instance.
         /// </summary>
         public void HoldMustard()
         {
@@ -119,7 +111,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the mayo from the ingredients list for this instance
+        /// Removes the mayo from the ingredients list for this instance.
         /// </summary>
         public void HoldMayo()
         {

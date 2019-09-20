@@ -1,6 +1,6 @@
 ﻿/*  VelociWrap.cs
-*   Author: Jason Byrne
-*/
+ *  Author: Jason Byrne
+ */
 
 using System;
 using System.Collections.Generic;
@@ -9,38 +9,29 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// Function that creates an entre and stores the price, calories, number of nuggets, and updates ingredients
-    /// depending on the customers requests.
+    /// Class that inherits from Entree and stores the price, calories, and 
+    /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
         /// <summary>
-        /// Keeps track of if cesar dressing is included on the entre
+        /// Keeps track of if cesar dressing is included on the entre.
         /// </summary>
         private bool dressing = true;
 
         /// <summary>
-        /// Keeps track of if lettuce is included on the entre
+        /// Keeps track of if lettuce is included on the entre.
         /// </summary>
         private bool lettuce = true;
 
         /// <summary>
-        /// Keeps track of if cheese is included on the entre
+        /// Keeps track of if cheese is included on the entre.
         /// </summary>
         private bool cheese = true;
 
         /// <summary>
-        /// Keeps track of the price of the entre
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Keeps track of the calories of the entre
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
-        /// Creates an instance of the entre and stores its price and calorie count
+        /// Creates an new instance of the VelociWrap Entree and stores its price
+        /// and calorie count.
         /// </summary>
         public VelociWrap()
         {
@@ -49,9 +40,10 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Checks what ingredients are included in the meal and puts them in a list
+        /// Overrides the ingredients property from Entree and checks what ingredients
+        /// are included in the meal and puts them in a list.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -64,7 +56,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the cesar dressing from the ingredients list for this instance
+        /// Removes the cesar dressing from the ingredients list for this instance.
         /// </summary>
         public void HoldDressing()
         {
@@ -72,7 +64,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the lettuce from the ingredients list for this instance
+        /// Removes the lettuce from the ingredients list for this instance.
         /// </summary>
         public void HoldLettuce()
         {
@@ -80,7 +72,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the cheese from the ingredients list for this instance
+        /// Removes the cheese from the ingredients list for this instance.
         /// </summary>
         public void HoldCheese()
         {

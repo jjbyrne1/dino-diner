@@ -1,6 +1,6 @@
 ﻿/*  DinoNuggets.cs
-*   Author: Jason Byrne
-*/
+ *  Author: Jason Byrne
+ */
 
 using System;
 using System.Collections.Generic;
@@ -9,26 +9,17 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// Function that creates an entre and stores the price, calories, number of nuggets, and updates ingredients
-    /// depending on the customers requests.
+    /// Function that creates an entre and stores the price, calories, number of nuggets,
+    /// and updates ingredients depending on the customer's requests.
     /// </summary>
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
         //backdrop properties
         private uint nuggetCount = 6;
 
         /// <summary>
-        /// Keeps track of the price of the entre
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Keeps track of the calories of the entre
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
-        /// Creates an instance of the entre and stores its price and calorie count
+        /// Creates an new instance of the DinonNuggets Entree and stores its price and 
+        /// calorie count.
         /// </summary>
         public DinoNuggets()
         {
@@ -37,9 +28,10 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Checks what ingredients are included in the meal and puts them in a list
+        /// Overrides the ingredients property from Entree and checks what ingredients
+        /// are included in the meal and puts them in a list.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -54,7 +46,7 @@ namespace DinoDiner.Menu.Entrees
 
         /// <summary>
         /// Adds another nugget to the ingredients list for this instance. Also updates the price
-        /// and calorie amounts
+        /// and calorie amounts.
         /// </summary>
         public void AddNugget()
         {

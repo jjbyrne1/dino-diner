@@ -1,6 +1,6 @@
 ﻿/*  PterodactylWings.cs
-*   Author: Jason Byrne
-*/
+ *  Author: Jason Byrne
+ */
 
 using System;
 using System.Collections.Generic;
@@ -9,23 +9,15 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// Function that creates an entre and stores the price, calories, number of nuggets, and updates ingredients
-    /// depending on the customers requests.
+    /// Class that inherits from Entree and stores the price, calories, and 
+    /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class PterodactylWings
+    public class PterodactylWings : Entree
     {
-        /// <summary>
-        /// Keeps track of the price of the entre
-        /// </summary>
-        public double Price { get; set; }
 
         /// <summary>
-        /// Keeps track of the calories of the entre
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
-        /// Creates an instance of the entre and stores its price and calorie count
+        /// Creates an new instance of the PterodactylWings Entree and stores its price
+        /// and calorie count.
         /// </summary>
         public PterodactylWings()
         {
@@ -34,9 +26,10 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Checks what ingredients are included in the meal and puts them in a list
+        /// Overrides the Ingredients property from Entree and checks what ingredients are included 
+        /// in the meal then puts them in a list.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

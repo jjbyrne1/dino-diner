@@ -1,36 +1,27 @@
 ﻿/*  PrehistoricPBJ.cs
-*   Author: Nathan Bean
-*   Modified by: Jason Byrne
-*/
+ *  Author: Nathan Bean
+ *  Modified by: Jason Byrne
+ */
 
 using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// Function that creates an entre and stores the price, calories, number of nuggets, and updates ingredients
-    /// depending on the customers requests.
+    /// Class that inherits from Entree and stores the price, calories, and 
+    /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class PrehistoricPBJ
+    public class PrehistoricPBJ : Entree
     {
         //backdrop properties
         private bool peanutButter = true;
         private bool jelly = true;
 
         /// <summary>
-        /// Keeps track of the price of the entre
+        /// Overrides the ingredients property from Entree and checks what ingredients
+        /// are included in the meal and puts them in a list.
         /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Keeps track of the calories of the entre
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
-        /// Checks what ingredients are included in the meal and puts them in a list
-        /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -42,7 +33,8 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Creates an instance of the entre and stores its price and calorie count
+        /// Creates an new instance of the PrehistoricPBJ Entree and stores its price and
+        /// calorie count.
         /// </summary>
         public PrehistoricPBJ()
         {
@@ -51,7 +43,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the peanut butter from the ingredients list for this instance
+        /// Removes the peanut butter from the ingredients list for this instance.
         /// </summary>
         public void HoldPeanutButter()
         {
@@ -59,7 +51,7 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Removes the jelly from the ingredients list for this instance
+        /// Removes the jelly from the ingredients list for this instance.
         /// </summary>
         public void HoldJelly()
         {
