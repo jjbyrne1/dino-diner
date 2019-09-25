@@ -8,16 +8,6 @@ using System.Text;
 namespace DinoDiner.Menu.Drinks
 {
     /// <summary>
-    /// Creates a Size enumerator with possible values Small, Medium, or Large.
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    }
-
-    /// <summary>
     /// 
     /// </summary>
     public abstract class Drink

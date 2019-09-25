@@ -9,16 +9,6 @@ using System.Text;
 namespace DinoDiner.Menu.Sides
 {
     /// <summary>
-    /// Creates a Size enumerator with possible values Small, Medium, or Large.
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
-
-    /// <summary>
     /// Creates a abstract class that includes propterties for setting the Price,
     /// Calories, Ingredients, and Size for all classes inheriting from this one.
     /// </summary>
@@ -47,6 +37,5 @@ namespace DinoDiner.Menu.Sides
         /// Gets or sets the size.
         /// </summary>
         public virtual Size Size { get; set; }
-
     }
 }

@@ -1,23 +1,22 @@
-﻿using System;
+﻿/*  SodasaurusTest.cs
+ *  Author: Jason Byrne
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public enum Flavor
+    public class Sodasaurus : Drink
     {
-        Cola,
-        Orange,
-        Vanilla,
-        Chocolate,
-        RootBeer,
-        Cherry,
-        Lime
-    }
-    public class Sodasarus : Drink
-    {
+        //private Size size = Size.Small;
+        private SodasaurusFlavor flavor;
+        public SodasaurusFlavor Flavor {
+            get { return flavor; }
+            set { flavor = value; }
+        }
 
-        public Sodasarus()
+        public Sodasaurus()
         {
             Price = 1.50;
             Calories = 112;
@@ -40,14 +39,17 @@ namespace DinoDiner.Menu.Drinks
                     case Size.Small:
                         Price = 1.50;
                         Calories = 112;
+                        //size = Size.Small;
                         break;
                     case Size.Medium:
                         Price = 2.00;
                         Calories = 156;
+                       // size = Size.Medium;
                         break;
                     case Size.Large:
                         Price = 2.50;
                         Calories = 208;
+                       // size = Size.Large;
                         break;
                 }
             }
