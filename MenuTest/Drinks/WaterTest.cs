@@ -1,10 +1,17 @@
-﻿using System;
+﻿/* WaterTest.cs
+ * Author: Jason Byrne
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
+using Xunit;
 
 namespace MenuTest.Drinks
 {
-    class WaterTests
+    public class WaterTest
     {
+
     }
 }
