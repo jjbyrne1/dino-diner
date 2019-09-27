@@ -14,19 +14,9 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class VelociWrap : Entree
     {
-        /// <summary>
-        /// Keeps track of if cesar dressing is included on the entre.
-        /// </summary>
+        //Backing Variables
         private bool dressing = true;
-
-        /// <summary>
-        /// Keeps track of if lettuce is included on the entre.
-        /// </summary>
         private bool lettuce = true;
-
-        /// <summary>
-        /// Keeps track of if cheese is included on the entre.
-        /// </summary>
         private bool cheese = true;
 
         /// <summary>

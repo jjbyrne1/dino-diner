@@ -13,7 +13,7 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class PrehistoricPBJ : Entree
     {
-        //backdrop properties
+        //Backing Variables
         private bool peanutButter = true;
         private bool jelly = true;
 

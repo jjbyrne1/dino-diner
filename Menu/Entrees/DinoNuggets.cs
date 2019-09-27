@@ -14,7 +14,7 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class DinoNuggets : Entree
     {
-        //backdrop properties
+        //Backing Variables
         private uint nuggetCount = 6;
 
         /// <summary>

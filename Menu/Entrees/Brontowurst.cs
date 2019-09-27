@@ -14,7 +14,7 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class Brontowurst : Entree
     {
-        //backdrop properties
+        //Backing Variables
         private bool bun = true;
         private bool peppers = true;
         private bool onions = true;
