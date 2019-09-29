@@ -8,7 +8,8 @@ using System.Text;
 namespace DinoDiner.Menu.Drinks
 {
     /// <summary>
-    /// 
+    /// Class that inherits from Drink and stores the price, calories, sizes, and 
+    /// updates ingredients depending on the customer's requests.
     /// </summary>
     public class Tyrannotea : Drink
     {
@@ -23,7 +24,8 @@ namespace DinoDiner.Menu.Drinks
         public bool Lemon { get; set; } = false;
 
         /// <summary>
-        /// 
+        /// Creates an new instance of the Tyrranotea drink and starts with 
+        /// the default price and calories for size small with all base ingredients.
         /// </summary>
         public Tyrannotea()
         {
@@ -31,19 +33,11 @@ namespace DinoDiner.Menu.Drinks
             Calories = 8;
             ingredients.Add("Water");
             ingredients.Add("Tea");
-            if (Lemon)
-            {
-                ingredients.Add("Lemon");
-            }
-            if (Sweet)
-            {
-                Calories *= 2;
-                ingredients.Add("Cane Suger");
-            }
         }
 
         /// <summary>
-        /// 
+        /// Gets the size or sets the new size and adjusts the price
+        /// and calories accordingly
         /// </summary>
         public override Size Size
         {
@@ -72,5 +66,35 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Adds Lemon to beverage and adds it to the ingredients list
+        /// </summary>
+        public void AddLemon()
+        {
+            Lemon = true;
+            ingredients.Add("Lemon");
+        }
+
+        /// <summary>
+        /// Adds Sweet, adjusts the calories to account for
+        /// the added Sweet, and adds it to the ingredients list
+        /// </summary>
+        public void AddSweet()
+        {
+            Sweet = true;
+            Calories *= 2;
+            ingredients.Add("Cane Sugar");
+        }
+
+        /// <summary>
+        /// Removes sweet, adjusts the calories to account for
+        /// the removal of Sweet, and removes it from the ingredients list
+        /// </summary>
+        public void RemoveSweet()
+        {
+            Sweet = false;
+            Calories /= 2;
+            ingredients.Remove("Cane Sugar");
+        }
     }
 }

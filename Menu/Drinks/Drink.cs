@@ -8,16 +8,18 @@ using System.Text;
 namespace DinoDiner.Menu.Drinks
 {
     /// <summary>
-    /// 
+    /// Abstract class that stores the Price, Calories, Size, Ingredients list, and Ice property
+    /// for all drinks
     /// </summary>
     public abstract class Drink
     {
         /// <summary>
-        /// 
+        /// Creates a protected size that allow only inherited members to modify
         /// </summary>
         protected Size size = Size.Small;
+
         /// <summary>
-        /// Creates a protected list ingredients that allow only inherited classes to modify.
+        /// Creates a protected list ingredients that allow only inherited classes to modify
         /// </summary>
         protected List<string> ingredients = new List<string>();
 

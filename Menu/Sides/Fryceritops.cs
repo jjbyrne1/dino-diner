@@ -13,9 +13,6 @@ namespace DinoDiner.Menu.Sides
     /// </summary>
     public class Fryceritops : Side
     {
-        // Backing variable
-        private Size size;
-        
         /// <summary>
         /// Overrides the Size property from Side, gets the size, and sets the price
         /// and calories based on the size.
@@ -48,8 +45,8 @@ namespace DinoDiner.Menu.Sides
         }
 
         /// <summary>
-        /// Creates an new instance of the Fyceritops size and starts with 
-        /// the default price and calories for small with all base ingredients.
+        /// Creates an new instance of the Fyceritops side and starts with 
+        /// the default price and calories for size small with all base ingredients.
         /// </summary>
         public Fryceritops()
         {

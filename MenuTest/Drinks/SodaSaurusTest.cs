@@ -8,7 +8,7 @@ using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu;
 using Xunit;
 
-namespace DinoDiner.MenuMenuTest.Drinks
+namespace MenuTest.Drinks
 {
     public class SodaSaurusTest
     {
@@ -149,6 +149,26 @@ namespace DinoDiner.MenuMenuTest.Drinks
             soda.Size = Size.Large;
             Assert.Equal<uint>(208, soda.Calories);
         }
+
         //That invoking HoldIce() results in the Ice property being false.
+        [Fact]
+        public void HoldIceShouldRemoveIce()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            Assert.False(soda.Ice);
+        }
+
+        //The correct ingredients are given
+        [Fact]
+        public void ShouldHaveCorrectIngredients()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            List<string> ingredients = soda.Ingredients;
+            Assert.Contains("Water", ingredients);
+            Assert.Contains("Natural Flavors", ingredients);
+            Assert.Contains("Cane Sugar", ingredients);
+            Assert.Equal<int>(3, ingredients.Count);
+        }
     }
 }

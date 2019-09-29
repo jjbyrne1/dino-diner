@@ -13,9 +13,6 @@ namespace DinoDiner.Menu.Sides
     /// </summary>
     public class Triceritots : Side
     {
-        // Backing variable
-        private Size size;
-
         /// <summary>
         /// Overrides the Size property from Side, gets the size, and sets the price
         /// and calories based on the size.
@@ -47,8 +44,8 @@ namespace DinoDiner.Menu.Sides
         }
 
         /// <summary>
-        /// Creates an new instance of the Triceritots size and starts with 
-        /// the default price and calories for small with all base ingredients.
+        /// Creates an new instance of the Triceritots side and starts with 
+        /// the default price and calories for size small with all base ingredients.
         /// </summary>
         public Triceritots()
         {

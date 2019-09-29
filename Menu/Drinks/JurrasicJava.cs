@@ -4,14 +4,31 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Class that inherits from Drink and stores the price, calories, sizes, and 
+    /// updates ingredients depending on the customer's requests.
+    /// </summary>
     public class JurrasicJava : Drink
     {
-        public bool RoomForCream { get; set; } = false;
+        /// <summary>
+        /// Gets or sets if there is space for cream, default is false
+        /// </summary>
+        public bool SpaceForCream { get; set; } = false;
 
+        /// <summary>
+        /// Gets or sets if there is decaf default is false
+        /// </summary>
         public bool Decaf { get; set; } = false;
 
+        /// <summary>
+        /// Gets or sets if there is ice, overrides default to false
+        /// </summary>
         public override bool Ice { get; set; } = false;
 
+        /// <summary>
+        /// Creates an new instance of the JurrasicJava drink and starts with 
+        /// the default price and calories for size small with all base ingredients.
+        /// </summary>
         public JurrasicJava()
         {
             Price = 0.59;
@@ -20,6 +37,10 @@ namespace DinoDiner.Menu.Drinks
             ingredients.Add("Coffee");
         }
 
+        /// <summary>
+        /// Gets the size or sets the new size and adjusts the price
+        /// and calories accordingly
+        /// </summary>
         public override Size Size
         {
             get
@@ -47,11 +68,17 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
-        public void LeaveRoomForCream()
+        /// <summary>
+        /// Leaves space for cream in beverage
+        /// </summary>
+        public void LeaveSpaceForCream()
         {
-            RoomForCream = true;
+            SpaceForCream = true;
         }
 
+        /// <summary>
+        /// Adds Ice to bevarage
+        /// </summary>
         public void AddIce()
         {
             Ice = true;

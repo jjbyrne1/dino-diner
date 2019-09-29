@@ -15,9 +15,15 @@ namespace DinoDiner.Menu.Sides
     public abstract class Side
     {
         /// <summary>
+        /// Creates a protected size that allow only inherited members to modify
+        /// </summary>
+        protected Size size = Size.Small;
+
+        /// <summary>
         /// Creates a protected list ingredients that allow only inherited classes to modify.
         /// </summary>
         protected List<string> ingredients = new List<string>();
+
         /// <summary>
         /// Gets and sets the price
         /// </summary>

@@ -9,6 +9,9 @@ namespace DinoDiner.Menu.Entrees
 {
     public abstract class Entree
     {
+        /// <summary>
+        /// List of ingredients for the entree
+        /// </summary>
         protected List<string> ingredients = new List<string>();
         /// <summary>
         /// Gets and sets the price
