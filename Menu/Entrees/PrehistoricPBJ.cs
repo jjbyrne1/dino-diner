@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class that inherits from Entree and stores the price, calories, and 
