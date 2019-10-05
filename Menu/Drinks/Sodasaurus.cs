@@ -32,9 +32,28 @@ namespace DinoDiner.Menu
         {
             Price = 1.50;
             Calories = 112;
-            ingredients.Add("Water");
-            ingredients.Add("Natural Flavors");
-            ingredients.Add("Cane Sugar");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to retrun the name of the item, its size, and
+        /// its flavor
+        /// </summary>
+        /// <returns> name of the item with its flavor and size </returns>
+        public override string ToString()
+        {
+            return Size + " " + Flavor + " " + "Sodasaurus";
+        }
+
+        /// <summary>
+        /// Overrides the ingredients property from Drink and checks what ingredients
+        /// are included in the beverage and puts them in a list.
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Water", "Natural Flavors" , "Cane Sugar" };
+            }
         }
 
         /// <summary>

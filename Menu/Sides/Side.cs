@@ -4,6 +4,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -12,7 +13,7 @@ namespace DinoDiner.Menu
     /// Creates a abstract class that includes propterties for setting the Price,
     /// Calories, Ingredients, and Size for all classes inheriting from this one.
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         /// <summary>
         /// Creates a protected size that allow only inherited members to modify
@@ -37,7 +38,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients list.
         /// </summary>
-        public List<string> Ingredients { get { return ingredients; } }
+        public virtual List<string> Ingredients { get { return ingredients; } }
 
         /// <summary>
         /// Gets or sets the size.

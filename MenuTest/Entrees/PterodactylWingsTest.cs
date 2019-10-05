@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿/* PterodactylWingsTest.cs
+ * Author: Nathan Bean
+ */
+using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
-    public class PterodactylWingsUnitTest
+    public class PterodactylWingsTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()

@@ -36,6 +36,38 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Overrides the ToString method to retrun the name of the item, its size, and
+        /// its specified additions
+        /// </summary>
+        /// <returns> name of the item with specified additions </returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Size);
+            if (Sweet)
+            {
+                sb.Append(" Sweet");
+            }
+            sb.Append(" Tyrannotea");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Overrides the ingredients property from Drink and checks what ingredients
+        /// are included in the beverage and puts them in a list.
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { "Water", "Tea" };
+                if (Sweet) ingredients.Add("Cane Sugar");
+                if (Lemon) ingredients.Add("Lemon");
+                return ingredients;
+            }
+        }
+
+        /// <summary>
         /// Gets the size or sets the new size and adjusts the price
         /// and calories accordingly
         /// </summary>

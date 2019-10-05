@@ -8,7 +8,7 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
         //Backing Variables
         private Size size = Size.Small;
@@ -108,6 +108,11 @@ namespace DinoDiner.Menu
             this.Entree = entree;
             this.Side = new Fryceritops();
             this.Drink = new Sodasaurus();
+        }
+
+        public override string ToString()
+        {
+            return Entree.ToString() + " Combo";
         }
     }
 }

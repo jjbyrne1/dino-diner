@@ -15,35 +15,35 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveDefaultPrice()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             Assert.Equal<double>(0.59, jj.Price);
         }
 
         [Fact]
         public void ShouldHaveDefaultCalories()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             Assert.Equal<uint>(2, jj.Calories);
         }
 
         [Fact]
         public void ShouldHaveDefaultIce()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             Assert.False(jj.Ice);
         }
 
         [Fact]
         public void ShouldHaveDefaultSize()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             Assert.Equal<Size>(Size.Small, jj.Size);
         }
 
         [Fact]
         public void ShouldHaveDefaultSpaceForCream()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             Assert.False(jj.SpaceForCream);
         }
 
@@ -51,7 +51,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectPriceAfterSettingSmall()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.Size = Size.Medium;
             jj.Size = Size.Small;
             Assert.Equal<double>(0.59, jj.Price);
@@ -60,7 +60,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectCaloriesAfterSettingSmall()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.Size = Size.Medium;
             jj.Size = Size.Small;
             Assert.Equal<uint>(2, jj.Calories);
@@ -69,7 +69,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectPriceAfterSettingMedium()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.Size = Size.Medium;
             Assert.Equal<double>(0.99, jj.Price);
         }
@@ -77,7 +77,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectCaloriesAfterSettingMedium()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.Size = Size.Medium;
             Assert.Equal<uint>(4, jj.Calories);
         }
@@ -85,7 +85,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectPriceAfterSettingLarge()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.Size = Size.Large;
             Assert.Equal<double>(1.49, jj.Price);
         }
@@ -93,7 +93,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectCaloriesAfterSettingLarge()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.Size = Size.Large;
             Assert.Equal<uint>(8, jj.Calories);
         }
@@ -102,7 +102,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void AddIceShouldAddIce()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.AddIce();
             Assert.True(jj.Ice);
         }
@@ -111,7 +111,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void LeaveSpaceForCreamShouldLeaveSpaceForCream()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             jj.LeaveSpaceForCream();
             Assert.True(jj.SpaceForCream);
         }
@@ -120,7 +120,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectIngredients()
         {
-            JurrasicJava jj = new JurrasicJava();
+            JurassicJava jj = new JurassicJava();
             List<string> ingredients = jj.Ingredients;
             Assert.Contains("Water", ingredients);
             Assert.Contains("Coffee", ingredients);

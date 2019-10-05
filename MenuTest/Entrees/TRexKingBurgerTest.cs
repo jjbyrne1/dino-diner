@@ -1,10 +1,13 @@
+/* TRexKingBurgerTest.cs
+ * Author: Nathan Bean
+ */
 using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
-    public class TRexKingBurgerUnitTest
+    public class TRexKingBurgerTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()

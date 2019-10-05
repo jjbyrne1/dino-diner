@@ -52,9 +52,27 @@ namespace DinoDiner.Menu
         {
             Price = 0.99;
             Calories = 420;
-            ingredients.Add("Macaroni Noodles");
-            ingredients.Add("Cheese Product");
-            ingredients.Add("Pork Sausage");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to retrun the name of the item and its size
+        /// </summary>
+        /// <returns> name of the item with size </returns>
+        public override string ToString()
+        {
+            return Size + " Meteor Mac and Cheese";
+        }
+
+        /// <summary>
+        /// Overrides the ingredients property from Side and checks what ingredients
+        /// are included in the side and puts them in a list.
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
+            }
         }
     }
 }

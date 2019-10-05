@@ -35,6 +35,15 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Overrides the ToString method to retrun the name of the item
+        /// </summary>
+        /// <returns> name of the item </returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
+
+        /// <summary>
         /// Overrides the ingredients property from Entree and checks what ingredients
         /// are included in the meal and puts them in a list.
         /// </summary>

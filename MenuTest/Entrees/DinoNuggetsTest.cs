@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿/* DinoNuggetsTest.cs
+ * Author: Nathan Bean
+ */
+using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
-    public class DinoNuggetsUnitTest
+    public class DinoNuggetsTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()

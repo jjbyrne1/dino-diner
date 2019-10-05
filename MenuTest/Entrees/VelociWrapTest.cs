@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿/* VelociWrapTest.cs
+ * Author: Nathan Bean
+ */
+using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
-    public class VelociWrapUnitTest
+    public class VelociWrapTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()

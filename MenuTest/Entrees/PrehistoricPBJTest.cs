@@ -1,10 +1,13 @@
+/* PrehistoricPBJTest.cs
+ * Author: Nathan Bean
+ */
 using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
-    public class PrehistoricPBJUnitTest
+    public class PrehistoricPBJTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()

@@ -1,10 +1,13 @@
+/* SteakosaurusBurgerTest.cs
+ * Author: Nathan Bean
+ */
 using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
-    public class SteakosaurusBurgerUnitTest
+    public class SteakosaurusBurgerTest
     {
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()

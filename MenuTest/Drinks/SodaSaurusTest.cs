@@ -1,4 +1,4 @@
-﻿/* SodaSaurusTEst.cs
+﻿/* SodaSaurusTest.cs
  * Author: Jason Byrne
  */
 using System;

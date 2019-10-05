@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// Abstract class that stores the Price, Calories, Size, Ingredients list, and Ice property
     /// for all drinks
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
         /// <summary>
         /// Creates a protected size that allow only inherited members to modify

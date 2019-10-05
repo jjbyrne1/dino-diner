@@ -43,6 +43,15 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Overrides the ToString method to retrun the name of the item
+        /// </summary>
+        /// <returns> name of the item </returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
+        }
+
+        /// <summary>
         /// Removes the peanut butter from the ingredients list for this instance.
         /// </summary>
         public void HoldPeanutButter()

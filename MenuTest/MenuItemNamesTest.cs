@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* MenuItemNamesTest.cs
+ * Author: Nathan Bean
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -103,7 +106,7 @@ namespace MenuTest
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
         [InlineData(Size.Large)]
-        public void ToStringShouldGiveNameForSize(Size size)
+        public void TriceritotsToStringShouldGiveNameForSize(Size size)
         {
             Triceritots tt = new Triceritots();
             tt.Size = size;
