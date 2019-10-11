@@ -8,7 +8,47 @@
       d:DesignHeight="390" d:DesignWidth="592"
       Title="SideSelection">
 
-    <Grid>
+    <WrapPanel>
+        <StackPanel>
+            <Label Margin="162,20,0,0">Side</Label>
+            <Button Width="200" Margin="80,0,0,0" Click="SelectFryceritopsSide">
+            <StackPanel>
+                <Image Width="60" Source="Assets/DinoDiner-08.png"/>
+                <TextBlock>Friceritops</TextBlock>
+            </StackPanel>
+            </Button>
+            <Button Width="200" Margin="80,0,0,0" Click="SelectMeteorMacAndCheeseSide">
+            <StackPanel>
+                <Image Width="60"  Source="Assets/DinoDiner-09.png"/>
+                <TextBlock><Run Text="Meteor Mac and Cheese"/></TextBlock>
+            </StackPanel>
+            </Button>
+            <Button Width="200" Margin="80,0,0,0" Click="SelectMezzorellaSticksSide">
+                <StackPanel>
+                    <Image Width="60"  Source="Assets/DinoDiner-10.png"/>
+                    <TextBlock>Mezzorella Sticks</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Width="200" Margin="80,0,0,0" Click="SelectTriceritotsSide">
+                <StackPanel>
+                    <Image Width="60"  Source="Assets/DinoDiner-11.png"/>
+                    <TextBlock>Triceritots</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel>
+            <Label Margin="105,20,0,0">Size</Label>
+            <Button Width="200" Height="107" Margin="20,0,0,0">
+                <TextBlock>Small</TextBlock>
+            </Button>
+            <Button Width="200" Height="107" Margin="20,0,0,0">
+                <TextBlock>Medium</TextBlock>
+            </Button>
+            <Button Width="200" Height="107" Margin="20,0,0,0">
+                <TextBlock>Large</TextBlock>
+            </Button>
+        </StackPanel>
         
-    </Grid>
+        
+    </WrapPanel>
 </Page>

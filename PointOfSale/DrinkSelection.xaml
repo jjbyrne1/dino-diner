@@ -8,7 +8,40 @@
       d:DesignHeight="390" d:DesignWidth="592"
       Title="DrinkSelection">
 
-    <Grid>
-        
-    </Grid>
+    <WrapPanel>
+        <StackPanel>
+            <Button Click="SelectSodasaurusDrink">
+                <StackPanel>
+                    <Image Width="50"  Source="Assets/DinoDiner-13.png"/>
+                    <TextBlock>Jurassic Java</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="SelectMeteorMacAndCheeseSide">
+                <StackPanel>
+                    <Image Width="50"  Source="Assets/DinoDiner-09.png"/>
+                    <TextBlock>J</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="SelectMezzorellaSticksSide">
+                <StackPanel>
+                    <Image Width="50"  Source="Assets/DinoDiner-10.png"/>
+                    <TextBlock>Mezzorella Sticks Side</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="SelectTriceritotsSide">
+                <StackPanel>
+                    <Image Width="50"  Source="Assets/DinoDiner-11.png"/>
+                    <TextBlock>Triceritots Side</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel>
+            <Button Click="SelectTriceritotsSide">
+                <StackPanel>
+                    <Image Width="50"  Source="Assets/DinoDiner-11.png"/>
+                    <TextBlock>Triceritots Side</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </WrapPanel>
 </Page>

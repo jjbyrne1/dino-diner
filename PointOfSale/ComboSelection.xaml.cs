@@ -24,5 +24,75 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for when the Brontowurst Combo button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectBrontowurstCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Dino-Nuggets Combo button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectDinoNuggetsCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Steakosaurus Combo button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectSteakosaurusCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the T-Rex King Burger Combo button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectTRexKingBurgerCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Prehistoric PB&J Combo button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectPrehistoricPBJCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Pterodactyl Wings Combo button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectPterodactylWingsCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Velici-Wrap Combo button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectVeliciWrapCombo(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new SideSelection());
+        }
     }
 }

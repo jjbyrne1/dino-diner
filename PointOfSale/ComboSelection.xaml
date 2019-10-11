@@ -15,12 +15,49 @@
                 <Setter Property="MinHeight" Value="130"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>Brontowurst Combo</Button>
-        <Button>Dino-Nuggets Combo</Button>
-        <Button>Steakosaurus Combo</Button>
-        <Button>T-Rex King Burger Combo</Button>
-        <Button>Prehistoric PB&amp;J Combo</Button>
-        <Button>Pterodactyl Wings Combo</Button>
-        <Button>Velici-Wrap Combo</Button>
+        <Button Click="SelectBrontowurstCombo">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-01.png"/>
+                <TextBlock> Brontowurst Combo </TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectDinoNuggetsCombo">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-02.png"/>
+                <TextBlock>Dino-Nuggets Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectSteakosaurusCombo">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-05.png"/>
+                <TextBlock>Steakosaurus Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectTRexKingBurgerCombo">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-06.png"/>
+                <TextBlock>T-Rex King Burger Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectPrehistoricPBJCombo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-03.png"/>
+            </Button.Background>
+            <StackPanel>
+                <TextBlock>Prehistoric PB&amp;J Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectPterodactylWingsCombo">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-04.png"/>
+                <TextBlock>Pterodactyl Wings Combo</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectVeliciWrapCombo">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-07.png"/>
+                <TextBlock>Velici-Wrap Combo</TextBlock>
+            </StackPanel>
+        </Button>
     </WrapPanel>
 </Page>

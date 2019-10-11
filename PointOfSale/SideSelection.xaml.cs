@@ -24,5 +24,45 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for when the Fryceritops Side button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectFryceritopsSide(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Meteor Mac and Cheese Side button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectMeteorMacAndCheeseSide(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Mezzorella Sticks Side button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectMezzorellaSticksSide(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Triceritots Side button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectTriceritotsSide(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }
