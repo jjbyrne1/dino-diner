@@ -99,34 +99,31 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Adds Lemon to beverage and adds it to the ingredients list
+        /// Adds Lemon to beverage
         /// </summary>
         public void AddLemon()
         {
             Lemon = true;
-            ingredients.Add("Lemon");
         }
 
         /// <summary>
         /// Adds Sweet, adjusts the calories to account for
-        /// the added Sweet, and adds it to the ingredients list
+        /// the added Sweet
         /// </summary>
         public void AddSweet()
         {
             Sweet = true;
             Calories *= 2;
-            ingredients.Add("Cane Sugar");
         }
 
         /// <summary>
         /// Removes sweet, adjusts the calories to account for
-        /// the removal of Sweet, and removes it from the ingredients list
+        /// the removal of Sweet
         /// </summary>
         public void RemoveSweet()
         {
             Sweet = false;
             Calories /= 2;
-            ingredients.Remove("Cane Sugar");
         }
     }
 }
