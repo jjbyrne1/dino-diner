@@ -48,7 +48,5 @@
                 <TextBlock>Large</TextBlock>
             </Button>
         </StackPanel>
-        
-        
     </WrapPanel>
 </Page>

@@ -32,7 +32,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectFryceritopsSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            //NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMeteorMacAndCheeseSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            //NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMezzorellaSticksSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            //NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectTriceritotsSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            //NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

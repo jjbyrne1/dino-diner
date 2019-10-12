@@ -9,6 +9,34 @@
       Title="FlavorSelection">
 
     <Grid>
-        
+        <WrapPanel>
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="MinWidth" Value="190"></Setter>
+                    <Setter Property="MinHeight" Value="130"></Setter>
+                </Style>
+            </WrapPanel.Resources>
+            <Button Click="SelectCherryFlavor" Background="PaleVioletRed">
+                <TextBlock FontSize="20">Cherry</TextBlock>
+            </Button>
+            <Button Click="SelectChocolateFlavor" Background="SaddleBrown">
+                <TextBlock FontSize="20" >Chocolate</TextBlock>
+            </Button>
+            <Button Click="SelectColaFlavor" Background="OrangeRed">
+                <TextBlock FontSize="20">Cola</TextBlock>
+            </Button>
+            <Button Click="SelectLimeFlavor" Background="LimeGreen">
+                <TextBlock FontSize="20">Lime</TextBlock>
+            </Button>
+            <Button Click="SelectOrangeFlavor" Background="Orange">
+                <TextBlock FontSize="20">Orange</TextBlock>
+            </Button>
+            <Button Click="SelectRootBeerFlavor" Background="RosyBrown">
+                <TextBlock FontSize="20">Root Beer</TextBlock>
+            </Button>
+            <Button Click="SelectVanillaFlavor" Background="PaleGoldenrod">
+                <TextBlock FontSize="20">Vanilla</TextBlock>
+            </Button>
+        </WrapPanel>
     </Grid>
 </Page>

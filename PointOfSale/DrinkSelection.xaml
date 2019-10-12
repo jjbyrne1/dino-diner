@@ -10,37 +10,54 @@
 
     <WrapPanel>
         <StackPanel>
-            <Button Click="SelectSodasaurusDrink">
+            <Label Margin="106,20,0,0">Drink</Label>
+            <Button Name="SodasaurusButton" Width="200" Margin="25,0,0,0" Click="SelectSodasurusDrink">
                 <StackPanel>
-                    <Image Width="50"  Source="Assets/DinoDiner-13.png"/>
-                    <TextBlock>Jurassic Java</TextBlock>
+                    <Image Width="60" Source="Assets/DinoDiner-14.png"/>
+                    <TextBlock HorizontalAlignment="Center">Sodasurus</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Click="SelectMeteorMacAndCheeseSide">
+            <Button Width="200" Margin="25,0,0,0" Click="SelectTyrannoteaDrink">
                 <StackPanel>
-                    <Image Width="50"  Source="Assets/DinoDiner-09.png"/>
-                    <TextBlock>J</TextBlock>
+                    <Image Width="60"  Source="Assets/DinoDiner-12.png"/>
+                    <TextBlock HorizontalAlignment="Center">Tyrannotea</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Click="SelectMezzorellaSticksSide">
+            <Button Width="200" Margin="25,0,0,0" Click="SelectJurassicJavaDrink">
                 <StackPanel>
-                    <Image Width="50"  Source="Assets/DinoDiner-10.png"/>
-                    <TextBlock>Mezzorella Sticks Side</TextBlock>
+                    <Image Width="60"  Source="Assets/DinoDiner-13.png"/>
+                    <TextBlock HorizontalAlignment="Center">Jurassic Java</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Click="SelectTriceritotsSide">
+            <Button Width="200" Margin="25,0,0,0" Click="SelectWaterDrink">
                 <StackPanel>
-                    <Image Width="50"  Source="Assets/DinoDiner-11.png"/>
-                    <TextBlock>Triceritots Side</TextBlock>
+                    <Image Width="60"  Source="Assets/DinoDiner-15.png"/>
+                    <TextBlock HorizontalAlignment="Center">Water</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
         <StackPanel>
-            <Button Click="SelectTriceritotsSide">
-                <StackPanel>
-                    <Image Width="50"  Source="Assets/DinoDiner-11.png"/>
-                    <TextBlock>Triceritots Side</TextBlock>
-                </StackPanel>
+            <Label Margin="78,20,0,0">Size</Label>
+            <Button Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock>Small</TextBlock>
+            </Button>
+            <Button Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock>Medium</TextBlock>
+            </Button>
+            <Button Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock>Large</TextBlock>
+            </Button>
+        </StackPanel>
+        <StackPanel>
+            <Label Margin="72,20,0,0">Special</Label>
+            <Button Visibility="Hidden" Name="SweetDecafFlavorButton" Click="SelectSweetDecafFlavor" Background="White" Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock>Sweet/Decaf/Flavor</TextBlock>
+            </Button>
+            <Button Visibility="Hidden" Name="AddLemonButton" Background="Yellow" Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock>Add Lemon</TextBlock>
+            </Button>
+            <Button Visibility="Hidden" Name="HoldIceButton" Background="LightBlue" Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock>HoldIce</TextBlock>
             </Button>
         </StackPanel>
     </WrapPanel>

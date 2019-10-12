@@ -42,7 +42,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectEntree(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new ComboSelection());
+            NavigationService.Navigate(new EntreeSelection());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new ComboSelection());
+            NavigationService.Navigate(new SideSelection());
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new ComboSelection());
+            NavigationService.Navigate(new DrinkSelection());
         }
     }
 }

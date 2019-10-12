@@ -24,5 +24,75 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for when the Brontowurst Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectBrontowurstEntree(object sender, RoutedEventArgs args)
+        {
+            //NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Dino-Nuggets Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectDinoNuggetsEntree(object sender, RoutedEventArgs args)
+        {
+            //NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Steakosaurus Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectSteakosaurusEntree(object sender, RoutedEventArgs args)
+        {
+            //NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the T-Rex King Burger Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectTRexKingBurgerEntree(object sender, RoutedEventArgs args)
+        {
+            //NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Prehistoric PB&J Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectPrehistoricPBJEntree(object sender, RoutedEventArgs args)
+        {
+            //NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Pterodactyl Wings Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectPterodactylWingsEntree(object sender, RoutedEventArgs args)
+        {
+            //NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Event handler for when the Velici-Wrap Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectVeliciWrapEntree(object sender, RoutedEventArgs args)
+        {
+            //NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }

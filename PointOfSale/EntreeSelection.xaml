@@ -8,7 +8,54 @@
       d:DesignHeight="390" d:DesignWidth="592"
       Title="EntreeSelection">
 
-    <Grid>
-        
-    </Grid>
+    <WrapPanel>
+        <WrapPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="MinWidth" Value="190"></Setter>
+                <Setter Property="MinHeight" Value="130"></Setter>
+            </Style>
+        </WrapPanel.Resources>
+        <Button Click="SelectBrontowurstEntree">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-01.png"/>
+                <TextBlock HorizontalAlignment="Center">Brontowurst</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectDinoNuggetsEntree">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-02.png"/>
+                <TextBlock HorizontalAlignment="Center">Dino-Nuggets</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectSteakosaurusEntree">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-05.png"/>
+                <TextBlock HorizontalAlignment="Center">Steakosaurus</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectTRexKingBurgerEntree">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-06.png"/>
+                <TextBlock HorizontalAlignment="Center">T-Rex King Burger</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectPrehistoricPBJEntree">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-03.png"/>
+                <TextBlock HorizontalAlignment="Center">Prehistoric PB&amp;J</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectPterodactylWingsEntree">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-04.png"/>
+                <TextBlock HorizontalAlignment="Center">Pterodactyl Wings</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Click="SelectVeliciWrapEntree">
+            <StackPanel>
+                <Image Width="100"  Source="Assets/DinoDiner-07.png"/>
+                <TextBlock HorizontalAlignment="Center">Velici-Wrap</TextBlock>
+            </StackPanel>
+        </Button>
+    </WrapPanel>
 </Page>
