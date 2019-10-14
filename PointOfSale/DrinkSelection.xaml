@@ -17,19 +17,19 @@
                     <TextBlock HorizontalAlignment="Center">Sodasurus</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Width="200" Margin="25,0,0,0" Click="SelectTyrannoteaDrink">
+            <Button Name="TyrannoteaButton" Width="200" Margin="25,0,0,0" Click="SelectTyrannoteaDrink">
                 <StackPanel>
                     <Image Width="60"  Source="Assets/DinoDiner-12.png"/>
                     <TextBlock HorizontalAlignment="Center">Tyrannotea</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Width="200" Margin="25,0,0,0" Click="SelectJurassicJavaDrink">
+            <Button Name="JurassicJavaButton" Width="200" Margin="25,0,0,0" Click="SelectJurassicJavaDrink">
                 <StackPanel>
                     <Image Width="60"  Source="Assets/DinoDiner-13.png"/>
                     <TextBlock HorizontalAlignment="Center">Jurassic Java</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Width="200" Margin="25,0,0,0" Click="SelectWaterDrink">
+            <Button Name="WaterButton" Width="200" Margin="25,0,0,0" Click="SelectWaterDrink">
                 <StackPanel>
                     <Image Width="60"  Source="Assets/DinoDiner-15.png"/>
                     <TextBlock HorizontalAlignment="Center">Water</TextBlock>
@@ -38,13 +38,13 @@
         </StackPanel>
         <StackPanel>
             <Label Margin="78,20,0,0">Size</Label>
-            <Button Width="150" Height="107" Margin="20,0,0,0">
+            <Button Name="SmallButton" Click="SelectSmall"  Width="150" Height="107" Margin="20,0,0,0">
                 <TextBlock>Small</TextBlock>
             </Button>
-            <Button Width="150" Height="107" Margin="20,0,0,0">
+            <Button Name="MediumButton" Click="SelectMedium" Width="150" Height="107" Margin="20,0,0,0">
                 <TextBlock>Medium</TextBlock>
             </Button>
-            <Button Width="150" Height="107" Margin="20,0,0,0">
+            <Button Name="LargeButton" Click="SelectLarge" Width="150" Height="107" Margin="20,0,0,0">
                 <TextBlock>Large</TextBlock>
             </Button>
         </StackPanel>
@@ -53,11 +53,11 @@
             <Button Visibility="Hidden" Name="SweetDecafFlavorButton" Click="SelectSweetDecafFlavor" Background="White" Width="150" Height="107" Margin="20,0,0,0">
                 <TextBlock>Sweet/Decaf/Flavor</TextBlock>
             </Button>
-            <Button Visibility="Hidden" Name="AddLemonButton" Background="Yellow" Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock>Add Lemon</TextBlock>
+            <Button Visibility="Hidden" Name="AddLemonButton" Click="AddLemon" Background="Yellow" Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock Name="LemonText">Add Lemon</TextBlock>
             </Button>
-            <Button Visibility="Hidden" Name="HoldIceButton" Background="LightBlue" Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock>HoldIce</TextBlock>
+            <Button Visibility="Hidden" Name="HoldIceButton" Click="HoldIce" Background="LightBlue" Width="150" Height="107" Margin="20,0,0,0">
+                <TextBlock Name="IceText">Hold Ice</TextBlock>
             </Button>
         </StackPanel>
     </WrapPanel>

@@ -11,25 +11,25 @@
     <WrapPanel>
         <StackPanel>
             <Label Margin="162,20,0,0">Side</Label>
-            <Button Width="200" Margin="80,0,0,0" Click="SelectFryceritopsSide">
+            <Button Name="FryceritopsButton" Width="200" Margin="80,0,0,0" Click="SelectFryceritopsSide">
             <StackPanel>
                 <Image Width="60" Source="Assets/DinoDiner-08.png"/>
                 <TextBlock>Friceritops</TextBlock>
             </StackPanel>
             </Button>
-            <Button Width="200" Margin="80,0,0,0" Click="SelectMeteorMacAndCheeseSide">
+            <Button Name="MeteorMacAndCheeseButton" Width="200" Margin="80,0,0,0" Click="SelectMeteorMacAndCheeseSide">
             <StackPanel>
                 <Image Width="60"  Source="Assets/DinoDiner-09.png"/>
                 <TextBlock><Run Text="Meteor Mac and Cheese"/></TextBlock>
             </StackPanel>
             </Button>
-            <Button Width="200" Margin="80,0,0,0" Click="SelectMezzorellaSticksSide">
+            <Button Name="MezzorellaSticksButton" Width="200" Margin="80,0,0,0" Click="SelectMezzorellaSticksSide">
                 <StackPanel>
                     <Image Width="60"  Source="Assets/DinoDiner-10.png"/>
                     <TextBlock>Mezzorella Sticks</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Width="200" Margin="80,0,0,0" Click="SelectTriceritotsSide">
+            <Button Name="TriceritotsButton" Width="200" Margin="80,0,0,0" Click="SelectTriceritotsSide">
                 <StackPanel>
                     <Image Width="60"  Source="Assets/DinoDiner-11.png"/>
                     <TextBlock>Triceritots</TextBlock>
@@ -38,13 +38,13 @@
         </StackPanel>
         <StackPanel>
             <Label Margin="105,20,0,0">Size</Label>
-            <Button Width="200" Height="107" Margin="20,0,0,0">
+            <Button Name="SmallButton" Click="SelectSmall" Width="200" Height="107" Margin="20,0,0,0">
                 <TextBlock>Small</TextBlock>
             </Button>
-            <Button Width="200" Height="107" Margin="20,0,0,0">
+            <Button Name="MediumButton" Click="SelectMedium" Width="200" Height="107" Margin="20,0,0,0">
                 <TextBlock>Medium</TextBlock>
             </Button>
-            <Button Width="200" Height="107" Margin="20,0,0,0">
+            <Button Name="LargeButton" Click="SelectLarge" Width="200" Height="107" Margin="20,0,0,0">
                 <TextBlock>Large</TextBlock>
             </Button>
         </StackPanel>

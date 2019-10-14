@@ -21,6 +21,10 @@ namespace PointOfSale
     public partial class DrinkSelection : Page
     {
         public bool flavor = false;
+        private Size size;
+        private bool lemon = false;
+        private bool ice = true;
+
         public DrinkSelection()
         {
             InitializeComponent();
@@ -37,6 +41,26 @@ namespace PointOfSale
             AddLemonButton.Visibility = Visibility.Hidden;
             HoldIceButton.Visibility = Visibility.Visible;
             flavor = true;
+
+            SodasaurusButton.IsEnabled = false;
+            TyrannoteaButton.IsEnabled = true;
+            JurassicJavaButton.IsEnabled = true;
+            WaterButton.IsEnabled = true;
+
+            //Resets Size Buttons
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+
+            //Resets Ice Button
+            IceText.Text = "Hold Ice";
+            HoldIceButton.Background = Brushes.LightBlue;
+            ice = true;
+
+            //Resets Lemon Button
+            LemonText.Text = "Add Lemon";
+            AddLemonButton.Background = Brushes.Yellow;
+            lemon = false;
         }
 
         /// <summary>
@@ -50,6 +74,26 @@ namespace PointOfSale
             AddLemonButton.Visibility = Visibility.Visible;
             HoldIceButton.Visibility = Visibility.Visible;
             flavor = false;
+
+            SodasaurusButton.IsEnabled = true;
+            TyrannoteaButton.IsEnabled = false;
+            JurassicJavaButton.IsEnabled = true;
+            WaterButton.IsEnabled = true;
+
+            //Resets Size Buttons
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+
+            //Resets Ice Button
+            IceText.Text = "Hold Ice";
+            HoldIceButton.Background = Brushes.LightBlue;
+            ice = true;
+
+            //Resets Lemon Button
+            LemonText.Text = "Add Lemon";
+            AddLemonButton.Background = Brushes.Yellow;
+            lemon = false;
         }
 
         /// <summary>
@@ -63,6 +107,26 @@ namespace PointOfSale
             AddLemonButton.Visibility = Visibility.Hidden;
             HoldIceButton.Visibility = Visibility.Visible;
             flavor = false;
+
+            SodasaurusButton.IsEnabled = true;
+            TyrannoteaButton.IsEnabled = true;
+            JurassicJavaButton.IsEnabled = false;
+            WaterButton.IsEnabled = true;
+
+            //Resets Size Buttons
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+
+            //Resets Ice Button
+            IceText.Text = "Hold Ice";
+            HoldIceButton.Background = Brushes.LightBlue;
+            ice = true;
+
+            //Resets Lemon Button
+            LemonText.Text = "Add Lemon";
+            AddLemonButton.Background = Brushes.Yellow;
+            lemon = false;
         }
 
         /// <summary>
@@ -76,6 +140,26 @@ namespace PointOfSale
             AddLemonButton.Visibility = Visibility.Visible;
             HoldIceButton.Visibility = Visibility.Visible;
             flavor = false;
+
+            SodasaurusButton.IsEnabled = true;
+            TyrannoteaButton.IsEnabled = true;
+            JurassicJavaButton.IsEnabled = true;
+            WaterButton.IsEnabled = false;
+
+            //Resets Size Buttons
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+
+            //Resets Ice Button
+            IceText.Text = "Hold Ice";
+            HoldIceButton.Background = Brushes.LightBlue;
+            ice = true;
+
+            //Resets Lemon Button
+            LemonText.Text = "Add Lemon";
+            AddLemonButton.Background = Brushes.Yellow;
+            lemon = false;
         }
 
         /// <summary>
@@ -90,6 +174,88 @@ namespace PointOfSale
                 NavigationService.Navigate(new FlavorSelection());
             }
             
+        }
+
+        /// <summary>
+        /// Event handler for when the Lemon button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void AddLemon(object sender, RoutedEventArgs args)
+        {
+            if (LemonText.Text.CompareTo("Add Lemon") == 0)
+            {
+                LemonText.Text = "Hold Lemon";
+                AddLemonButton.Background = Brushes.White;
+                lemon = true;
+            }
+            else
+            {
+                LemonText.Text = "Add Lemon";
+                AddLemonButton.Background = Brushes.Yellow;
+                lemon = false;
+            }
+        }
+
+        /// <summary>
+        /// Event handler for when the Sweet/Decaf/Flavor button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void HoldIce(object sender, RoutedEventArgs args)
+        {
+            
+            if (IceText.Text.CompareTo("Hold Ice") == 0)
+            {
+                IceText.Text = "Add Ice";
+                HoldIceButton.Background = Brushes.SkyBlue;
+                ice = false;
+            }
+            else
+            {
+                IceText.Text = "Hold Ice";
+                HoldIceButton.Background = Brushes.LightBlue;
+                ice = true;
+            }
+        }
+
+        /// <summary>
+        /// Event handler for when Small Size button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectSmall(object sender, RoutedEventArgs args)
+        {
+            size = Size.Small;
+            SmallButton.IsEnabled = false;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Event handler for when the Medium Size button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectMedium(object sender, RoutedEventArgs args)
+        {
+            size = Size.Medium;
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = false;
+            LargeButton.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Event handler for when the Large size button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectLarge(object sender, RoutedEventArgs args)
+        {
+            size = Size.Large;
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = false;
         }
     }
 }

@@ -31,13 +31,13 @@
             <Label Margin="-208,190,0,0">Size</Label>
         </WrapPanel>
         <WrapPanel>
-            <Button Width="160" Height="107" Margin="50,0,0,0">
+            <Button Name="SmallButton" Click="SelectSmall" Width="160" Height="107" Margin="50,0,0,0">
                 <TextBlock>Small</TextBlock>
             </Button>
-            <Button Width="160" Height="107">
+            <Button Name="MediumButton" Click="SelectMedium" Width="160" Height="107">
                 <TextBlock>Medium</TextBlock>
             </Button>
-            <Button Width="160" Height="107">
+            <Button Name="LargeButton" Click="SelectLarge" Width="160" Height="107">
                 <TextBlock>Large</TextBlock>
             </Button>
         </WrapPanel>
