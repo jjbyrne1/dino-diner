@@ -94,6 +94,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
+                special.Add("Added " + nuggetCount - 6 + " Nuggets");
                 return special.ToArray();
             }
         }

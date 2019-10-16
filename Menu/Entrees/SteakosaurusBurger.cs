@@ -101,5 +101,30 @@ namespace DinoDiner.Menu
         {
             this.mustard = false;
         }
+
+        /// <summary>
+        /// Property that gets the menu item's name
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Property that gets an array of all the special demands for the
+        /// specific entree
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Dressing");
+                if (!pickle) special.Add("Hold Lettuce");
+                if (!ketchup) special.Add("Hold Cheese");
+                if (!mustard) special.Add("Hold Mustard");
+                return special.ToArray();
+            }
+        }
     }
 }

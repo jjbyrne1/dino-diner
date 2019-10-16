@@ -13,7 +13,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Entree and stores the price, calories, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class VelociWrap : Entree, INotifyPropertyChanged
+    public class VelociWrap : Entree, IOrderItem, INotifyPropertyChanged
     {
         //Backing Variables
         private bool dressing = true;
@@ -89,6 +89,30 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             this.cheese = false;
+        }
+
+        /// <summary>
+        /// Property that gets the menu item's name
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Property that gets an array of all the special demands for the
+        /// specific entree
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!dressing) special.Add("Hold Dressing");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!cheese) special.Add("Hold Cheese");
+                return special.ToArray();
+            }
         }
     }
 }
