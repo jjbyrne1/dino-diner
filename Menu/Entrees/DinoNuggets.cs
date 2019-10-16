@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -12,10 +13,22 @@ namespace DinoDiner.Menu
     /// Function that creates an entre and stores the price, calories, number of nuggets,
     /// and updates ingredients depending on the customer's requests.
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, IOrderItem, INotifyPropertyChanged
     {
         //Backing Variables
         private uint nuggetCount = 6;
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for the fields or properties
+        /// description, special, or price
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Creates an new instance of the DinonNuggets Entree and stores its price and 
@@ -62,6 +75,27 @@ namespace DinoDiner.Menu
             this.nuggetCount++;
             this.Calories += 59;
             this.Price += .25;
+        }
+
+        /// <summary>
+        /// Property that gets the menu item's name
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Property that gets an array of all the special demands for the
+        /// specific entree
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                return special.ToArray();
+            }
         }
     }
 }

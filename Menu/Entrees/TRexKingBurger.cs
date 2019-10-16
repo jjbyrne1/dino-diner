@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -12,7 +13,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Entree and stores the price, calories, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, INotifyPropertyChanged
     {
         //backdrop properties
         private bool bun = true;
@@ -23,6 +24,18 @@ namespace DinoDiner.Menu
         private bool ketchup = true;
         private bool mustard = true;
         private bool mayo = true;
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for the fields or properties
+        /// description, special, or price
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Creates an new instance of the TRexKingBurger Entree and stores its price and

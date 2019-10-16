@@ -4,6 +4,7 @@
  */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,11 +12,23 @@ namespace DinoDiner.Menu
     /// Class that inherits from Entree and stores the price, calories, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, IOrderItem, INotifyPropertyChanged
     {
         //Backing Variables
         private bool peanutButter = true;
         private bool jelly = true;
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for the fields or properties
+        /// description, special, or price
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Overrides the ingredients property from Entree and checks what ingredients
@@ -57,6 +70,8 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -65,6 +80,33 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
+
+        /// <summary>
+        /// Property that gets the menu item's name
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Property that gets an array of all the special demands for the
+        /// specific entree
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!peanutButter) special.Add("Hold Peanut Butter");
+                if (!jelly) special.Add("Hold Jelly");
+                return special.ToArray();
+            }
+        }
+
+
     }
 }
