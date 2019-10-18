@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* IOrderItem.cs
+ * Author: Jason Byrne
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,8 +13,6 @@ namespace DinoDiner.Menu
 
         string Description { get; }
 
-        string[] Special { get; }
-
-        
+        string[] Special { get; }        
     }
 }

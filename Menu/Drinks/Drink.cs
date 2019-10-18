@@ -26,12 +26,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Get or sets the Price
         /// </summary>
-        public double Price { get; set; }
+        public virtual double Price { get; protected set; }
 
         /// <summary>
         /// Gets or sets the Calories
         /// </summary>
-        public uint Calories { get; set; }
+        public virtual uint Calories { get; protected set; }
 
         /// <summary>
         /// Gets the ingredients list
@@ -46,7 +46,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets if Ice is included, default is true
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        public virtual bool Ice { get; protected set; } = true;
 
         /// <summary>
         /// Changes the Ice property to false
