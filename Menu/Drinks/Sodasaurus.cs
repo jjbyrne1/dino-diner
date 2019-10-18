@@ -11,11 +11,10 @@ namespace DinoDiner.Menu
     /// Class that inherits from Drink and stores the price, calories, sizes, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, IOrderItem
     {
         //private Size size = Size.Small;
         private SodasaurusFlavor flavor;
-
         /// <summary>
         /// Gets flavor or sets flavor to the new flavor
         /// </summary>
@@ -26,7 +25,7 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Creates an new instance of the Sodasaurus drink and starts with 
-        /// the default price and calories for size small with all base ingredients.
+        /// the default price and calories for size small
         /// </summary>
         public Sodasaurus()
         {
@@ -35,18 +34,8 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Overrides the ToString method to retrun the name of the item, its size, and
-        /// its flavor
-        /// </summary>
-        /// <returns> name of the item with its flavor and size </returns>
-        public override string ToString()
-        {
-            return Size + " " + Flavor + " " + "Sodasaurus";
-        }
-
-        /// <summary>
         /// Overrides the ingredients property from Drink and checks what ingredients
-        /// are included in the beverage and puts them in a list.
+        /// are included in the beverage and puts them in a list
         /// </summary>
         public override List<string> Ingredients
         {
@@ -87,6 +76,40 @@ namespace DinoDiner.Menu
                        // size = Size.Large;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Description");
+            }
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to return the name of the item, its size, and
+        /// its flavor
+        /// </summary>
+        /// <returns> name of the item with its flavor and size </returns>
+        public override string ToString()
+        {
+            return Size + " " + Flavor + " " + "Sodasaurus";
+        }
+
+        /// <summary>
+        /// Property that gets the menu item's name
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Property that gets an array of all the special instructions for the
+        /// specific drink
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
             }
         }
     }

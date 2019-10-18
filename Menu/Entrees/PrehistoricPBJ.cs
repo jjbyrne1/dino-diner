@@ -4,7 +4,6 @@
  */
 
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -12,23 +11,11 @@ namespace DinoDiner.Menu
     /// Class that inherits from Entree and stores the price, calories, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class PrehistoricPBJ : Entree, IOrderItem, INotifyPropertyChanged
+    public class PrehistoricPBJ : Entree, IOrderItem
     {
         //Backing Variables
         private bool peanutButter = true;
         private bool jelly = true;
-
-        /// <summary>
-        /// An event handler for PropertyChanged events for the fields or properties
-        /// description, special, or price
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Overrides the ingredients property from Entree and checks what ingredients
@@ -56,21 +43,11 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Overrides the ToString method to retrun the name of the item
-        /// </summary>
-        /// <returns> name of the item </returns>
-        public override string ToString()
-        {
-            return "Prehistoric PB&J";
-        }
-
-        /// <summary>
         /// Removes the peanut butter from the ingredients list for this instance.
         /// </summary>
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
-            NotifyOfPropertyChanged("Ingredients");
             NotifyOfPropertyChanged("Special");
         }
 
@@ -80,8 +57,16 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
-            NotifyOfPropertyChanged("Ingredients");
             NotifyOfPropertyChanged("Special");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to return the name of the item
+        /// </summary>
+        /// <returns> name of the item </returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
         }
 
         /// <summary>
@@ -93,7 +78,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Property that gets an array of all the special demands for the
+        /// Property that gets an array of all the special instructions for the
         /// specific entree
         /// </summary>
         public string[] Special
@@ -106,7 +91,6 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
-
 
     }
 }

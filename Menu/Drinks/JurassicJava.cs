@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Drink and stores the price, calories, sizes, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class JurassicJava : Drink
+    public class JurassicJava : Drink, IOrderItem
     {
         /// <summary>
         /// Gets or sets if there is space for cream, default is false
@@ -23,11 +23,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets if there is ice, overrides default to false
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        public override bool Ice { get; protected set; } = false;
 
         /// <summary>
         /// Creates an new instance of the JurrasicJava drink and starts with 
-        /// the default price and calories for size small with all base ingredients.
+        /// the default price and calories for size small
         /// </summary>
         public JurassicJava()
         {
@@ -36,25 +36,8 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Overrides the ToString method to retrun the name of the item, its size, and
-        /// its specified additions
-        /// </summary>
-        /// <returns> name of the item with specified additions </returns>
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(Size);
-            if (Decaf)
-            {
-                sb.Append( " Decaf");
-            }
-            sb.Append(" Jurassic Java");
-            return sb.ToString();
-        }
-
-        /// <summary>
         /// Overrides the ingredients property from Drink and checks what ingredients
-        /// are included in the beverage and puts them in a list.
+        /// are included in the beverage and puts them in a list
         /// </summary>
         public override List<string> Ingredients
         {
@@ -94,6 +77,8 @@ namespace DinoDiner.Menu
                         Calories = 8;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -103,6 +88,7 @@ namespace DinoDiner.Menu
         public void LeaveSpaceForCream()
         {
             SpaceForCream = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -111,6 +97,47 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChanged("Special");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to return the name of the item, its size, and
+        /// its specified additions
+        /// </summary>
+        /// <returns> name of the item with specified additions </returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Size);
+            if (Decaf)
+            {
+                sb.Append(" Decaf");
+            }
+            sb.Append(" Jurassic Java");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Property that gets the menu item's name
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Property that gets an array of all the special instructions for the
+        /// specific drink
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (SpaceForCream) special.Add("Leave Space for Cream");
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
+            }
         }
     }
 }

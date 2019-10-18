@@ -5,7 +5,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -13,22 +12,10 @@ namespace DinoDiner.Menu
     /// Function that creates an entre and stores the price, calories, number of nuggets,
     /// and updates ingredients depending on the customer's requests.
     /// </summary>
-    public class DinoNuggets : Entree, IOrderItem, INotifyPropertyChanged
+    public class DinoNuggets : Entree, IOrderItem
     {
         //Backing Variables
         private uint nuggetCount = 6;
-
-        /// <summary>
-        /// An event handler for PropertyChanged events for the fields or properties
-        /// description, special, or price
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Creates an new instance of the DinonNuggets Entree and stores its price and 
@@ -38,15 +25,6 @@ namespace DinoDiner.Menu
         {
             this.Price = 4.25;
             this.Calories = 59 * nuggetCount;
-        }
-
-        /// <summary>
-        /// Overrides the ToString method to retrun the name of the item
-        /// </summary>
-        /// <returns> name of the item </returns>
-        public override string ToString()
-        {
-            return "Dino-Nuggets";
         }
 
         /// <summary>
@@ -75,6 +53,16 @@ namespace DinoDiner.Menu
             this.nuggetCount++;
             this.Calories += 59;
             this.Price += .25;
+            NotifyOfPropertyChanged("Special");
+        }
+
+        /// <summary>
+        /// Overrides the ToString method to return the name of the item
+        /// </summary>
+        /// <returns> name of the item </returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
 
         /// <summary>
@@ -86,7 +74,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Property that gets an array of all the special demands for the
+        /// Property that gets an array of all the special instructions for the
         /// specific entree
         /// </summary>
         public string[] Special
@@ -94,9 +82,10 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                special.Add("Added " + nuggetCount - 6 + " Nuggets");
+                if (nuggetCount > 6) special.Add(nuggetCount - 6 + " Extra Nuggets");
                 return special.ToArray();
             }
         }
+
     }
 }

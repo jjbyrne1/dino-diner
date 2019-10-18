@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -13,7 +14,7 @@ namespace DinoDiner.Menu
     /// Creates a abstract class that includes propterties for setting the Price,
     /// Calories, Ingredients, and Size for all classes inheriting from this one.
     /// </summary>
-    public abstract class Side : IMenuItem
+    public abstract class Side : IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Creates a protected size that allow only inherited members to modify
@@ -44,5 +45,16 @@ namespace DinoDiner.Menu
         /// Gets or sets the size.
         /// </summary>
         public virtual Size Size { get; set; }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for the fields or properties
+        /// description, special, or price
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
