@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Drink and stores the price, calories, sizes, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class Tyrannotea : Drink, IOrderItem
+    public class Tyrannotea : Drink
     {
         /// <summary>
         /// Gets or sets if sugar is added, default is false
@@ -89,6 +89,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -99,6 +100,7 @@ namespace DinoDiner.Menu
         {
             Sweet = true;
             Calories *= 2;
+            NotifyOfPropertyChanged("Description");
         }
 
         /// <summary>
@@ -109,6 +111,7 @@ namespace DinoDiner.Menu
         {
             Sweet = false;
             Calories /= 2;
+            NotifyOfPropertyChanged("Description");
         }
 
         /// <summary>
@@ -131,7 +134,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -140,7 +143,7 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific drink
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

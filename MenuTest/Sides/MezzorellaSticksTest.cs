@@ -87,10 +87,13 @@ namespace MenuTest.Sides
             Assert.Equal<Size>(Size.Large, ms.Size);
         }
 
+        // Correct Description for Size
         [Fact]
         public void DescriptionShouldBeCorrectForSmall()
         {
             MezzorellaSticks ms = new MezzorellaSticks();
+            ms.Size = Size.Medium;
+            ms.Size = Size.Small;
             Assert.Equal("Small Mezzorella Sticks", ms.Description);
         }
 
@@ -98,6 +101,7 @@ namespace MenuTest.Sides
         public void DescriptionShouldBeCorrectForMedium()
         {
             MezzorellaSticks ms = new MezzorellaSticks();
+            ms.Size = Size.Medium;
             Assert.Equal("Medium Mezzorella Sticks", ms.Description);
         }
 
@@ -105,14 +109,40 @@ namespace MenuTest.Sides
         public void DescriptionShouldBeCorrectForLarge()
         {
             MezzorellaSticks ms = new MezzorellaSticks();
+            ms.Size = Size.Large;
             Assert.Equal("Large Mezzorella Sticks", ms.Description);
         }
 
+        // Add To Special
         [Fact]
         public void SpecialShouldBeEmptyByDefault()
         {
             MezzorellaSticks ms = new MezzorellaSticks();
             Assert.Empty(ms.Special);
+        }
+
+        // Notify Description Change
+        [Fact]
+        public void SizeShouldNotifyDescriptionChange()
+        {
+            MezzorellaSticks ms = new MezzorellaSticks();
+            Assert.PropertyChanged(ms, "Description",
+                () =>
+                {
+                    ms.Size = Size.Medium;
+                });
+        }
+
+        // Notify Price Change
+        [Fact]
+        public void SizeShouldNotifyPriceChange()
+        {
+            MezzorellaSticks ms = new MezzorellaSticks();
+            Assert.PropertyChanged(ms, "Price",
+                () =>
+                {
+                    ms.Size = Size.Medium;
+                });
         }
     }
 }

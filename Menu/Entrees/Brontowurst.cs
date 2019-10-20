@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Entree and stores the price, calories, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class Brontowurst : Entree, IOrderItem
+    public class Brontowurst : Entree
     {
         //Backing Variables
         private bool bun = true;
@@ -65,7 +65,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Removes the onions from the ingredients list for this instance.
         /// </summary>
-        public void HoldOnion()
+        public void HoldOnions()
         {
             this.onions = false;
             NotifyOfPropertyChanged("Special");
@@ -83,7 +83,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -92,7 +92,7 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific entree
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

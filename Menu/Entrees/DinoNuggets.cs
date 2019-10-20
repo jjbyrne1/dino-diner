@@ -12,10 +12,15 @@ namespace DinoDiner.Menu
     /// Function that creates an entre and stores the price, calories, number of nuggets,
     /// and updates ingredients depending on the customer's requests.
     /// </summary>
-    public class DinoNuggets : Entree, IOrderItem
+    public class DinoNuggets : Entree
     {
         //Backing Variables
         private uint nuggetCount = 6;
+
+        /// <summary>
+        /// Property that gets the number of nuggets
+        /// </summary>
+        public uint NuggetCount { get { return nuggetCount; } }
 
         /// <summary>
         /// Creates an new instance of the DinonNuggets Entree and stores its price and 
@@ -68,7 +73,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -77,7 +82,7 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific entree
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

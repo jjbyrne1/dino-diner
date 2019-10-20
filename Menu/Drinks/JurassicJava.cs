@@ -8,8 +8,11 @@ namespace DinoDiner.Menu
     /// Class that inherits from Drink and stores the price, calories, sizes, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class JurassicJava : Drink, IOrderItem
+    public class JurassicJava : Drink
     {
+        //Backing Variable
+        private bool decaf;
+
         /// <summary>
         /// Gets or sets if there is space for cream, default is false
         /// </summary>
@@ -18,7 +21,15 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets or sets if there is decaf default is false
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Gets or sets if there is ice, overrides default to false
@@ -120,7 +131,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -129,12 +140,12 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific drink
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
-                if (SpaceForCream) special.Add("Leave Space for Cream");
+                if (SpaceForCream) special.Add("Leave Space For Cream");
                 if (Ice) special.Add("Add Ice");
                 return special.ToArray();
             }

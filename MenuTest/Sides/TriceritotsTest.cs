@@ -87,10 +87,13 @@ namespace MenuTest.Sides
             Assert.Equal<Size>(Size.Large, tt.Size);
         }
 
+        //Correct Description for Size
         [Fact]
         public void DescriptionShouldBeCorrectForSmall()
         {
             Triceritots tt = new Triceritots();
+            tt.Size = Size.Medium;
+            tt.Size = Size.Small;
             Assert.Equal("Small Triceritots", tt.Description);
         }
 
@@ -98,6 +101,7 @@ namespace MenuTest.Sides
         public void DescriptionShouldBeCorrectForMedium()
         {
             Triceritots tt = new Triceritots();
+            tt.Size = Size.Medium;
             Assert.Equal("Medium Triceritots", tt.Description);
         }
 
@@ -105,14 +109,40 @@ namespace MenuTest.Sides
         public void DescriptionShouldBeCorrectForLarge()
         {
             Triceritots tt = new Triceritots();
+            tt.Size = Size.Large;
             Assert.Equal("Large Triceritots", tt.Description);
         }
 
+        // Add To Special
         [Fact]
         public void SpecialShouldBeEmptyByDefault()
         {
             Triceritots tt = new Triceritots();
             Assert.Empty(tt.Special);
+        }
+
+        // Notify Description Change
+        [Fact]
+        public void SizeShouldNotifyDescriptionChange()
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Description",
+                () =>
+                {
+                    tt.Size = Size.Medium;
+                });
+        }
+
+        // Notify Price Change
+        [Fact]
+        public void SizeShouldNotifyPriceChange()
+        {
+            Triceritots tt = new Triceritots();
+            Assert.PropertyChanged(tt, "Price",
+                () =>
+                {
+                    tt.Size = Size.Medium;
+                });
         }
     }
 }

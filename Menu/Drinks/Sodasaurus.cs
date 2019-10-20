@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Drink and stores the price, calories, sizes, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class Sodasaurus : Drink, IOrderItem
+    public class Sodasaurus : Drink
     {
         //private Size size = Size.Small;
         private SodasaurusFlavor flavor;
@@ -20,7 +20,10 @@ namespace DinoDiner.Menu
         /// </summary>
         public SodasaurusFlavor Flavor {
             get { return flavor; }
-            set { flavor = value; }
+            set { 
+                flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
         }
 
         /// <summary>
@@ -94,7 +97,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -103,7 +106,7 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific drink
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

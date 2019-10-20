@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Side, stores the ingredients, and updates the 
     /// price and calories depending on the Size of the side.
     /// </summary>
-    public class MeteorMacAndCheese : Side, IOrderItem
+    public class MeteorMacAndCheese : Side
     {
         /// <summary>
         /// Overrides the Size property from Side, gets the size, and sets the price
@@ -80,7 +80,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -89,7 +89,7 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific side
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

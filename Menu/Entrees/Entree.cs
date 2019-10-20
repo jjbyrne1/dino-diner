@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree : IMenuItem, INotifyPropertyChanged
+    public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// List of ingredients for the entree
@@ -28,6 +28,18 @@ namespace DinoDiner.Menu
         /// Gets the ingredients list
         /// </summary>
         public virtual List<string> Ingredients { get { return ingredients; } }
+
+        /// <summary>
+        /// Gets the item desctiption
+        /// </summary>
+        /// <returns></returns>
+        public virtual string Description { get;}
+
+        /// <summary>
+        /// Gets the Special Specifications
+        /// </summary>
+        /// <returns></returns>
+        public virtual string[] Special { get;}
 
         /// <summary>
         /// An event handler for PropertyChanged events for the fields or properties

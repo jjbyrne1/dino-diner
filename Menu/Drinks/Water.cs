@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Drink and stores the price, calories, sizes, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class Water : Drink, IOrderItem
+    public class Water : Drink
     {
         /// <summary>
         /// Gets or sets the lemon
@@ -55,13 +55,13 @@ namespace DinoDiner.Menu
             }
         }
 
-
         /// <summary>
         /// Adds Lemon to beverage
         /// </summary>
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -88,7 +88,7 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific drink
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

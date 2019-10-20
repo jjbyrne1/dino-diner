@@ -33,6 +33,7 @@ namespace MenuTest.Entrees
             Assert.Equal<int>(2, ingredients.Count);
         }
 
+        // Correct Description
         [Fact]
         public void DescriptionShouldBeCorrect()
         {
@@ -40,6 +41,7 @@ namespace MenuTest.Entrees
             Assert.Equal("Pterodactyl Wings", pw.Description);
         }
 
+        // Add To Special
         [Fact]
         public void SpecialShouldBeEmptyByDefault()
         {

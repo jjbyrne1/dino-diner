@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// Class that inherits from Entree and stores the price, calories, and 
     /// updates ingredients depending on the customer's requests.
     /// </summary>
-    public class SteakosaurusBurger : Entree, IOrderItem
+    public class SteakosaurusBurger : Entree
     {
         //backdrop properties
         private bool bun = true;
@@ -95,7 +95,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -104,14 +104,14 @@ namespace DinoDiner.Menu
         /// Property that gets an array of all the special instructions for the
         /// specific entree
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
-                if (!bun) special.Add("Hold Dressing");
-                if (!pickle) special.Add("Hold Lettuce");
-                if (!ketchup) special.Add("Hold Cheese");
+                if (!bun) special.Add("Hold Bun");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
                 if (!mustard) special.Add("Hold Mustard");
                 return special.ToArray();
             }

@@ -68,6 +68,7 @@ namespace MenuTest.Entrees
             Assert.DoesNotContain<string>("Mustard", sb.Ingredients);
         }
 
+        // Correct Description
         [Fact]
         public void DescriptionShouldBeCorrect()
         {
@@ -75,11 +76,133 @@ namespace MenuTest.Entrees
             Assert.Equal("Steakosaurus Burger", sb.Description);
         }
 
+        // Add To Special
         [Fact]
         public void SpecialShouldBeEmptyByDefault()
         {
             SteakosaurusBurger sb = new SteakosaurusBurger();
             Assert.Empty(sb.Special);
+        }
+
+        [Fact]
+        public void HoldBunShouldAddToSpecial()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldBun();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Bun", item);
+                });
+        }
+
+        [Fact]
+        public void HoldPickleShouldAddToSpecial()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldPickle();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Pickle", item);
+                });
+        }
+
+        [Fact]
+        public void HoldKetchupShouldAddToSpecial()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldKetchup();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ketchup", item);
+                });
+        }
+
+        [Fact]
+        public void HoldMustardShouldAddToSpecial()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldMustard();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Mustard", item);
+                });
+        }
+
+
+        [Fact]
+        public void HoldBunPickleKetchupAndMustardShouldAddToSpecial()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            sb.HoldBun();
+            sb.HoldPickle();
+            sb.HoldKetchup();
+            sb.HoldMustard();
+            Assert.Collection<string>(sb.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Bun", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Pickle", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Ketchup", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Mustard", item);
+                });
+        }
+
+        //Notify Special Change
+        [Fact]
+        public void HoldingBunShouldNotifySpecialChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special",
+                () =>
+                {
+                    sb.HoldBun();
+                });
+        }
+
+        [Fact]
+        public void HoldingPickleShouldNotifySpecialChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special",
+                () =>
+                {
+                    sb.HoldPickle();
+                });
+        }
+
+        [Fact]
+        public void HoldingKetchupShouldNotifySpecialChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special",
+                () =>
+                {
+                    sb.HoldKetchup();
+                });
+        }
+
+        [Fact]
+        public void HoldingMustardShouldNotifySpecialChange()
+        {
+            SteakosaurusBurger sb = new SteakosaurusBurger();
+            Assert.PropertyChanged(sb, "Special",
+                () =>
+                {
+                    sb.HoldMustard();
+                });
         }
     }
 }

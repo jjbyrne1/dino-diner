@@ -172,7 +172,7 @@ namespace DinoDiner.Menu
                 special.AddRange(Entree.Special);
                 special.Add(Side.Description);
                 special.AddRange(Side.Special);
-                special.Add(Drink.Desctiption);
+                special.Add(Drink.Description);
                 special.AddRange(Drink.Special);
                 return special.ToArray();
             }

@@ -134,5 +134,115 @@ namespace MenuTest.Drinks
             Assert.Contains("Water", ingredients);
             Assert.Contains("Lemon", ingredients);
         }
+
+        // Correct Desctiption for Size
+        [Fact]
+        public void DescriptionShouldBeCorrectForSmall()
+        {
+            Water w = new Water();
+            w.Size = Size.Medium;
+            w.Size = Size.Small;
+            Assert.Equal("Small Water", w.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForMedium()
+        {
+            Water w = new Water();
+            w.Size = Size.Medium;
+            Assert.Equal("Medium Water", w.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForLarge()
+        {
+            Water w = new Water();
+            w.Size = Size.Large;
+            Assert.Equal("Large Water", w.Description);
+        }
+
+        // Add To Special
+        [Fact]
+        public void SpecialShouldBeEmptyByDefault()
+        {
+            Water w = new Water();
+            Assert.Empty(w.Special);
+        }
+
+        [Fact]
+        public void AddLemonShouldAddToSpecial()
+        {
+            Water w = new Water();
+            w.AddLemon();
+            Assert.Collection<string>(w.Special,
+                item =>
+                {
+                    Assert.Equal("Add Lemon", item);
+                });
+        }
+
+        [Fact]
+        public void HoldIceShouldAddToSpecial()
+        {
+            Water w = new Water();
+            w.HoldIce();
+            Assert.Collection<string>(w.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                });
+        }
+
+        [Fact]
+        public void AddLemonAndHoldIceShouldAddToSpecial()
+        {
+            Water w = new Water();
+            w.AddLemon();
+            w.HoldIce();
+            Assert.Collection<string>(w.Special,
+                item =>
+                {
+                    Assert.Equal("Add Lemon", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                });
+        }
+
+        // Notify Special Change
+        [Fact]
+        public void AddLemonShouldNotifySpecialChange()
+        {
+            Water w = new Water();
+            Assert.PropertyChanged(w, "Special",
+                () =>
+                {
+                    w.AddLemon();
+                });
+        }
+
+        [Fact]
+        public void HoldIceShouldNotifySpecialChange()
+        {
+            Water w = new Water();
+            Assert.PropertyChanged(w, "Special",
+                () =>
+                {
+                    w.HoldIce();
+                });
+        }
+
+        //Notify Description Change
+        [Fact]
+        public void SizeShouldNotifyDescriptionChange()
+        {
+            Water w = new Water();
+            Assert.PropertyChanged(w, "Description",
+                () =>
+                {
+                    w.Size = Size.Medium;
+                });
+        }
     }
 }

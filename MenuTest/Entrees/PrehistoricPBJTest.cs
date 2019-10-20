@@ -106,7 +106,7 @@ namespace MenuTest.Entrees
                 });
         }
 
-        //Only need to change special or description
+        //Notify Special Change
         [Fact]
         public void HoldingPeanutButterShouldNotifySpecialChange()
         {
@@ -129,5 +129,4 @@ namespace MenuTest.Entrees
                 });
         }
     }
-
 }
