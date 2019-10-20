@@ -12,11 +12,15 @@ namespace DinoDiner.Menu
     {
         // Backing Variable
         private double subtotalCost;
+        private ObservableCollection<IOrderItem> items;
 
         /// <summary>
         /// Represents the items added to the Order
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public ObservableCollection<IOrderItem> Items {
+            get { return items; }
+            set { items = value; }
+        }
 
         /// <summary>
         /// Property that gets the Subtotal Cost of the order
@@ -24,7 +28,7 @@ namespace DinoDiner.Menu
         public double SubtotalCost { 
             get
             {
-                foreach(var order in Items)
+                foreach(IOrderItem order in Items)
                 {
                     subtotalCost += order.Price;
                 }
@@ -39,7 +43,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and protectedly sets the Sales Tax Rate
         /// </summary>
-        public double SalesTaxRate { get; protected set; }
+        public double SalesTaxRate { get; protected set; } = 3.0;
 
         /// <summary>
         /// Propterty that gets the Sales Tax Cost of the order
