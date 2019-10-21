@@ -146,6 +146,7 @@ namespace MenuTest
         public void SalesTaxIsCorrectWhenSet()
         {
             Order o = new Order();
+            o.SalesTaxRate = .03;
             Assert.Equal(.03, o.SalesTaxRate);
         }
 
@@ -157,6 +158,7 @@ namespace MenuTest
             MockEntree me = new MockEntree();
             order.Add(me);
             o.Items = order;
+            o.SalesTaxRate = .03;
             Assert.Equal(0.03*1.00, o.SalesTaxCost);
         }
 
@@ -168,6 +170,7 @@ namespace MenuTest
             MockSide ms = new MockSide();
             order.Add(ms);
             o.Items = order;
+            o.SalesTaxRate = .03;
             Assert.Equal(0.03 * 3.00 + 3.00, o.TotalCost);
         }
 
