@@ -45,11 +45,9 @@ namespace MenuTest
         [Fact]
         public void AddEntreeToOrderAddsToItems()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockEntree me = new MockEntree();
-            order.Add(me);
-            o.Items = order;
+            o.Items.Add(me);
             Assert.Collection<IOrderItem>(o.Items,
                 item =>
                 {
@@ -60,11 +58,9 @@ namespace MenuTest
         [Fact]
         public void AddSideToOrderAddsToItems()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockSide ms = new MockSide();
-            order.Add(ms);
-            o.Items = order;
+            o.Items.Add(ms);
             Assert.Collection<IOrderItem>(o.Items,
                 item =>
                 {
@@ -75,11 +71,9 @@ namespace MenuTest
         [Fact]
         public void AddDrinkToOrderAddsToItems()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockDrink md = new MockDrink();
-            order.Add(md);
-            o.Items = order;
+            o.Items.Add(md);
             Assert.Collection<IOrderItem>(o.Items,
                 item =>
                 {
@@ -91,54 +85,43 @@ namespace MenuTest
         [Fact]
         public void RemoveEntreeFromOrderRemovesFromItems()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockEntree me = new MockEntree();
-            order.Add(me);
-            o.Items = order;
-            order.Remove(me);
-            o.Items = order;
+            o.Items.Add(me);
+            o.Items.Remove(me);
             Assert.Empty(o.Items);
         }
 
         [Fact]
         public void RemoveSideFromOrderRemovesFromItems()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockSide ms = new MockSide();
-            order.Add(ms);
-            o.Items = order;
-            order.Remove(ms);
-            o.Items = order;
+            o.Items.Add(ms);
+            o.Items.Remove(ms);
             Assert.Empty(o.Items);
         }
 
         [Fact]
         public void RemoveDrinkFromOrderRemovesFromItems()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockDrink md = new MockDrink();
-            order.Add(md);
-            o.Items = order;
-            order.Remove(md);
-            o.Items = order;
+            o.Items.Add(md);
+            o.Items.Remove(md);
             Assert.Empty(o.Items);
         }
 
         [Fact]
         public void SubtotalCostIsSumOfAllItemPrices()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockEntree me = new MockEntree();
             MockSide ms = new MockSide();
             MockDrink md = new MockDrink();
-            order.Add(me);
-            order.Add(ms);
-            order.Add(md);
-            o.Items = order;
+            o.Items.Add(me);
+            o.Items.Add(ms);
+            o.Items.Add(md);
             Assert.Equal(6.00, o.SubtotalCost);
         }
 
@@ -153,11 +136,9 @@ namespace MenuTest
         [Fact]
         public void SalesTaxCostIsCorrect()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockEntree me = new MockEntree();
-            order.Add(me);
-            o.Items = order;
+            o.Items.Add(me);
             o.SalesTaxRate = .03;
             Assert.Equal(0.03*1.00, o.SalesTaxCost);
         }
@@ -165,11 +146,9 @@ namespace MenuTest
         [Fact]
         public void TotalCostIsCorrect()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             MockSide ms = new MockSide();
-            order.Add(ms);
-            o.Items = order;
+            o.Items.Add(ms);
             o.SalesTaxRate = .03;
             Assert.Equal(0.03 * 3.00 + 3.00, o.TotalCost);
         }
@@ -177,11 +156,9 @@ namespace MenuTest
         [Fact]
         public void TotalCostCannotBeNegative()
         {
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             Order o = new Order();
             FakeMockIMenuItem fake = new FakeMockIMenuItem();
-            order.Add(fake);
-            o.Items = order;
+            o.Items.Add(fake);
             Assert.Equal(0, o.TotalCost);
         }
     }

@@ -19,7 +19,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Represents the items added to the Order
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 
         /// <summary>
         /// Property that gets the Subtotal Cost of the order

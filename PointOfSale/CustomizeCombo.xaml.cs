@@ -71,7 +71,6 @@ namespace PointOfSale
             SmallButton.IsEnabled = false;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
-            //NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -85,7 +84,6 @@ namespace PointOfSale
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = false;
             LargeButton.IsEnabled = true;
-            //NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -99,7 +97,6 @@ namespace PointOfSale
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = false;
-            //NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }
