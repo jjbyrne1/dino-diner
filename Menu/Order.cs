@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Order.cs
+ * Author: Jason Byrne
+ */
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -12,15 +15,11 @@ namespace DinoDiner.Menu
     {
         // Backing Variable
         private double subtotalCost;
-        private ObservableCollection<IOrderItem> items;
 
         /// <summary>
         /// Represents the items added to the Order
         /// </summary>
-        public ObservableCollection<IOrderItem> Items {
-            get { return items; }
-            set { items = value; }
-        }
+        public ObservableCollection<IOrderItem> Items { get; set; }
 
         /// <summary>
         /// Property that gets the Subtotal Cost of the order
@@ -28,9 +27,12 @@ namespace DinoDiner.Menu
         public double SubtotalCost { 
             get
             {
-                foreach(IOrderItem order in Items)
+                if (subtotalCost == 0)
                 {
-                    subtotalCost += order.Price;
+                    foreach(IOrderItem item in Items)
+                    {
+                        subtotalCost += item.Price;
+                    }
                 }
                 if (subtotalCost < 0)
                 {
@@ -43,10 +45,10 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and protectedly sets the Sales Tax Rate
         /// </summary>
-        public double SalesTaxRate { get; protected set; } = 3.0;
+        public double SalesTaxRate { get; protected set; } = .03;
 
         /// <summary>
-        /// Propterty that gets the Sales Tax Cost of the order
+        /// Property that gets the Sales Tax Cost of the order
         /// </summary>
         public double SalesTaxCost { get { return SalesTaxRate * SubtotalCost; } }
 

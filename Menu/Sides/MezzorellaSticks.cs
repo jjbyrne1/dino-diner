@@ -12,19 +12,8 @@ namespace DinoDiner.Menu
     /// Class that inherits from Side, stores the ingredients, and updates the 
     /// price and calories depending on the Size of the side.
     /// </summary>
-    public class MezzorellaSticks : Side, IOrderItem, INotifyPropertyChanged
+    public class MezzorellaSticks : Side
     {
-
-        /// <summary>
-        /// An event handler for PropertyChanged events for the fields or properties
-        /// description, special, or price
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Overrides the Size property from Side, gets the size, and sets the price
