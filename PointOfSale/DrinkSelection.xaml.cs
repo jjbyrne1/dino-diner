@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+using DDSize = DinoDiner.Menu.Size;
 
 namespace PointOfSale
 {
@@ -20,8 +22,9 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
-        public bool flavor = false;
         private Size size;
+        private Drink drink;
+        public bool flavor = false;
         private bool lemon = false;
         private bool ice = true;
 
@@ -227,9 +230,10 @@ namespace PointOfSale
         void SelectSmall(object sender, RoutedEventArgs args)
         {
             size = Size.Small;
-            SmallButton.IsEnabled = false;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            if (sender is FrameworkElement element)
+            {
+                drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
         }
 
         /// <summary>
@@ -240,9 +244,10 @@ namespace PointOfSale
         void SelectMedium(object sender, RoutedEventArgs args)
         {
             size = Size.Medium;
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = false;
-            LargeButton.IsEnabled = true;
+            if (sender is FrameworkElement element)
+            {
+                drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
         }
 
         /// <summary>
@@ -253,9 +258,10 @@ namespace PointOfSale
         void SelectLarge(object sender, RoutedEventArgs args)
         {
             size = Size.Large;
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = false;
+            if (sender is FrameworkElement element)
+            {
+                drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
         }
     }
 }

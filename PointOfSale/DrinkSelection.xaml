@@ -8,57 +8,131 @@
       d:DesignHeight="390" d:DesignWidth="584"
       Title="DrinkSelection">
 
-    <WrapPanel>
-        <StackPanel>
-            <Label Margin="106,20,0,0">Drink</Label>
-            <Button Name="SodasaurusButton" Width="200" Margin="25,0,0,0" Click="SelectSodasurusDrink">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Drink"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   Grid.Row="0"/>
+        <WrapPanel Grid.Row="1"
+                    Grid.Column="0">
+            <Button Name="SodasaurusButton"
+                    Click="SelectSodasurusDrink"
+                    Width="146">
                 <StackPanel>
-                    <Image Width="60" Source="Assets/DinoDiner-14.png"/>
-                    <TextBlock HorizontalAlignment="Center">Sodasurus</TextBlock>
+                    <Image Source="Assets/DinoDiner-14.png"
+                           Width="80"/>
+                    <TextBlock Text="Sodasurus"
+                               HorizontalAlignment="Center"
+                               FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button Name="TyrannoteaButton" Width="200" Margin="25,0,0,0" Click="SelectTyrannoteaDrink">
+            <Button Name="TyrannoteaButton"
+                    Click="SelectTyrannoteaDrink"
+                    Width="146">
                 <StackPanel>
-                    <Image Width="60"  Source="Assets/DinoDiner-12.png"/>
-                    <TextBlock HorizontalAlignment="Center">Tyrannotea</TextBlock>
+                    <Image Width="80"
+                           Source="Assets/DinoDiner-12.png"/>
+                    <TextBlock Text="Tyrannotea"
+                               HorizontalAlignment="Center"
+                               FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button Name="JurassicJavaButton" Width="200" Margin="25,0,0,0" Click="SelectJurassicJavaDrink">
+            <Button Name="JurassicJavaButton"
+                    Click="SelectJurassicJavaDrink"
+                    Width="146">
                 <StackPanel>
-                    <Image Width="60"  Source="Assets/DinoDiner-13.png"/>
-                    <TextBlock HorizontalAlignment="Center">Jurassic Java</TextBlock>
+                    <Image Source="Assets/DinoDiner-13.png"
+                           Width="80"/>
+                    <TextBlock Text="Jurassic Java"
+                               HorizontalAlignment="Center"
+                               FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button Name="WaterButton" Width="200" Margin="25,0,0,0" Click="SelectWaterDrink">
+            <Button Name="WaterButton"
+                    Click="SelectWaterDrink"
+                    Width="146">
                 <StackPanel>
-                    <Image Width="60"  Source="Assets/DinoDiner-15.png"/>
-                    <TextBlock HorizontalAlignment="Center">Water</TextBlock>
+                    <Image Source="Assets/DinoDiner-15.png"
+                           Width="80"/>
+                    <TextBlock Text="Water"
+                               HorizontalAlignment="Center"
+                               FontSize="20"/>
                 </StackPanel>
             </Button>
-        </StackPanel>
-        <StackPanel>
-            <Label Margin="78,20,0,0">Size</Label>
-            <Button Name="SmallButton" Click="SelectSmall"  Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock>Small</TextBlock>
+        </WrapPanel>
+        <TextBlock Text="Size"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   Grid.Row="2"/>
+        <WrapPanel Grid.Row="3"
+                    Grid.Column="1">
+            <Button Name="SmallButton"
+                    Click="SelectSmall"
+                    IsEnabled="False"
+                    Width="195"
+                    Height="110">
+                <TextBlock Text="Small"
+                           FontSize="30"/>
             </Button>
-            <Button Name="MediumButton" Click="SelectMedium" Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock>Medium</TextBlock>
+            <Button Name="MediumButton"
+                    Click="SelectMedium"
+                    IsEnabled="False"
+                    Width="195"
+                    Height="110">
+                <TextBlock Text="Medium"
+                           FontSize="30"/>
             </Button>
-            <Button Name="LargeButton" Click="SelectLarge" Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock>Large</TextBlock>
+            <Button Name="LargeButton"
+                    Click="SelectLarge"
+                    IsEnabled="False"
+                    Width="194"
+                    Height="110">
+                <TextBlock Text="Large"
+                           FontSize="30"/>
             </Button>
-        </StackPanel>
-        <StackPanel>
-            <Label Margin="72,20,0,0">Special</Label>
-            <Button Visibility="Hidden" Name="SweetDecafFlavorButton" Click="SelectSweetDecafFlavor" Background="White" Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock>Sweet/Decaf/Flavor</TextBlock>
+        </WrapPanel>
+        <TextBlock Text="Special"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   Grid.Row="4"/>
+        <WrapPanel Grid.Row="5">
+            <Button Visibility="Hidden"
+                    Name="SweetDecafFlavorButton"
+                    Click="SelectSweetDecafFlavor"
+                    Background="White"
+                    Width="195"
+                    Height="110">
+                <TextBlock Text="Sweet/Decaf/Flavor"
+                           FontSize="20"/>
             </Button>
-            <Button Visibility="Hidden" Name="AddLemonButton" Click="AddLemon" Background="Yellow" Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock Name="LemonText">Add Lemon</TextBlock>
+            <Button Visibility="Hidden"
+                    Name="AddLemonButton"
+                    Click="AddLemon"
+                    Background="Yellow"
+                    Width="195"
+                    Height="110">
+                <TextBlock Name="LemonText"
+                           Text="Add Lemon"
+                           FontSize="20"/>
             </Button>
-            <Button Visibility="Hidden" Name="HoldIceButton" Click="HoldIce" Background="LightBlue" Width="150" Height="107" Margin="20,0,0,0">
-                <TextBlock Name="IceText">Hold Ice</TextBlock>
+            <Button Visibility="Hidden"
+                    Name="HoldIceButton"
+                    Click="HoldIce"
+                    Background="LightBlue"
+                    Width="194"
+                    Height="110">
+                <TextBlock Name="IceText"
+                           Text="Hold Ice"
+                           FontSize="20"/>
             </Button>
-        </StackPanel>
-    </WrapPanel>
+        </WrapPanel>
+    </Grid>
 </Page>
