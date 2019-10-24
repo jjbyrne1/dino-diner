@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+using DDSize = DinoDiner.Menu.Size;
 
 namespace PointOfSale
 {
@@ -21,6 +23,7 @@ namespace PointOfSale
     public partial class SideSelection : Page
     {
         private Size size;
+        private Side side;
         public SideSelection()
         {
             InitializeComponent();
@@ -33,14 +36,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectFryceritopsSide(object sender, RoutedEventArgs args)
         {
-            FryceritopsButton.IsEnabled = false;
-            MeteorMacAndCheeseButton.IsEnabled = true;
-            MezzorellaSticksButton.IsEnabled = true;
-            TriceritotsButton.IsEnabled = true;
-
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
+            if(DataContext is Order order)
+            {
+                side = new Fryceritops();
+                order.Items.Add(side);
+            }
         }
 
         /// <summary>
@@ -50,14 +53,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMeteorMacAndCheeseSide(object sender, RoutedEventArgs args)
         {
-            FryceritopsButton.IsEnabled = true;
-            MeteorMacAndCheeseButton.IsEnabled = false;
-            MezzorellaSticksButton.IsEnabled = true;
-            TriceritotsButton.IsEnabled = true;
-
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
+            if (DataContext is Order order)
+            {
+                side = new MeteorMacAndCheese();
+                order.Items.Add(side);
+            }
         }
 
         /// <summary>
@@ -67,14 +70,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMezzorellaSticksSide(object sender, RoutedEventArgs args)
         {
-            FryceritopsButton.IsEnabled = true;
-            MeteorMacAndCheeseButton.IsEnabled = true;
-            MezzorellaSticksButton.IsEnabled = false;
-            TriceritotsButton.IsEnabled = true;
-
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
+            if (DataContext is Order order)
+            {
+                side = new MezzorellaSticks();
+                order.Items.Add(side);
+            }
         }
 
         /// <summary>
@@ -84,14 +87,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectTriceritotsSide(object sender, RoutedEventArgs args)
         {
-            FryceritopsButton.IsEnabled = true;
-            MeteorMacAndCheeseButton.IsEnabled = true;
-            MezzorellaSticksButton.IsEnabled = true;
-            TriceritotsButton.IsEnabled = false;
-
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
+            if (DataContext is Order order)
+            {
+                side = new Triceritots();
+                order.Items.Add(side);
+            }
         }
 
         /// <summary>
@@ -102,9 +105,10 @@ namespace PointOfSale
         void SelectSmall(object sender, RoutedEventArgs args)
         {
             size = Size.Small;
-            SmallButton.IsEnabled = false;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            if (sender is FrameworkElement element)
+            {
+                side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
         }
 
         /// <summary>
@@ -115,9 +119,10 @@ namespace PointOfSale
         void SelectMedium(object sender, RoutedEventArgs args)
         {
             size = Size.Medium;
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = false;
-            LargeButton.IsEnabled = true;
+            if (sender is FrameworkElement element)
+            {
+                side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
         }
 
         /// <summary>
@@ -128,9 +133,10 @@ namespace PointOfSale
         void SelectLarge(object sender, RoutedEventArgs args)
         {
             size = Size.Large;
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = false;
+            if (sender is FrameworkElement element)
+            {
+                side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
         }
     }
 }

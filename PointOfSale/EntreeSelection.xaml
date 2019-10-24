@@ -5,56 +5,86 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="390" d:DesignWidth="592"
+      d:DesignHeight="390" d:DesignWidth="584"
       Title="EntreeSelection">
 
     <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="MinWidth" Value="190"></Setter>
-                <Setter Property="MinHeight" Value="130"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button Click="SelectBrontowurstEntree">
+        <Button Click="SelectBrontowurstEntree"
+                Width="195"
+                Height="130"
+                Margin="100,0,0,0">
             <StackPanel>
-                <Image Width="100"  Source="Assets/DinoDiner-01.png"/>
-                <TextBlock HorizontalAlignment="Center">Brontowurst</TextBlock>
+                <Image Width="90"
+                       Source="Assets/DinoDiner-01.png"/>
+                <TextBlock Text="Brontowurst"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectDinoNuggetsEntree">
+        <Button Click="SelectDinoNuggetsEntree"
+                Width="195"
+                Height="130">
             <StackPanel>
-                <Image Width="100"  Source="Assets/DinoDiner-02.png"/>
-                <TextBlock HorizontalAlignment="Center">Dino-Nuggets</TextBlock>
+                <Image Width="90"
+                       Source="Assets/DinoDiner-02.png"/>
+                <TextBlock Text="Dino-Nuggets"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectSteakosaurusEntree">
+        <Button Click="SelectSteakosaurusEntree"
+                Width="194"
+                Height="130">
             <StackPanel>
-                <Image Width="100"  Source="Assets/DinoDiner-05.png"/>
-                <TextBlock HorizontalAlignment="Center">Steakosaurus</TextBlock>
+                <Image Width="90"
+                       Source="Assets/DinoDiner-05.png"/>
+                <TextBlock Text="Steakosaurus"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectTRexKingBurgerEntree">
+        <Button Click="SelectTRexKingBurgerEntree"
+                Width="195"
+                Height="130">
             <StackPanel>
-                <Image Width="100"  Source="Assets/DinoDiner-06.png"/>
-                <TextBlock HorizontalAlignment="Center">T-Rex King Burger</TextBlock>
+                <Image Width="90"  Source="Assets/DinoDiner-06.png"/>
+                <TextBlock Text="T-Rex King Burger"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectPrehistoricPBJEntree">
+        <Button Click="SelectPrehistoricPBJEntree"
+                Width="195"
+                Height="130">
             <StackPanel>
-                <Image Width="100"  Source="Assets/DinoDiner-03.png"/>
-                <TextBlock HorizontalAlignment="Center">Prehistoric PB&amp;J</TextBlock>
+                <Image Width="90"
+                       Source="Assets/DinoDiner-03.png"/>
+                <TextBlock Text="Prehistoric PB&amp;J"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectPterodactylWingsEntree">
+        <Button Click="SelectPterodactylWingsEntree"
+                Width="194"
+                Height="130"
+                Margin="100,0,0,0">
             <StackPanel>
-                <Image Width="100"  Source="Assets/DinoDiner-04.png"/>
-                <TextBlock HorizontalAlignment="Center">Pterodactyl Wings</TextBlock>
+                <Image Width="90"
+                       Source="Assets/DinoDiner-04.png"/>
+                <TextBlock Text="Pterodactyl Wings"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectVeliciWrapEntree">
+        <Button Click="SelectVeliciWrapEntree"
+                Width="195"
+                Height="130">
             <StackPanel>
-                <Image Width="100"  Source="Assets/DinoDiner-07.png"/>
-                <TextBlock HorizontalAlignment="Center">Velici-Wrap</TextBlock>
+                <Image Width="90"
+                       Source="Assets/DinoDiner-07.png"/>
+                <TextBlock Text="Velici-Wrap"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
     </WrapPanel>
