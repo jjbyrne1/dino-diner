@@ -114,15 +114,6 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Adds Ice to bevarage
-        /// </summary>
-        public void AddIce()
-        {
-            Ice = true;
-            NotifyOfPropertyChanged("Special");
-        }
-
-        /// <summary>
         /// Overrides the ToString method to return the name of the item, its size, and
         /// its specified additions
         /// </summary>

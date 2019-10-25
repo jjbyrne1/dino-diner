@@ -38,11 +38,13 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="15"/>
                              </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=Description}"/>
+                            <TextBlock Text="{Binding Path=Description}"
+                                       Grid.Column="0"/>
                             <Button Click="RemoveItem"
                                     Grid.Column="1"
                                     Background="Red"
-                                    Foreground="White">X</Button>
+                                    Foreground="White"
+                                    HorizontalAlignment="Right">X</Button>
                         </Grid>
                         <ListBox ItemsSource="{Binding Path=Special}"
                                  BorderBrush="White"/>
