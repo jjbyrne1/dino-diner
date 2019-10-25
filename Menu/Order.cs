@@ -77,6 +77,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public double TotalCost { get { return SubtotalCost + SalesTaxCost; } }
 
+        public static object NavigationService { get; set; }
+
         /// <summary>
         /// Constructor for Order
         /// </summary>

@@ -22,8 +22,9 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
-        private Size size;
+        //BAcking Variables
         private Drink drink;
+        private bool sodasaurus, tyrannoTea, jurassicJava, water;
         public bool flavor = false;
         private bool lemon = false;
         private bool ice = true;
@@ -40,20 +41,11 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSodasurusDrink(object sender, RoutedEventArgs args)
         {
-            SweetDecafFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.Visibility = Visibility.Hidden;
-            HoldIceButton.Visibility = Visibility.Visible;
+            sodasaurus = true;
             flavor = true;
 
-            SodasaurusButton.IsEnabled = false;
-            TyrannoteaButton.IsEnabled = true;
-            JurassicJavaButton.IsEnabled = true;
-            WaterButton.IsEnabled = true;
-
-            //Resets Size Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            //Sets Flavor/Decaf/Sweet Button's Text
+            SweetDecafFlavorText.Text = "Select Flavor";
 
             //Resets Ice Button
             IceText.Text = "Hold Ice";
@@ -64,6 +56,12 @@ namespace PointOfSale
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
             lemon = false;
+
+            if (DataContext is Order order)
+            {
+                drink = new Sodasaurus();
+                order.Add(drink);
+            }
         }
 
         /// <summary>
@@ -73,20 +71,11 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectTyrannoteaDrink(object sender, RoutedEventArgs args)
         {
-            SweetDecafFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.Visibility = Visibility.Visible;
-            HoldIceButton.Visibility = Visibility.Visible;
+            tyrannoTea = true;
             flavor = false;
 
-            SodasaurusButton.IsEnabled = true;
-            TyrannoteaButton.IsEnabled = false;
-            JurassicJavaButton.IsEnabled = true;
-            WaterButton.IsEnabled = true;
-
-            //Resets Size Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            //Sets Flavor/Decaf/Sweet Button's Text
+            SweetDecafFlavorText.Text = "Add Sweet";
 
             //Resets Ice Button
             IceText.Text = "Hold Ice";
@@ -97,6 +86,12 @@ namespace PointOfSale
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
             lemon = false;
+
+            if (DataContext is Order order)
+            {
+                drink = new Tyrannotea();
+                order.Add(drink);
+            }
         }
 
         /// <summary>
@@ -106,20 +101,11 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectJurassicJavaDrink(object sender, RoutedEventArgs args)
         {
-            SweetDecafFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.Visibility = Visibility.Hidden;
-            HoldIceButton.Visibility = Visibility.Visible;
+            jurassicJava = true;
             flavor = false;
 
-            SodasaurusButton.IsEnabled = true;
-            TyrannoteaButton.IsEnabled = true;
-            JurassicJavaButton.IsEnabled = false;
-            WaterButton.IsEnabled = true;
-
-            //Resets Size Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            //Sets Flavor/Decaf/Sweet Button's Text
+            SweetDecafFlavorText.Text = "Add Decaf";
 
             //Resets Ice Button
             IceText.Text = "Hold Ice";
@@ -130,6 +116,12 @@ namespace PointOfSale
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
             lemon = false;
+
+            if (DataContext is Order order)
+            {
+                drink = new JurassicJava();
+                order.Add(drink);
+            }
         }
 
         /// <summary>
@@ -139,20 +131,12 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectWaterDrink(object sender, RoutedEventArgs args)
         {
+            water = true;
             SweetDecafFlavorButton.Visibility = Visibility.Hidden;
             AddLemonButton.Visibility = Visibility.Visible;
             HoldIceButton.Visibility = Visibility.Visible;
             flavor = false;
 
-            SodasaurusButton.IsEnabled = true;
-            TyrannoteaButton.IsEnabled = true;
-            JurassicJavaButton.IsEnabled = true;
-            WaterButton.IsEnabled = false;
-
-            //Resets Size Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
 
             //Resets Ice Button
             IceText.Text = "Hold Ice";
@@ -163,6 +147,12 @@ namespace PointOfSale
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
             lemon = false;
+
+            if (DataContext is Order order)
+            {
+                drink = new Water();
+                order.Add(drink);
+            }
         }
 
         /// <summary>
@@ -229,7 +219,31 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSmall(object sender, RoutedEventArgs args)
         {
-            size = Size.Small;
+            if (sodasaurus)
+            {
+                SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                AddLemonButton.Visibility = Visibility.Hidden;
+                HoldIceButton.Visibility = Visibility.Visible;
+            }
+            else if (tyrannoTea)
+            {
+                SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                AddLemonButton.Visibility = Visibility.Visible;
+                HoldIceButton.Visibility = Visibility.Visible;
+            }
+            else if (jurassicJava)
+            {
+                SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                AddLemonButton.Visibility = Visibility.Hidden;
+                HoldIceButton.Visibility = Visibility.Visible;
+            }
+            else if (water)
+            {
+                SweetDecafFlavorButton.Visibility = Visibility.Hidden;
+                AddLemonButton.Visibility = Visibility.Visible;
+                HoldIceButton.Visibility = Visibility.Visible;
+            }
+
             if (sender is FrameworkElement element)
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
@@ -243,7 +257,6 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMedium(object sender, RoutedEventArgs args)
         {
-            size = Size.Medium;
             if (sender is FrameworkElement element)
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
@@ -257,7 +270,6 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectLarge(object sender, RoutedEventArgs args)
         {
-            size = Size.Large;
             if (sender is FrameworkElement element)
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());

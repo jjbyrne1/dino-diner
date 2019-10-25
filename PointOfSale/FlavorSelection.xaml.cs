@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,6 +21,8 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
+        private Sodasaurus soda;
+        private FlavorSelection flavor;
         public FlavorSelection()
         {
             InitializeComponent();

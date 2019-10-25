@@ -75,6 +75,7 @@
         <WrapPanel Grid.Row="3"
                     Grid.Column="1">
             <Button Name="SmallButton"
+                    Tag="Small"
                     Click="SelectSmall"
                     IsEnabled="False"
                     Width="195"
@@ -83,6 +84,7 @@
                            FontSize="30"/>
             </Button>
             <Button Name="MediumButton"
+                    Tag="Medium"
                     Click="SelectMedium"
                     IsEnabled="False"
                     Width="195"
@@ -91,6 +93,7 @@
                            FontSize="30"/>
             </Button>
             <Button Name="LargeButton"
+                    Tag="Large"
                     Click="SelectLarge"
                     IsEnabled="False"
                     Width="194"
@@ -111,6 +114,7 @@
                     Width="195"
                     Height="110">
                 <TextBlock Text="Sweet/Decaf/Flavor"
+                           Name="SweetDecafFlavorText"
                            FontSize="20"/>
             </Button>
             <Button Visibility="Hidden"

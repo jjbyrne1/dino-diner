@@ -21,11 +21,18 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderList : UserControl
     {
+        public NavigationService NavigationService { get; set; }
+
         public OrderList()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// RemoveItem event handler
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
         private void RemoveItem(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -38,6 +45,19 @@ namespace PointOfSale
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// OnSelectionChanged event handler
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+           if (OrderItems.SelectedItem is Side side)
+           {
+                NavigationService.Navigate(new SideSelection());
+           }
         }
     }
 }
