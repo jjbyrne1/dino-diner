@@ -22,7 +22,6 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
-        private Size size;
         private Side side;
         public SideSelection()
         {
@@ -104,7 +103,6 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSmall(object sender, RoutedEventArgs args)
         {
-            size = Size.Small;
             if (sender is FrameworkElement element)
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
@@ -118,7 +116,6 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMedium(object sender, RoutedEventArgs args)
         {
-            size = Size.Medium;
             if (sender is FrameworkElement element)
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
@@ -132,7 +129,6 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectLarge(object sender, RoutedEventArgs args)
         {
-            size = Size.Large;
             if (sender is FrameworkElement element)
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
