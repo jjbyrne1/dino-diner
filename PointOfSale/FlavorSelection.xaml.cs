@@ -27,6 +27,7 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Event handler for when the Cherry Flavor button is clicked
         /// </summary>
@@ -34,7 +35,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectCherryFlavor(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new DrinkSelection());
+            if (sender is Button button && DataContext is Order order)
+            {
+                if (order.Items[order.Items.Length-1] is Sodasaurus s)
+                {
+                     s.Flavor = SodasaurusFlavor.Cherry;
+                }
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -44,7 +52,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectChocolateFlavor(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new DrinkSelection());
+            if (sender is Button button && DataContext is Order order)
+            {
+                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                {
+                    s.Flavor = SodasaurusFlavor.Chocolate;
+                }
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -54,7 +69,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectColaFlavor(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new DrinkSelection());
+            if (sender is Button button && DataContext is Order order)
+            {
+                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                {
+                    s.Flavor = SodasaurusFlavor.Cola;
+                }
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -64,7 +86,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectLimeFlavor(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new DrinkSelection());
+            if (sender is Button button && DataContext is Order order)
+            {
+                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                {
+                    s.Flavor = SodasaurusFlavor.Lime;
+                }
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -74,7 +103,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectOrangeFlavor(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new DrinkSelection());
+            if (sender is Button button && DataContext is Order order)
+            {
+                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                {
+                    s.Flavor = SodasaurusFlavor.Orange;
+                }
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -84,7 +120,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectRootBeerFlavor(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new DrinkSelection());
+            if (sender is Button button && DataContext is Order order)
+            {
+                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                {
+                    s.Flavor = SodasaurusFlavor.RootBeer;
+                }
+            }
+            NavigationService.GoBack();
         }
 
         /// <summary>
@@ -94,7 +137,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectVanillaFlavor(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new DrinkSelection());
+            if (sender is Button button && DataContext is Order order)
+            {
+                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                {
+                    s.Flavor = SodasaurusFlavor.Vanilla;
+                }
+            }
+            NavigationService.GoBack();
         }
     }
 }

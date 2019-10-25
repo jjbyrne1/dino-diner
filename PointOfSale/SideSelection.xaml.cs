@@ -28,6 +28,18 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        public SideSelection(Side side)
+        {
+            InitializeComponent();
+            this.side = side;
+            FryceritopsButton.IsEnabled = false;
+            MeteorMacAndCheeseButton.IsEnabled = false;
+
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+        }
+
         /// <summary>
         /// Event handler for when the Fryceritops Side button is clicked
         /// </summary>

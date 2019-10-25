@@ -28,6 +28,12 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        public EntreeSelection(Entree entree)
+        {
+            InitializeComponent();
+            this.entree = entree;
+        }
+
         /// <summary>
         /// Event handler for when the Brontowurst Entree button is clicked
         /// </summary>

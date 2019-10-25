@@ -54,10 +54,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-           if (OrderItems.SelectedItem is Side side)
-           {
-                NavigationService.Navigate(new SideSelection());
-           }
+            if (OrderItems.SelectedItem is Side side)
+            {
+                NavigationService.Navigate(new SideSelection(side));
+            }
+            else if (OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService.Navigate(new DrinkSelection(drink));
+            }
         }
     }
 }
