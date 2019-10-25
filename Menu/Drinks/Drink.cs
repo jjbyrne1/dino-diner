@@ -59,10 +59,19 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Gets the item desctiption
+        /// Changes the Ice property to true
         /// </summary>
-        /// <returns></returns>
-        public virtual string Description { get; }
+        public void AddIce()
+        {
+            Ice = true;
+            NotifyOfPropertyChanged("Special");
+        }
+
+    /// <summary>
+    /// Gets the item desctiption
+    /// </summary>
+    /// <returns></returns>
+    public virtual string Description { get; }
 
         /// <summary>
         /// Gets the Special Specifications

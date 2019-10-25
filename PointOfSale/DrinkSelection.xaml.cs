@@ -24,8 +24,9 @@ namespace PointOfSale
     {
         //BAcking Variables
         private Drink drink;
-        private bool sodasaurus, tyrannoTea, jurassicJava, water = false;
-        public bool flavor = false;
+        private bool flavor = false;
+        private bool couldAddSweet = false;
+        private bool couldAddDecaf = false;
         private bool lemon = false;
         private bool ice = true;
 
@@ -42,19 +43,95 @@ namespace PointOfSale
             {
                 if (d is Sodasaurus)
                 {
+                    //Displays appropriate special buttons
+                    SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                    AddLemonButton.Visibility = Visibility.Hidden;
+                    HoldIceButton.Visibility = Visibility.Visible;
 
+                    //Sets Flavor/Decaf/Sweet Button's Text
+                    SweetDecafFlavorText.Text = "Select Flavor";
+
+                    //Resets Ice Button
+                    IceText.Text = "Hold Ice";
+                    HoldIceButton.Background = Brushes.LightBlue;
+                    ice = true;
+
+                    //Resets Lemon Button
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                    lemon = false;
                 }
                 else if (d is Tyrannotea)
                 {
+                    //Enables Buttons
+                    SmallButton.IsEnabled = true;
+                    MediumButton.IsEnabled = true;
+                    LargeButton.IsEnabled = true;
 
+                    //Displays appropriate special buttons
+                    SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                    AddLemonButton.Visibility = Visibility.Visible;
+                    HoldIceButton.Visibility = Visibility.Visible;
+
+                    //Sets Flavor/Decaf/Sweet Button's Text
+                    SweetDecafFlavorText.Text = "Add Sweet";
+
+                    //Resets Ice Button
+                    IceText.Text = "Hold Ice";
+                    HoldIceButton.Background = Brushes.LightBlue;
+                    ice = true;
+
+                    //Resets Lemon Button
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                    lemon = false;
                 }
                 else if (d is JurassicJava)
                 {
+                    //Enables Buttons
+                    SmallButton.IsEnabled = true;
+                    MediumButton.IsEnabled = true;
+                    LargeButton.IsEnabled = true;
 
+                    //Displays appropriate special buttons
+                    SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                    AddLemonButton.Visibility = Visibility.Hidden;
+                    HoldIceButton.Visibility = Visibility.Visible;
+
+                    //Sets Flavor/Decaf/Sweet Button's Text
+                    SweetDecafFlavorText.Text = "Add Decaf";
+
+                    //Resets Ice Button
+                    IceText.Text = "Hold Ice";
+                    HoldIceButton.Background = Brushes.LightBlue;
+                    ice = true;
+
+                    //Resets Lemon Button
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                    lemon = false;
                 }
                 else if (d is Water)
                 {
+                    //Enables Buttons
+                    SmallButton.IsEnabled = true;
+                    MediumButton.IsEnabled = true;
+                    LargeButton.IsEnabled = true;
 
+                    //Displays appropriate special buttons
+                    SweetDecafFlavorButton.Visibility = Visibility.Hidden;
+                    AddLemonButton.Visibility = Visibility.Visible;
+                    HoldIceButton.Visibility = Visibility.Visible;
+
+                    //Resets Ice Button
+                    IceText.Text = "Hold Ice";
+                    HoldIceButton.Background = Brushes.LightBlue;
+                    ice = true;
+
+                    //Resets Lemon Button
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                    lemon = false;
                 }
             }
             if (drink is Sodasaurus)
@@ -113,6 +190,7 @@ namespace PointOfSale
         void SelectTyrannoteaDrink(object sender, RoutedEventArgs args)
         {
             flavor = false;
+            couldAddSweet = true;
 
             //Enables Buttons
             SmallButton.IsEnabled = true;
@@ -126,6 +204,7 @@ namespace PointOfSale
 
             //Sets Flavor/Decaf/Sweet Button's Text
             SweetDecafFlavorText.Text = "Add Sweet";
+            SweetDecafFlavorButton.Background = Brushes.White;
 
             //Resets Ice Button
             IceText.Text = "Hold Ice";
@@ -151,8 +230,8 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectJurassicJavaDrink(object sender, RoutedEventArgs args)
         {
-            jurassicJava = true;
             flavor = false;
+            couldAddDecaf = true;
 
             //Enables Buttons
             SmallButton.IsEnabled = true;
@@ -166,11 +245,12 @@ namespace PointOfSale
 
             //Sets Flavor/Decaf/Sweet Button's Text
             SweetDecafFlavorText.Text = "Add Decaf";
+            SweetDecafFlavorButton.Background = Brushes.White;
 
             //Resets Ice Button
-            IceText.Text = "Hold Ice";
+            IceText.Text = "Add Ice";
             HoldIceButton.Background = Brushes.LightBlue;
-            ice = true;
+            ice = false;
 
             //Resets Lemon Button
             LemonText.Text = "Add Lemon";
@@ -191,7 +271,6 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectWaterDrink(object sender, RoutedEventArgs args)
         {
-            water = true;
             flavor = false;
 
             //Enables Buttons
@@ -232,6 +311,33 @@ namespace PointOfSale
             {
                 NavigationService.Navigate(new FlavorSelection());
             }
+            else if (drink is Tyrannotea t)
+                if (SweetDecafFlavorText.Text == "Add Sweet")
+                {
+                    SweetDecafFlavorText.Text = "Hold Sweet";
+                    SweetDecafFlavorButton.Background = Brushes.Tan;
+                }
+                else
+                {
+                    SweetDecafFlavorText.Text = "Add Sweet";
+                    SweetDecafFlavorButton.Background = Brushes.White;
+
+                }
+            else if (drink is JurassicJava jj) {
+                if (SweetDecafFlavorText.Text == "Add Decaf")
+                {
+                    SweetDecafFlavorText.Text = "Hold Decaf";
+                    SweetDecafFlavorButton.Background = Brushes.Brown;
+                    SweetDecafFlavorButton.Foreground = Brushes.White;
+                }
+                else
+                {
+                    SweetDecafFlavorText.Text = "Add DEcaf";
+                    SweetDecafFlavorButton.Background = Brushes.White;
+                    SweetDecafFlavorButton.Foreground = Brushes.Black;
+
+                }
+            }
         }
 
         /// <summary>
@@ -245,13 +351,17 @@ namespace PointOfSale
             {
                 LemonText.Text = "Hold Lemon";
                 AddLemonButton.Background = Brushes.White;
-                lemon = true;
+                //lemon = true;
+                if (drink is Tyrannotea t) t.AddLemon();
+                else if (drink is Water w) w.AddLemon();
             }
             else
             {
                 LemonText.Text = "Add Lemon";
                 AddLemonButton.Background = Brushes.Yellow;
-                lemon = false;
+                //lemon = false;
+                if (drink is Tyrannotea t) t.Lemon = false;
+                else if (drink is Water w) w.Lemon = false;
             }
         }
 
@@ -267,13 +377,15 @@ namespace PointOfSale
             {
                 IceText.Text = "Add Ice";
                 HoldIceButton.Background = Brushes.SkyBlue;
-                ice = false;
+                //ice = false;
+                if (drink is Drink d) d.HoldIce();
             }
             else
             {
                 IceText.Text = "Hold Ice";
                 HoldIceButton.Background = Brushes.LightBlue;
-                ice = true;
+                //ice = true;
+                if (drink is Drink d) d.AddIce();
             }
         }
 

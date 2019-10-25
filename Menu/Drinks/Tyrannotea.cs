@@ -13,15 +13,37 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Tyrannotea : Drink
     {
-        /// <summary>
-        /// Gets or sets if sugar is added, default is false
-        /// </summary>
-        public bool Sweet { get; set; } = false;
+        //Backing Variables
+        private bool sweet = false;
+        private bool lemon = false;
 
         /// <summary>
-        /// Gets or sets if a lemon is added, defualt is false
+        /// Gets or sets if sugar is added
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Sweet
+        {
+            get { return sweet; }
+
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets if a lemon is added
+        /// </summary>
+        public bool Lemon
+        {
+            get { return lemon; }
+
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Creates an new instance of the Tyrranotea drink and starts with 

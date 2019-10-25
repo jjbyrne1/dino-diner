@@ -14,12 +14,20 @@ namespace DinoDiner.Menu
     public class JurassicJava : Drink
     {
         //Backing Variable
-        private bool decaf;
+        private bool spaceForCream = false;
+        private bool decaf = false;
 
         /// <summary>
         /// Gets or sets if there is space for cream, default is false
         /// </summary>
-        public bool SpaceForCream { get; set; } = false;
+        public bool SpaceForCream
+        {
+            get { return spaceForCream; }
+            set {
+                spaceForCream = value;
+                NotifyOfPropertyChanged("Special");
+            }
+        }
 
         /// <summary>
         /// Gets or sets if there is decaf default is false

@@ -15,6 +15,7 @@ namespace DinoDiner.Menu
     {
         //private Size size = Size.Small;
         private SodasaurusFlavor flavor;
+
         /// <summary>
         /// Gets flavor or sets flavor to the new flavor
         /// </summary>

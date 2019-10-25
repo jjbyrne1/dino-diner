@@ -13,10 +13,22 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Water : Drink
     {
+        //Backing Variable
+        private bool lemon = false;
+
         /// <summary>
         /// Gets or sets the lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Creates an new instance of the Water drink and starts with 
