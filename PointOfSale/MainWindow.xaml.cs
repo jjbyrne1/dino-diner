@@ -24,6 +24,25 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            Order order = DataContext as Order;
+        }
+
+        private void PassDataContentToPage()
+        {
+            if (OrderIU.Content is Page page)
+            {
+                page.DataContext = OrderIU.DataContext;
+            }
+        }
+
+        private void OnLoadCompleted(object sender, NavigationEventArgs args)
+        {
+            PassDataContentToPage();
+        }
+
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+            PassDataContentToPage();
         }
     }
 }
