@@ -17,6 +17,10 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Button Content="Done"
+                Click="SelectDone"
+                Width="100"
+                HorizontalAlignment="Right"/>
         <TextBlock Text="Drink"
                    HorizontalAlignment="Center"
                    FontWeight="Bold"

@@ -25,8 +25,6 @@ namespace PointOfSale
         //BAcking Variables
         private Drink drink;
         private bool flavor = false;
-        private bool lemon = false;
-        private bool ice = true;
 
         public DrinkSelection()
         {
@@ -52,12 +50,10 @@ namespace PointOfSale
                     //Resets Ice Button
                     IceText.Text = "Hold Ice";
                     HoldIceButton.Background = Brushes.LightBlue;
-                    this.ice = true;
 
                     //Resets Lemon Button
                     LemonText.Text = "Add Lemon";
                     AddLemonButton.Background = Brushes.Yellow;
-                    this.lemon = false;
                 }
                 else if (d is Tyrannotea)
                 {
@@ -77,12 +73,10 @@ namespace PointOfSale
                     //Resets Ice Button
                     IceText.Text = "Hold Ice";
                     HoldIceButton.Background = Brushes.LightBlue;
-                    this.ice = true;
 
                     //Resets Lemon Button
                     LemonText.Text = "Add Lemon";
                     AddLemonButton.Background = Brushes.Yellow;
-                    this.lemon = false;
                 }
                 else if (d is JurassicJava)
                 {
@@ -102,12 +96,10 @@ namespace PointOfSale
                     //Resets Ice Button
                     IceText.Text = "Hold Ice";
                     HoldIceButton.Background = Brushes.LightBlue;
-                    this.ice = true;
 
                     //Resets Lemon Button
                     LemonText.Text = "Add Lemon";
                     AddLemonButton.Background = Brushes.Yellow;
-                    this.lemon = false;
                 }
                 else if (d is Water)
                 {
@@ -124,12 +116,10 @@ namespace PointOfSale
                     //Resets Ice Button
                     IceText.Text = "Hold Ice";
                     HoldIceButton.Background = Brushes.LightBlue;
-                    this.ice = true;
 
                     //Resets Lemon Button
                     LemonText.Text = "Add Lemon";
                     AddLemonButton.Background = Brushes.Yellow;
-                    this.lemon = false;
                 }
             }
             if (drink is Sodasaurus)
@@ -166,12 +156,10 @@ namespace PointOfSale
             //Resets Ice Button
             IceText.Text = "Hold Ice";
             HoldIceButton.Background = Brushes.LightBlue;
-            ice = true;
 
             //Resets Lemon Button
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
-            lemon = false;
 
             if (DataContext is Order order)
             {
@@ -206,12 +194,10 @@ namespace PointOfSale
             //Resets Ice Button
             IceText.Text = "Hold Ice";
             HoldIceButton.Background = Brushes.LightBlue;
-            ice = true;
 
             //Resets Lemon Button
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
-            lemon = false;
 
             if (DataContext is Order order)
             {
@@ -246,12 +232,10 @@ namespace PointOfSale
             //Resets Ice Button
             IceText.Text = "Add Ice";
             HoldIceButton.Background = Brushes.White;
-            ice = false;
 
             //Resets Lemon Button
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
-            lemon = false;
 
             if (DataContext is Order order)
             {
@@ -282,12 +266,10 @@ namespace PointOfSale
             //Resets Ice Button
             IceText.Text = "Hold Ice";
             HoldIceButton.Background = Brushes.LightBlue;
-            ice = true;
 
             //Resets Lemon Button
             LemonText.Text = "Add Lemon";
             AddLemonButton.Background = Brushes.Yellow;
-            lemon = false;
 
             if (DataContext is Order order)
             {
