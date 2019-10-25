@@ -47,7 +47,7 @@ namespace MenuTest
         {
             Order o = new Order();
             MockEntree me = new MockEntree();
-            o.Items.Add(me);
+            o.Add(me);
             Assert.Collection<IOrderItem>(o.Items,
                 item =>
                 {
@@ -60,7 +60,7 @@ namespace MenuTest
         {
             Order o = new Order();
             MockSide ms = new MockSide();
-            o.Items.Add(ms);
+            o.Add(ms);
             Assert.Collection<IOrderItem>(o.Items,
                 item =>
                 {
@@ -73,7 +73,7 @@ namespace MenuTest
         {
             Order o = new Order();
             MockDrink md = new MockDrink();
-            o.Items.Add(md);
+            o.Add(md);
             Assert.Collection<IOrderItem>(o.Items,
                 item =>
                 {
@@ -87,8 +87,8 @@ namespace MenuTest
         {
             Order o = new Order();
             MockEntree me = new MockEntree();
-            o.Items.Add(me);
-            o.Items.Remove(me);
+            o.Add(me);
+            o.Remove(me);
             Assert.Empty(o.Items);
         }
 
@@ -97,8 +97,8 @@ namespace MenuTest
         {
             Order o = new Order();
             MockSide ms = new MockSide();
-            o.Items.Add(ms);
-            o.Items.Remove(ms);
+            o.Add(ms);
+            o.Remove(ms);
             Assert.Empty(o.Items);
         }
 
@@ -107,8 +107,8 @@ namespace MenuTest
         {
             Order o = new Order();
             MockDrink md = new MockDrink();
-            o.Items.Add(md);
-            o.Items.Remove(md);
+            o.Add(md);
+            o.Remove(md);
             Assert.Empty(o.Items);
         }
 
@@ -119,9 +119,9 @@ namespace MenuTest
             MockEntree me = new MockEntree();
             MockSide ms = new MockSide();
             MockDrink md = new MockDrink();
-            o.Items.Add(me);
-            o.Items.Add(ms);
-            o.Items.Add(md);
+            o.Add(me);
+            o.Add(ms);
+            o.Add(md);
             Assert.Equal(6.00, o.SubtotalCost);
         }
 
@@ -138,7 +138,7 @@ namespace MenuTest
         {
             Order o = new Order();
             MockEntree me = new MockEntree();
-            o.Items.Add(me);
+            o.Add(me);
             o.SalesTaxRate = .03;
             Assert.Equal(0.03*1.00, o.SalesTaxCost);
         }
@@ -148,7 +148,7 @@ namespace MenuTest
         {
             Order o = new Order();
             MockSide ms = new MockSide();
-            o.Items.Add(ms);
+            o.Add(ms);
             o.SalesTaxRate = .03;
             Assert.Equal(0.03 * 3.00 + 3.00, o.TotalCost);
         }
@@ -158,7 +158,7 @@ namespace MenuTest
         {
             Order o = new Order();
             FakeMockIMenuItem fake = new FakeMockIMenuItem();
-            o.Items.Add(fake);
+            o.Add(fake);
             Assert.Equal(0, o.TotalCost);
         }
     }

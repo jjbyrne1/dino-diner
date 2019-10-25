@@ -41,7 +41,7 @@ namespace PointOfSale
             if(DataContext is Order order)
             {
                 side = new Fryceritops();
-                order.Items.Add(side);
+                order.Add(side);
             }
         }
 
@@ -58,7 +58,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MeteorMacAndCheese();
-                order.Items.Add(side);
+                order.Add(side);
             }
         }
 
@@ -75,7 +75,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MezzorellaSticks();
-                order.Items.Add(side);
+                order.Add(side);
             }
         }
 
@@ -92,7 +92,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new Triceritots();
-                order.Items.Add(side);
+                order.Add(side);
             }
         }
 

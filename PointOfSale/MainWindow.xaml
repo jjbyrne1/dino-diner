@@ -12,7 +12,7 @@
     </Window.DataContext>
     <DockPanel>
         <local:OrderList DockPanel.Dock="Right"
-                         Width="200"
+                         MinWidth="200"
                          Background="LightSteelBlue"/>
         <Frame Name="OrderIU"
                LoadCompleted="OnLoadCompleted"

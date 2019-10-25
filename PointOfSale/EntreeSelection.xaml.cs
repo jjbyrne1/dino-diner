@@ -38,7 +38,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new Brontowurst();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
@@ -53,7 +53,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new DinoNuggets();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
@@ -68,7 +68,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new SteakosaurusBurger();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
@@ -83,7 +83,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new TRexKingBurger();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
@@ -98,7 +98,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new PrehistoricPBJ();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
@@ -113,7 +113,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new PterodactylWings();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
@@ -128,7 +128,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new VelociWrap();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
             NavigationService.Navigate(new MenuCategorySelection());
         }
