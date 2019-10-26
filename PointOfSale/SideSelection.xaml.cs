@@ -32,9 +32,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.side = side;
-            FryceritopsButton.IsEnabled = false;
-            MeteorMacAndCheeseButton.IsEnabled = false;
-
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;

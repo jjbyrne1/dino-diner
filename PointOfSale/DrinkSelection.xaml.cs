@@ -131,12 +131,17 @@ namespace PointOfSale
             LargeButton.IsEnabled = true;
         }
 
+        private void SelectDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
         /// <summary>
         /// Event handler for when the Sodasurus Drink button is clicked
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectSodasurusDrink(object sender, RoutedEventArgs args)
+        private void SelectSodasurusDrink(object sender, RoutedEventArgs args)
         {
             flavor = true;
 
@@ -173,7 +178,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectTyrannoteaDrink(object sender, RoutedEventArgs args)
+        private void SelectTyrannoteaDrink(object sender, RoutedEventArgs args)
         {
             flavor = false;
 
@@ -211,7 +216,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectJurassicJavaDrink(object sender, RoutedEventArgs args)
+        private void SelectJurassicJavaDrink(object sender, RoutedEventArgs args)
         {
             flavor = false;
 
@@ -249,7 +254,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectWaterDrink(object sender, RoutedEventArgs args)
+        public void SelectWaterDrink(object sender, RoutedEventArgs args)
         {
             flavor = false;
 
@@ -283,7 +288,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectSweetDecafFlavor(object sender, RoutedEventArgs args)
+        public void SelectSweetDecafFlavor(object sender, RoutedEventArgs args)
         {
             if (flavor)
             {
@@ -325,7 +330,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void AddLemon(object sender, RoutedEventArgs args)
+        public void AddLemon(object sender, RoutedEventArgs args)
         {
             if (LemonText.Text.CompareTo("Add Lemon") == 0)
             {
@@ -350,7 +355,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void HoldIce(object sender, RoutedEventArgs args)
+        public void HoldIce(object sender, RoutedEventArgs args)
         {
             
             if (IceText.Text.CompareTo("Hold Ice") == 0)
@@ -374,7 +379,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectSmall(object sender, RoutedEventArgs args)
+        public void SelectSmall(object sender, RoutedEventArgs args)
         {
             if (sender is FrameworkElement element)
             {
@@ -387,7 +392,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectMedium(object sender, RoutedEventArgs args)
+        public void SelectMedium(object sender, RoutedEventArgs args)
         {
             if (sender is FrameworkElement element)
             {
@@ -400,7 +405,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args"> event arguements </param>
-        void SelectLarge(object sender, RoutedEventArgs args)
+        public void SelectLarge(object sender, RoutedEventArgs args)
         {
             if (sender is FrameworkElement element)
             {
