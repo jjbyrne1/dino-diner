@@ -68,7 +68,7 @@ namespace PointOfSale
                 NavigationService.Navigate(new MenuCategorySelection());
                 OrderItems.SelectedItem = entree;
             }*/
-            if (DataContext is Order order)
+            /*if (DataContext is Order order)
             {
                 for (int i = order.Items.Length - 1; i > 0; i--)
                 {
@@ -77,7 +77,7 @@ namespace PointOfSale
                         OrderItems.SelectedItem = order.Items[i];
                     }
                 }
-            }
+            }*/
         }
     }
 }
