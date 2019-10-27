@@ -149,6 +149,7 @@ namespace DinoDiner.Menu
             {
                 sb.Append(" Sweet");
             }
+            else sb.Append(" Unsweet");
             sb.Append(" Tyrannotea");
             return sb.ToString();
         }

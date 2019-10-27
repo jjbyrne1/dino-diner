@@ -116,6 +116,7 @@ namespace PointOfSale
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -129,6 +130,7 @@ namespace PointOfSale
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -142,6 +144,7 @@ namespace PointOfSale
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

@@ -61,12 +61,22 @@ namespace PointOfSale
             else if (OrderItems.SelectedItem is Drink drink)
             {
                 NavigationService.Navigate(new DrinkSelection(drink));
+                OrderItems.SelectedItem = drink;
             }
-            else if (OrderItems.SelectedItem is Entree entree)
+            /*else if (OrderItems.SelectedItem is Entree entree)
             {
-                OrderItems.SelectedItem = entree;
                 NavigationService.Navigate(new MenuCategorySelection());
-                
+                OrderItems.SelectedItem = entree;
+            }*/
+            if (DataContext is Order order)
+            {
+                for (int i = order.Items.Length - 1; i > 0; i--)
+                {
+                    if (order.Items[i] is Entree e)
+                    {
+                        OrderItems.SelectedItem = order.Items[i];
+                    }
+                }
             }
         }
     }

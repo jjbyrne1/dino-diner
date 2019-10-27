@@ -46,6 +46,7 @@ namespace PointOfSale
 
                     //Sets Flavor/Decaf/Sweet Button's Text
                     SweetDecafFlavorText.Text = "Select Flavor";
+                    SweetDecafFlavorButton.Foreground = Brushes.Black;
 
                     //Resets Ice Button
                     IceText.Text = "Hold Ice";
@@ -94,12 +95,8 @@ namespace PointOfSale
                     SweetDecafFlavorText.Text = "Add Decaf";
 
                     //Resets Ice Button
-                    IceText.Text = "Hold Ice";
+                    IceText.Text = "Add Ice";
                     HoldIceButton.Background = Brushes.LightBlue;
-
-                    //Resets Lemon Button
-                    LemonText.Text = "Add Lemon";
-                    AddLemonButton.Background = Brushes.Yellow;
                 }
                 else if (d is Water)
                 {
@@ -238,10 +235,6 @@ namespace PointOfSale
             IceText.Text = "Add Ice";
             HoldIceButton.Background = Brushes.White;
 
-            //Resets Lemon Button
-            LemonText.Text = "Add Lemon";
-            AddLemonButton.Background = Brushes.Yellow;
-
             if (DataContext is Order order)
             {
                 drink = new JurassicJava();
@@ -298,11 +291,13 @@ namespace PointOfSale
                 if (SweetDecafFlavorText.Text == "Add Sweet")
                 {
                     SweetDecafFlavorText.Text = "Hold Sweet";
+                    t.AddSweet();
                     SweetDecafFlavorButton.Background = Brushes.Tan;
                 }
                 else
                 {
                     SweetDecafFlavorText.Text = "Add Sweet";
+                    t.RemoveSweet();
                     SweetDecafFlavorButton.Background = Brushes.White;
 
                 }
@@ -384,7 +379,7 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
-            }
+            } 
         }
 
         /// <summary>

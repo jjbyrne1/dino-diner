@@ -22,7 +22,9 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        //Backing Variable
         private Entree entree;
+
         public EntreeSelection()
         {
             InitializeComponent();
