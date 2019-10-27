@@ -32,7 +32,7 @@
                  SelectionChanged="OnSelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Width="180">
+                    <StackPanel Width="165">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>

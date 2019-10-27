@@ -288,6 +288,7 @@ namespace PointOfSale
                 NavigationService.Navigate(new FlavorSelection());
             }
             else if (drink is Tyrannotea t)
+            {
                 if (SweetDecafFlavorText.Text == "Add Sweet")
                 {
                     SweetDecafFlavorText.Text = "Hold Sweet";
@@ -301,7 +302,9 @@ namespace PointOfSale
                     SweetDecafFlavorButton.Background = Brushes.White;
 
                 }
-            else if (drink is JurassicJava jj) {
+            }
+            else if (drink is JurassicJava jj)
+            {
                 if (SweetDecafFlavorText.Text == "Add Decaf")
                 {
                     SweetDecafFlavorText.Text = "Hold Decaf";
