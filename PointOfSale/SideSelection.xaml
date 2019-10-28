@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="390" d:DesignWidth="584"
+      d:DesignHeight="370" d:DesignWidth="584"
       Title="SideSelection">
 
     <Grid>
@@ -69,7 +69,7 @@
                     Height="120">
                 <StackPanel>
                     <Image Source="Assets/DinoDiner-11.png"
-                           Width="65"/>
+                           Width="90"/>
                     <TextBlock Text="Triceritots"
                                HorizontalAlignment="Center"
                                FontSize="16"/>
@@ -89,7 +89,7 @@
                     Click="SelectSmall"
                     IsEnabled="False"
                     Width="195"
-                    Height="110">
+                    Height="90">
                 <TextBlock Text="Small"
                            FontSize="30"/>
             </Button>
@@ -98,7 +98,7 @@
                     Click="SelectMedium"
                     IsEnabled="False"
                     Width="195"
-                    Height="110">
+                    Height="90">
                 <TextBlock Text="Medium"
                            FontSize="30"/>
             </Button>
@@ -107,7 +107,7 @@
                     Click="SelectLarge"
                     IsEnabled="False"
                     Width="194"
-                    Height="110">
+                    Height="90">
                 <TextBlock Text="Large"
                            FontSize="30"/>
             </Button>

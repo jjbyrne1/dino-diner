@@ -41,8 +41,11 @@ namespace PointOfSale
             {
                 entree = new Brontowurst();
                 order.Add(entree);
+                if (entree is Brontowurst bw)
+                {
+                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(bw));
+                }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -56,8 +59,11 @@ namespace PointOfSale
             {
                 entree = new DinoNuggets();
                 order.Add(entree);
+                if (entree is DinoNuggets dn)
+                {
+                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeDinoNuggets(dn));
+                }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -71,8 +77,11 @@ namespace PointOfSale
             {
                 entree = new SteakosaurusBurger();
                 order.Add(entree);
+                if (entree is SteakosaurusBurger sb)
+                {
+                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeSteakosaurusBurger(sb));
+                }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -86,8 +95,11 @@ namespace PointOfSale
             {
                 entree = new TRexKingBurger();
                 order.Add(entree);
+                if (entree is TRexKingBurger trex) 
+                {
+                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeTRexKingBurger(trex));
+                }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -101,8 +113,11 @@ namespace PointOfSale
             {
                 entree = new PrehistoricPBJ();
                 order.Add(entree);
+                if (entree is PrehistoricPBJ pbj)
+                {
+                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizePrehistoricPBJ(pbj));
+                }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -116,8 +131,12 @@ namespace PointOfSale
             {
                 entree = new PterodactylWings();
                 order.Add(entree);
+                if (entree is PterodactylWings pw)
+                {
+                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizePterodactylWings(pw));
+                }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
+            
         }
 
         /// <summary>
@@ -131,8 +150,11 @@ namespace PointOfSale
             {
                 entree = new VelociWrap();
                 order.Add(entree);
+                if (entree is VelociWrap vw)
+                {
+                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(vw));
+                }
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

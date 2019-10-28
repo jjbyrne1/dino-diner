@@ -5,36 +5,53 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="390" d:DesignWidth="584"
+      d:DesignHeight="370" d:DesignWidth="584"
       Title="FlavorSelection">
 
     <Grid>
         <WrapPanel>
-            <WrapPanel.Resources>
-                <Style TargetType="Button">
-                    <Setter Property="MinWidth" Value="190"></Setter>
-                    <Setter Property="MinHeight" Value="130"></Setter>
-                </Style>
-            </WrapPanel.Resources>
-            <Button Click="SelectCherryFlavor" Background="PaleVioletRed">
+            <Button Click="SelectCherryFlavor" 
+                    Background="PaleVioletRed"
+                    Width="195"
+                    Height="124"
+                    Margin="100,0,0,0">
                 <TextBlock FontSize="20">Cherry</TextBlock>
             </Button>
-            <Button Click="SelectChocolateFlavor" Background="SaddleBrown">
+            <Button Click="SelectChocolateFlavor"
+                    Background="SaddleBrown"
+                    Width="195"
+                    Height="124">
                 <TextBlock FontSize="20" >Chocolate</TextBlock>
             </Button>
-            <Button Click="SelectColaFlavor" Background="OrangeRed">
+            <Button Click="SelectColaFlavor"
+                    Background="OrangeRed"
+                    Width="194"
+                    Height="123">
                 <TextBlock FontSize="20">Cola</TextBlock>
             </Button>
-            <Button Click="SelectLimeFlavor" Background="LimeGreen">
+            <Button Click="SelectLimeFlavor"
+                    Background="LimeGreen"
+                    Width="195"
+                    Height="123">
                 <TextBlock FontSize="20">Lime</TextBlock>
             </Button>
-            <Button Click="SelectOrangeFlavor" Background="Orange">
+            <Button Click="SelectOrangeFlavor"
+                    Background="Orange"
+                    Width="195"
+                    Height="123">
                 <TextBlock FontSize="20">Orange</TextBlock>
             </Button>
-            <Button Click="SelectRootBeerFlavor" Background="RosyBrown">
+            <Button Click="SelectRootBeerFlavor"
+                    Background="RosyBrown"
+                    Width="194"
+                    Height="124"
+                    Margin="100,0,0,0">
                 <TextBlock FontSize="20">Root Beer</TextBlock>
             </Button>
-            <Button Click="SelectVanillaFlavor" Background="PaleGoldenrod">
+            <Button Click="SelectVanillaFlavor"
+                    Background="PaleGoldenrod"
+                    Width="195"
+                    Height="124">
                 <TextBlock FontSize="20">Vanilla</TextBlock>
             </Button>
         </WrapPanel>

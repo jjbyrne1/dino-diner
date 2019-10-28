@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale.Entree_Customization_Pages
 {
@@ -20,9 +21,11 @@ namespace PointOfSale.Entree_Customization_Pages
     /// </summary>
     public partial class CustomizePterodactylWings : Page
     {
-        public CustomizePterodactylWings()
+        private PterodactylWings pw;
+        public CustomizePterodactylWings(PterodactylWings pw)
         {
             InitializeComponent();
+            this.pw = pw;
         }
     }
 }

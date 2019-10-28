@@ -5,56 +5,80 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="390" d:DesignWidth="584"
+      d:DesignHeight="370" d:DesignWidth="584"
       Title="ComboSelection">
 
     <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="MinWidth" Value="190"></Setter>
-                <Setter Property="MinHeight" Value="130"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button Click="SelectBrontowurstCombo">
+        <Button Click="SelectBrontowurstCombo"
+                Width="195"
+                Height="124"
+                Margin="100,0,0,0">
             <StackPanel>
                 <Image Width="100"  Source="Assets/DinoDiner-16.png"/>
-                <TextBlock> Brontowurst Combo </TextBlock>
+                <TextBlock Text="Brontowurst Combo"
+                           FontSize="15"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectDinoNuggetsCombo">
+        <Button Click="SelectDinoNuggetsCombo"
+                Width="195"
+                Height="124">
             <StackPanel>
                 <Image Width="100"  Source="Assets/DinoDiner-17.png"/>
-                <TextBlock>Dino-Nuggets Combo</TextBlock>
+                <TextBlock Text="Dino-Nuggets Combo"
+                           FontSize="15"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectSteakosaurusCombo">
+        <Button Click="SelectSteakosaurusCombo"
+                Width="194"
+                Height="123">
             <StackPanel>
                 <Image Width="100"  Source="Assets/DinoDiner-20.png"/>
-                <TextBlock>Steakosaurus Combo</TextBlock>
+                <TextBlock Text="Steakosaurus Combo"
+                           FontSize="15"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectTRexKingBurgerCombo">
+        <Button Click="SelectTRexKingBurgerCombo"
+                Width="195"
+                Height="123">
             <StackPanel>
                 <Image Width="100"  Source="Assets/DinoDiner-21.png"/>
-                <TextBlock>T-Rex King Burger Combo</TextBlock>
+                <TextBlock Text="T-Rex King Burger Combo"
+                           FontSize="15"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectPrehistoricPBJCombo">
+        <Button Click="SelectPrehistoricPBJCombo"
+                Width="195"
+                Height="123">
             <StackPanel>
                 <Image Width="100"  Source="Assets/DinoDiner-18.png"/>
-                <TextBlock>Prehistoric PB&amp;J Combo</TextBlock>
+                <TextBlock Text="Prehistoric PB&amp;J Combo"
+                           FontSize="15"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectPterodactylWingsCombo">
+        <Button Click="SelectPterodactylWingsCombo"
+                Width="194"
+                Height="124"
+                Margin="100,0,0,0">
             <StackPanel>
                 <Image Width="100"  Source="Assets/DinoDiner-19.png"/>
-                <TextBlock>Pterodactyl Wings Combo</TextBlock>
+                <TextBlock Text="Pterodactyl Wings Combo"
+                           FontSize="15"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button Click="SelectVeliciWrapCombo">
+        <Button Click="SelectVeliciWrapCombo"
+                Width="195"
+                Height="124">
             <StackPanel>
                 <Image Width="100"  Source="Assets/DinoDiner-22.png"/>
-                <TextBlock>Velici-Wrap Combo</TextBlock>
+                <TextBlock Text="Velici-Wrap Combo"
+                           FontSize="15"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
     </WrapPanel>

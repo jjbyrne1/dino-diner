@@ -25,5 +25,9 @@
         <Button Content="Hold Jelly"
                 Click="SelectHoldJelly"
                 Grid.Row="1"/>
+        <Button Content="Done"
+                Click="SelectDone"
+                Grid.Row="2"
+                Grid.Column="2"/>
     </Grid>
 </Page>

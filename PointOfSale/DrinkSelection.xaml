@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="390" d:DesignWidth="584"
+      d:DesignHeight="370" d:DesignWidth="584"
       Title="DrinkSelection">
 
     <Grid>
@@ -29,10 +29,11 @@
                     Grid.Column="0">
             <Button Name="SodasaurusButton"
                     Click="SelectSodasurusDrink"
-                    Width="146">
+                    Width="146"
+                    Background="White">
                 <StackPanel>
                     <Image Source="Assets/DinoDiner-14.png"
-                           Width="80"/>
+                           Width="75"/>
                     <TextBlock Text="Sodasurus"
                                HorizontalAlignment="Center"
                                FontSize="20"/>
@@ -40,9 +41,10 @@
             </Button>
             <Button Name="TyrannoteaButton"
                     Click="SelectTyrannoteaDrink"
-                    Width="146">
+                    Width="146"
+                    Background="White">
                 <StackPanel>
-                    <Image Width="80"
+                    <Image Width="75"
                            Source="Assets/DinoDiner-12.png"/>
                     <TextBlock Text="Tyrannotea"
                                HorizontalAlignment="Center"
@@ -51,10 +53,11 @@
             </Button>
             <Button Name="JurassicJavaButton"
                     Click="SelectJurassicJavaDrink"
-                    Width="146">
+                    Width="146"
+                    Background="White">
                 <StackPanel>
                     <Image Source="Assets/DinoDiner-13.png"
-                           Width="80"/>
+                           Width="75"/>
                     <TextBlock Text="Jurassic Java"
                                HorizontalAlignment="Center"
                                FontSize="20"/>
@@ -62,10 +65,11 @@
             </Button>
             <Button Name="WaterButton"
                     Click="SelectWaterDrink"
-                    Width="146">
+                    Width="146"
+                    Background="White">
                 <StackPanel>
                     <Image Source="Assets/DinoDiner-15.png"
-                           Width="80"/>
+                           Width="75"/>
                     <TextBlock Text="Water"
                                HorizontalAlignment="Center"
                                FontSize="20"/>
@@ -83,7 +87,7 @@
                     Click="SelectSmall"
                     IsEnabled="False"
                     Width="195"
-                    Height="110">
+                    Height="104">
                 <TextBlock Text="Small"
                            FontSize="30"/>
             </Button>
@@ -92,7 +96,7 @@
                     Click="SelectMedium"
                     IsEnabled="False"
                     Width="195"
-                    Height="110">
+                    Height="104">
                 <TextBlock Text="Medium"
                            FontSize="30"/>
             </Button>
@@ -101,7 +105,7 @@
                     Click="SelectLarge"
                     IsEnabled="False"
                     Width="194"
-                    Height="110">
+                    Height="104">
                 <TextBlock Text="Large"
                            FontSize="30"/>
             </Button>
@@ -116,30 +120,30 @@
                     Click="SelectSweetDecafFlavor"
                     Background="White"
                     Width="195"
-                    Height="110">
+                    Height="103">
                 <TextBlock Text="Sweet/Decaf/Flavor"
                            Name="SweetDecafFlavorText"
-                           FontSize="20"/>
+                           FontSize="25"/>
             </Button>
             <Button Visibility="Hidden"
                     Name="AddLemonButton"
                     Click="AddLemon"
                     Background="Yellow"
                     Width="195"
-                    Height="110">
+                    Height="103">
                 <TextBlock Name="LemonText"
                            Text="Add Lemon"
-                           FontSize="20"/>
+                           FontSize="25"/>
             </Button>
             <Button Visibility="Hidden"
                     Name="HoldIceButton"
                     Click="HoldIce"
                     Background="LightBlue"
                     Width="194"
-                    Height="110">
+                    Height="103">
                 <TextBlock Name="IceText"
                            Text="Hold Ice"
-                           FontSize="20"/>
+                           FontSize="25"/>
             </Button>
         </WrapPanel>
     </Grid>

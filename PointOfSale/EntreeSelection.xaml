@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="390" d:DesignWidth="584"
+      d:DesignHeight="370" d:DesignWidth="584"
       Title="EntreeSelection">
 
     <WrapPanel>
         <Button Click="SelectBrontowurstEntree"
                 Width="195"
-                Height="130"
+                Height="124"
                 Margin="100,0,0,0">
             <StackPanel>
                 <Image Width="90"
@@ -23,7 +23,7 @@
         </Button>
         <Button Click="SelectDinoNuggetsEntree"
                 Width="195"
-                Height="130">
+                Height="124">
             <StackPanel>
                 <Image Width="90"
                        Source="Assets/DinoDiner-02.png"/>
@@ -34,7 +34,7 @@
         </Button>
         <Button Click="SelectSteakosaurusEntree"
                 Width="194"
-                Height="130">
+                Height="123">
             <StackPanel>
                 <Image Width="90"
                        Source="Assets/DinoDiner-05.png"/>
@@ -45,7 +45,7 @@
         </Button>
         <Button Click="SelectTRexKingBurgerEntree"
                 Width="195"
-                Height="130">
+                Height="123">
             <StackPanel>
                 <Image Width="90"  Source="Assets/DinoDiner-06.png"/>
                 <TextBlock Text="T-Rex King Burger"
@@ -55,7 +55,7 @@
         </Button>
         <Button Click="SelectPrehistoricPBJEntree"
                 Width="195"
-                Height="130">
+                Height="123">
             <StackPanel>
                 <Image Width="90"
                        Source="Assets/DinoDiner-03.png"/>
@@ -66,7 +66,7 @@
         </Button>
         <Button Click="SelectPterodactylWingsEntree"
                 Width="194"
-                Height="130"
+                Height="124"
                 Margin="100,0,0,0">
             <StackPanel>
                 <Image Width="90"
@@ -78,7 +78,7 @@
         </Button>
         <Button Click="SelectVeliciWrapEntree"
                 Width="195"
-                Height="130">
+                Height="124">
             <StackPanel>
                 <Image Width="90"
                        Source="Assets/DinoDiner-07.png"/>

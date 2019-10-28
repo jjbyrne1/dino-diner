@@ -15,9 +15,22 @@
                          x:Name="OrderInterface"
                          MinWidth="200"
                          Background="LightSteelBlue"/>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Return to Category Selection"
+                    Click="SelectReturnToCategorySelection"
+                    Grid.Column="1"/>
+        </Grid>
         <Frame Name="OrderUI"
                LoadCompleted="OnLoadCompleted"
                DataContextChanged="OnDataContextChanged"
-               Source="MenuCategorySelection.xaml"/>
+               Source="MenuCategorySelection.xaml"
+               >
+            
+        </Frame>
     </DockPanel>
 </Window>

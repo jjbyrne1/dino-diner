@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale.Entree_Customization_Pages
 {
@@ -20,9 +21,11 @@ namespace PointOfSale.Entree_Customization_Pages
     /// </summary>
     public partial class CustomizeDinoNuggets : Page
     {
-        public CustomizeDinoNuggets()
+        private DinoNuggets dn;
+        public CustomizeDinoNuggets(DinoNuggets dn)
         {
             InitializeComponent();
+            this.dn = dn;
         }
     }
 }

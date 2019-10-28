@@ -34,7 +34,6 @@ namespace PointOfSale.Entree_Customization_Pages
             this.pbj = pbj;
         }
 
-
         /// <summary>
         /// Event handler for Hold Peanut Butter
         /// </summary>
@@ -42,7 +41,7 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPeanutButter(object sender, RoutedEventArgs args)
         {
-            
+            pbj.HoldPeanutButter();
         }
 
         /// <summary>
@@ -52,7 +51,12 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldJelly(object sender, RoutedEventArgs args)
         {
+            pbj.HoldJelly();
+        }
 
+        private void SelectDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.GoBack();
         }
     }
 }
