@@ -35,6 +35,11 @@ namespace PointOfSale
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
+
+            FryceritopsButton.IsEnabled = false;
+            MeteorMacAndCheeseButton.IsEnabled = false;
+            MezzorellaSticksButton.IsEnabled = false;
+            TriceritotsButton.IsEnabled = false;
         }
 
         /// <summary>

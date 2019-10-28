@@ -163,6 +163,11 @@ namespace PointOfSale
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
+
+            /*SodasaurusButton.IsEnabled = false;
+            JurassicJavaButton.IsEnabled = false;
+            TyrannoteaButton.IsEnabled = false;
+            WaterButton.IsEnabled = false;*/
         }
 
         private void SelectDone(object sender, RoutedEventArgs args)
