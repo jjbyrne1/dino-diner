@@ -14,20 +14,19 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Order : INotifyPropertyChanged
     {
-        // Backing Variable
+        //Backing Variable
         private double subtotalCost;
         private double salesTaxRate;
+        private List<IOrderItem> items;
 
         /// <summary>
         /// PropertyChanged event handler
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /// <summary>
-        /// Represents the items added to the Order
+        // <summary>
+        /// Property that gets the list of the order items
         /// </summary>
-        private List<IOrderItem> items;
-
         public IOrderItem[] Items { get { return items.ToArray(); } }
 
         /// <summary>
@@ -85,6 +84,10 @@ namespace DinoDiner.Menu
             items = new List<IOrderItem>();
         }
 
+        /// <summary>
+        /// Adds a new order item
+        /// </summary>
+        /// <param name="item"> order item to be added </param>
         public void Add(IOrderItem item)
         {
             item.PropertyChanged += OnCollectionChanged;
@@ -92,6 +95,10 @@ namespace DinoDiner.Menu
             OnCollectionChanged(this, new EventArgs());
         }
 
+        /// <summary>
+        /// Removes an order item
+        /// </summary>
+        /// <param name="item"> order item to be removed </param>
         public void Remove(IOrderItem item)
         {
             items.Remove(item);
@@ -101,8 +108,8 @@ namespace DinoDiner.Menu
         /// <summary>
         /// OnCollectionChanged event handler
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
+        /// <param name="sender"> the object being checked </param>
+        /// <param name="args"> event arguments </param>
         private void OnCollectionChanged(object sender, EventArgs args)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
