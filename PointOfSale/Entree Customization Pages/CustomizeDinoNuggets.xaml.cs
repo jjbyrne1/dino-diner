@@ -27,5 +27,21 @@ namespace PointOfSale.Entree_Customization_Pages
             InitializeComponent();
             this.dn = dn;
         }
+
+        /// <summary>
+        /// Event handler for Add Nugget
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args">  event arguemnts </param>
+        private void SelectAddNugget(object sender, RoutedEventArgs args)
+        {
+            dn.AddNugget();
+        }
+
+
+        private void SelectDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo(dn));
+        }
     }
 }

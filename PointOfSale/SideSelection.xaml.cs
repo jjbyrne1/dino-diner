@@ -23,6 +23,7 @@ namespace PointOfSale
     public partial class SideSelection : Page
     {
         private Side side;
+        private bool isCombo = false;
         public SideSelection()
         {
             InitializeComponent();
@@ -41,6 +42,13 @@ namespace PointOfSale
             MezzorellaSticksButton.IsEnabled = false;
             TriceritotsButton.IsEnabled = false;
         }
+
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            isCombo = true;
+        }
+
 
         /// <summary>
         /// Event handler for when the Fryceritops Side button is clicked
@@ -66,13 +74,18 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMeteorMacAndCheeseSide(object sender, RoutedEventArgs args)
         {
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
             if (DataContext is Order order)
             {
                 side = new MeteorMacAndCheese();
                 order.Add(side);
+            }
+
+            if (isCombo) NavigationService.GoBack();
+            else
+            {
+                SmallButton.IsEnabled = true;
+                MediumButton.IsEnabled = true;
+                LargeButton.IsEnabled = true;
             }
         }
 
@@ -83,13 +96,18 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMezzorellaSticksSide(object sender, RoutedEventArgs args)
         {
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
             if (DataContext is Order order)
             {
                 side = new MezzorellaSticks();
                 order.Add(side);
+            }
+
+            if (isCombo) NavigationService.GoBack();
+            else
+            {
+                SmallButton.IsEnabled = true;
+                MediumButton.IsEnabled = true;
+                LargeButton.IsEnabled = true;
             }
         }
 
@@ -100,13 +118,18 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectTriceritotsSide(object sender, RoutedEventArgs args)
         {
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
             if (DataContext is Order order)
             {
                 side = new Triceritots();
                 order.Add(side);
+            }
+
+            if (isCombo) NavigationService.GoBack();
+            else
+            {
+                SmallButton.IsEnabled = true;
+                MediumButton.IsEnabled = true;
+                LargeButton.IsEnabled = true;
             }
         }
 

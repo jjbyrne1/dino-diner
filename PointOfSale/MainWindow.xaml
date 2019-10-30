@@ -28,9 +28,6 @@
         <Frame Name="OrderUI"
                LoadCompleted="OnLoadCompleted"
                DataContextChanged="OnDataContextChanged"
-               Source="MenuCategorySelection.xaml"
-               >
-            
-        </Frame>
+               Source="MenuCategorySelection.xaml"/>
     </DockPanel>
 </Window>

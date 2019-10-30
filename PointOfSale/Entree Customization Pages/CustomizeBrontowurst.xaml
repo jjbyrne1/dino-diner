@@ -9,6 +9,28 @@
       Title="CustomizeBrontowurst">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Hold Bun"
+                Click="SelectHoldBun"
+                Grid.Column="0"/>
+        <Button Content="Hold Peppers"
+                Click="SelectHoldPeppers"
+                Grid.Column="1"/>
+        <Button Content="Hold Onions"
+                Click="SelectHoldOnions"
+                Grid.Column="2"/>
+        <Button Content="Done"
+                Click="SelectDone"
+                Grid.Row="2"
+                Grid.Column="2"/>
     </Grid>
 </Page>
