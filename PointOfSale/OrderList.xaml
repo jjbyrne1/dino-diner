@@ -46,7 +46,7 @@
                                     Foreground="White"
                                     HorizontalAlignment="Right">X</Button>
                         </Grid>
-                        <ListBox ItemsSource="{Binding Path=Special}"
+                        <ItemsControl ItemsSource="{Binding Path=Special}"
                                  BorderBrush="White"/>
                     </StackPanel>
                 </DataTemplate>

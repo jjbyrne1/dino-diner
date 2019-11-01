@@ -112,7 +112,7 @@ namespace MenuTest.Drinks
         public void LeaveSpaceForCreamShouldLeaveSpaceForCream()
         {
             JurassicJava jj = new JurassicJava();
-            jj.LeaveSpaceForCream();
+            jj.LeaveRoomForCream();
             Assert.True(jj.SpaceForCream);
         }
 
@@ -204,7 +204,7 @@ namespace MenuTest.Drinks
         public void LeaveSpaceForCreamShouldAddToSpecial()
         {
             JurassicJava jj = new JurassicJava();
-            jj.LeaveSpaceForCream();
+            jj.LeaveRoomForCream();
             Assert.Collection<string>(jj.Special,
                 item =>
                 {
@@ -216,7 +216,7 @@ namespace MenuTest.Drinks
         public void LeaveSpaceForCreamAndAddIceShouldAddToSpecial()
         {
             JurassicJava jj = new JurassicJava();
-            jj.LeaveSpaceForCream();
+            jj.LeaveRoomForCream();
             jj.AddIce();
             Assert.Collection<string>(jj.Special,
                 item =>
@@ -237,7 +237,7 @@ namespace MenuTest.Drinks
             Assert.PropertyChanged(jj, "Special",
                 () =>
                 {
-                    jj.LeaveSpaceForCream();
+                    jj.LeaveRoomForCream();
                 });
         }
 

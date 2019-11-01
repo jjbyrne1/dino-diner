@@ -21,6 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        private CretaceousCombo combo;
         public ComboSelection()
         {
             InitializeComponent();
@@ -33,7 +34,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectBrontowurstCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(new Brontowurst()));
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new Brontowurst());
+                order.Add(combo);
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
+            
         }
 
         /// <summary>
@@ -43,7 +50,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectDinoNuggetsCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(new DinoNuggets()));
+            //NavigationService.Navigate(new CustomizeCombo(new DinoNuggets()));
         }
 
         /// <summary>
@@ -53,7 +60,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSteakosaurusCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(new SteakosaurusBurger()));
+           // NavigationService.Navigate(new CustomizeCombo(new SteakosaurusBurger()));
         }
 
         /// <summary>
@@ -63,7 +70,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectTRexKingBurgerCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(new TRexKingBurger()));
+            //NavigationService.Navigate(new CustomizeCombo(new TRexKingBurger()));
         }
 
         /// <summary>
@@ -73,7 +80,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectPrehistoricPBJCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(new PrehistoricPBJ()));
+            //NavigationService.Navigate(new CustomizeCombo(new PrehistoricPBJ()));
         }
 
         /// <summary>
@@ -83,7 +90,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectPterodactylWingsCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(new PterodactylWings()));
+            //NavigationService.Navigate(new CustomizeCombo(new PterodactylWings()));
         }
 
         /// <summary>
@@ -93,7 +100,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectVeliciWrapCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(new VelociWrap()));
+            //NavigationService.Navigate(new CustomizeCombo(new VelociWrap()));
         }
     }
 }

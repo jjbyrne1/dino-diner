@@ -238,7 +238,7 @@ namespace MenuTest.Drinks
             Tyrannotea tt = new Tyrannotea();
             tt.Size = Size.Medium;
             tt.Size = Size.Small;
-            Assert.Equal("Small Tyrannotea", tt.Description);
+            Assert.Equal("Small Unsweet Tyrannotea", tt.Description);
         }
 
         [Fact]
@@ -256,7 +256,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tt = new Tyrannotea();
             tt.Size = Size.Medium;
-            Assert.Equal("Medium Tyrannotea", tt.Description);
+            Assert.Equal("Medium Unsweet Tyrannotea", tt.Description);
         }
 
         [Fact]
@@ -273,7 +273,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tt = new Tyrannotea();
             tt.Size = Size.Large;
-            Assert.Equal("Large Tyrannotea", tt.Description);
+            Assert.Equal("Large Unsweet Tyrannotea", tt.Description);
         }
 
         [Fact]

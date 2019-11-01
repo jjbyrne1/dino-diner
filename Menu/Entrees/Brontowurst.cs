@@ -65,7 +65,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Removes the onions from the ingredients list for this instance.
         /// </summary>
-        public void HoldOnions()
+        public void HoldOnion()
         {
             this.onions = false;
             NotifyOfPropertyChanged("Special");

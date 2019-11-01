@@ -41,7 +41,7 @@ namespace PointOfSale.Entree_Customization_Pages
 
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(dn));
+            //NavigationService.Navigate(new CustomizeCombo(dn));
         }
     }
 }

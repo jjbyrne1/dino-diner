@@ -54,11 +54,10 @@ namespace DinoDiner.Menu
             set
             {
                 drink = value;
-                drink.Size = size;
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Drink");
             }
         }
         
@@ -69,11 +68,10 @@ namespace DinoDiner.Menu
             get { return side; }
             set {
                 side = value;
-                side.Size = size;
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Side");
             }
         }
 
@@ -115,7 +113,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 

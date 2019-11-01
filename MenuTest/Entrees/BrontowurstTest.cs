@@ -55,7 +55,7 @@ namespace MenuTest.Entrees
         public void HoldOnionShouldRemoveOnion()
         {
             Brontowurst bw = new Brontowurst();
-            bw.HoldOnions();
+            bw.HoldOnion();
             Assert.DoesNotContain<string>("Onion", bw.Ingredients);
         }
 
@@ -103,7 +103,7 @@ namespace MenuTest.Entrees
         public void HoldOnionsShouldAddToSpecial()
         {
             Brontowurst bw = new Brontowurst();
-            bw.HoldOnions();
+            bw.HoldOnion();
             Assert.Collection<string>(bw.Special,
                 item =>
                 {
@@ -117,7 +117,7 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldBun();
             bw.HoldPeppers();
-            bw.HoldOnions();
+            bw.HoldOnion();
             Assert.Collection<string>(bw.Special,
                 item =>
                 {
@@ -157,13 +157,13 @@ namespace MenuTest.Entrees
         }
 
         [Fact]
-        public void HoldingOnionsShouldNotifySpecialChange()
+        public void HoldingOnionShouldNotifySpecialChange()
         {
             Brontowurst bw = new Brontowurst();
             Assert.PropertyChanged(bw, "Special",
                 () =>
                 {
-                    bw.HoldOnions();
+                    bw.HoldOnion();
                 });
         }
     }

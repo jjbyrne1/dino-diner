@@ -55,12 +55,12 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldOnions(object sender, RoutedEventArgs args)
         {
-            bw.HoldOnions();
+            bw.HoldOnion();
         }
 
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(bw));
+            // NavigationService.Navigate(new CustomizeCombo(bw));
         }
     }
 }

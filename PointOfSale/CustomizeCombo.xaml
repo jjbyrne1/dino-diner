@@ -13,8 +13,8 @@
             <Label Margin="140,20,0,0">Side</Label>
             <Button Width="160" Margin="80,0,0,0" Click="SelectSide">
                 <StackPanel>
-                    <Image Width="75" Source="Assets/DinoDiner-08.png"/>
-                    <TextBlock TextAlignment="Center">Friceritops</TextBlock>
+                    <Image Name="SideImage" Width="75" Source="Assets/DinoDiner-08.png"/>
+                    <TextBlock Name="SideName" TextAlignment="Center">Friceritops</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>

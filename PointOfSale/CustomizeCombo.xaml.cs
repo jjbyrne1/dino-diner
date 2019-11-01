@@ -28,13 +28,28 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        private Size size;
-        private Entree entree;
+        private CretaceousCombo combo;
 
-        public CustomizeCombo(Entree entree)
+        /// <summary>
+        /// Constructor for the CustomizeCombo
+        /// </summary>
+        /// <param name="combo"> the updated combo </param>
+        public CustomizeCombo(CretaceousCombo combo)
         {
             InitializeComponent();
-            this.entree = entree;
+            this.combo = combo;
+            EnableSizeButtons();
+            ChangeSidePicture();
+        }
+
+        /// <summary>
+        /// Enables all the size buttons
+        /// </summary>
+        private void EnableSizeButtons()
+        {
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
         }
 
         /// <summary>
@@ -44,10 +59,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection(new CretaceousCombo(entree)));
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            NavigationService.Navigate(new SideSelection(combo));
         }
 
         /// <summary>
@@ -58,9 +70,6 @@ namespace PointOfSale
         void SelectDrink(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection());
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
         }
 
         /// <summary>
@@ -70,10 +79,8 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSmall(object sender, RoutedEventArgs args)
         {
-            size = Size.Small;
-            SmallButton.IsEnabled = false;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            combo.Side.Size = DinoDiner.Menu.Size.Small;
+            combo.Drink.Size = DinoDiner.Menu.Size.Small;
         }
 
         /// <summary>
@@ -83,10 +90,8 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMedium(object sender, RoutedEventArgs args)
         {
-            size = Size.Medium;
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = false;
-            LargeButton.IsEnabled = true;
+            combo.Side.Size = DinoDiner.Menu.Size.Medium;
+            combo.Drink.Size = DinoDiner.Menu.Size.Medium;
         }
 
         /// <summary>
@@ -96,10 +101,24 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectLarge(object sender, RoutedEventArgs args)
         {
-            size = Size.Large;
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = false;
+            combo.Side.Size = DinoDiner.Menu.Size.Large;
+            combo.Drink.Size = DinoDiner.Menu.Size.Large;
+        }
+
+        private void ChangeSidePicture()
+        {
+            if(combo.Side is Fryceritops) 
+            {
+                SideName.Text = "Fryceritops";
+            }
+            if (combo.Side is Triceritots)
+            {
+                SideName.Text = "Triceritots";
+            }
+            if (combo.Side is MeteorMacAndCheese)
+            {
+                SideName.Text = "Meteor Mac And Cheese";
+            }
         }
     }
 }

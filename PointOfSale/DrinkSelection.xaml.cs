@@ -22,8 +22,10 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
-        //BAcking Variables
+        //Backing Variables
         private Drink drink;
+        private CretaceousCombo combo;
+        private bool isCombo;
         private bool flavor = false;
 
         /// <summary>
@@ -44,135 +46,133 @@ namespace PointOfSale
             this.drink = drink;
             if (drink is Drink d)
             {
-                if (d is Sodasaurus s)
-                {
-                    //Enables Buttons
-                    SmallButton.IsEnabled = true;
-                    MediumButton.IsEnabled = true;
-                    LargeButton.IsEnabled = true;
-
-                    //Displays appropriate special buttons
-                    SweetDecafFlavorButton.Visibility = Visibility.Visible;
-                    AddLemonButton.Visibility = Visibility.Hidden;
-                    HoldIceButton.Visibility = Visibility.Visible;
-
-                    //Sets Flavor/Decaf/Sweet Button's Text
-                    SweetDecafFlavorText.Text = "Select Flavor";
-                    SweetDecafFlavorButton.Foreground = Brushes.Black;
-                    this.flavor = true;
-                }
-                else if (d is Tyrannotea t)
-                {
-                    //Enables Buttons
-                    SmallButton.IsEnabled = true;
-                    MediumButton.IsEnabled = true;
-                    LargeButton.IsEnabled = true;
-
-                    //Displays appropriate special buttons
-                    SweetDecafFlavorButton.Visibility = Visibility.Visible;
-                    AddLemonButton.Visibility = Visibility.Visible;
-                    HoldIceButton.Visibility = Visibility.Visible;
-
-                    //Updates sweet
-                    if (t.Sweet == true)
-                    {
-                        SweetDecafFlavorText.Text = "Hold Sweet";
-                        SweetDecafFlavorButton.Background = Brushes.Tan;
-                    }
-                    else
-                    {
-                        SweetDecafFlavorText.Text = "Add Sweet";
-                        SweetDecafFlavorButton.Background = Brushes.White;
-                    }
-
-                    //Updates lemon
-                    if (t.Lemon == true)
-                    {
-                        LemonText.Text = "Hold Lemon";
-                        AddLemonButton.Background = Brushes.White;
-                    }
-                    else
-                    {
-                        LemonText.Text = "Add Lemon";
-                        AddLemonButton.Background = Brushes.Yellow;
-                    }
-                }
-                else if (d is JurassicJava jj)
-                {
-                    //Enables Buttons
-                    SmallButton.IsEnabled = true;
-                    MediumButton.IsEnabled = true;
-                    LargeButton.IsEnabled = true;
-
-                    //Displays appropriate special buttons
-                    SweetDecafFlavorButton.Visibility = Visibility.Visible;
-                    AddLemonButton.Visibility = Visibility.Hidden;
-                    HoldIceButton.Visibility = Visibility.Visible;
-
-                    //Updates decaf
-                    if (jj.Decaf == true)
-                    {
-                        SweetDecafFlavorText.Text = "Hold Decaf";
-                        SweetDecafFlavorButton.Background = Brushes.Brown;
-                        SweetDecafFlavorButton.Foreground = Brushes.White;
-                    }
-                    else
-                    {
-                        SweetDecafFlavorText.Text = "Add Decaf";
-                        SweetDecafFlavorButton.Background = Brushes.White;
-                        SweetDecafFlavorButton.Foreground = Brushes.Black;
-
-                    }
-                }
-                else if (d is Water w)
-                {
-                    //Enables Buttons
-                    SmallButton.IsEnabled = true;
-                    MediumButton.IsEnabled = true;
-                    LargeButton.IsEnabled = true;
-
-                    //Displays appropriate special buttons
-                    SweetDecafFlavorButton.Visibility = Visibility.Hidden;
-                    AddLemonButton.Visibility = Visibility.Visible;
-                    HoldIceButton.Visibility = Visibility.Visible;
-
-                    //Updates lemon
-                    if (w.Lemon == true)
-                    {
-                        LemonText.Text = "Hold Lemon";
-                        AddLemonButton.Background = Brushes.White;
-                    }
-                    else
-                    {
-                        LemonText.Text = "Add Lemon";
-                        AddLemonButton.Background = Brushes.Yellow;
-                    }
-                }
-                //Updates ice
-                if (d.Ice == false)
-                {
-                    IceText.Text = "Add Ice";
-                    HoldIceButton.Background = Brushes.White;
-                }
-                else
-                {
-                    IceText.Text = "Hold Ice";
-                    HoldIceButton.Background = Brushes.LightBlue;
-                }
+                ChangeSpecialButtons(d);
             }
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            EnableSizeButtons();
+        }
 
-            /*SodasaurusButton.IsEnabled = false;
-            JurassicJavaButton.IsEnabled = false;
-            TyrannoteaButton.IsEnabled = false;
-            WaterButton.IsEnabled = false;*/
+        public DrinkSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            isCombo = true;
         }
 
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo));
+            else NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Enables all the size buttons
+        /// </summary>
+        private void EnableSizeButtons()
+        {
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Deals with the special drink buttons differently depending on the type of drink
+        /// </summary>
+        private void ChangeSpecialButtons(Drink drink)
+        {
+            if (drink is Sodasaurus soda)
+            {
+                //Sets visibility for buttons
+                SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                AddLemonButton.Visibility = Visibility.Hidden;
+                HoldIceButton.Visibility = Visibility.Visible;
+
+                //Sets Flavor/Decaf/Sweet Button's Text
+                SweetDecafFlavorText.Text = "Select Flavor";
+                SweetDecafFlavorButton.Foreground = Brushes.Black;
+                this.flavor = true;
+            }
+            else if (drink is Tyrannotea tea)
+            {
+                SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                AddLemonButton.Visibility = Visibility.Visible;
+                HoldIceButton.Visibility = Visibility.Visible;
+
+                //Updates sweet
+                if (tea.Sweet == true)
+                {
+                    SweetDecafFlavorText.Text = "Hold Sweet";
+                    SweetDecafFlavorButton.Background = Brushes.Tan;
+                }
+                else
+                {
+                    SweetDecafFlavorText.Text = "Add Sweet";
+                    SweetDecafFlavorButton.Background = Brushes.White;
+                }
+
+                //Updates lemon
+                if (tea.Lemon == true)
+                {
+                    LemonText.Text = "Hold Lemon";
+                    AddLemonButton.Background = Brushes.White;
+                }
+                else
+                {
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                }
+            }
+            else if (drink is JurassicJava java)
+            {
+                SweetDecafFlavorButton.Visibility = Visibility.Visible;
+                AddLemonButton.Visibility = Visibility.Hidden;
+                HoldIceButton.Visibility = Visibility.Visible;
+
+                //Updates decaf
+                if (java.Decaf == true)
+                {
+                    SweetDecafFlavorText.Text = "Hold Decaf";
+                    SweetDecafFlavorButton.Background = Brushes.Brown;
+                    SweetDecafFlavorButton.Foreground = Brushes.White;
+                }
+                else
+                {
+                    SweetDecafFlavorText.Text = "Add Decaf";
+                    SweetDecafFlavorButton.Background = Brushes.White;
+                    SweetDecafFlavorButton.Foreground = Brushes.Black;
+
+                }
+            }
+            else if (drink is Water water)
+            {
+                //Displays appropriate special buttons
+                SweetDecafFlavorButton.Visibility = Visibility.Hidden;
+                AddLemonButton.Visibility = Visibility.Visible;
+                HoldIceButton.Visibility = Visibility.Visible;
+
+                //Updates lemon
+                if (water.Lemon == true)
+                {
+                    LemonText.Text = "Hold Lemon";
+                    AddLemonButton.Background = Brushes.White;
+                }
+                else
+                {
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                }
+            }
+
+            //Updates Ice
+            if (drink.Ice == false)
+            {
+                IceText.Text = "Add Ice";
+                HoldIceButton.Background = Brushes.White;
+            }
+            else
+            {
+                IceText.Text = "Hold Ice";
+                HoldIceButton.Background = Brushes.LightBlue;
+            }
         }
 
         /// <summary>
@@ -182,33 +182,17 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         private void SelectSodasurusDrink(object sender, RoutedEventArgs args)
         {
-            flavor = true;
-
-            //Enables Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
-
-            //Displays appropriate special buttons
-            SweetDecafFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.Visibility = Visibility.Hidden;
-            HoldIceButton.Visibility = Visibility.Visible;
-
-            //Sets Flavor/Decaf/Sweet Button's Text
-            SweetDecafFlavorText.Text = "Select Flavor";
-
-            //Resets Ice Button
-            IceText.Text = "Hold Ice";
-            HoldIceButton.Background = Brushes.LightBlue;
-
-            //Resets Lemon Button
-            LemonText.Text = "Add Lemon";
-            AddLemonButton.Background = Brushes.Yellow;
-
+            
             if (DataContext is Order order)
             {
                 drink = new Sodasaurus();
-                order.Add(drink);
+                if (isCombo)
+                    combo.Drink = drink;
+                else
+                    order.Add(drink);
+                flavor = true;
+                EnableSizeButtons();
+                ChangeSpecialButtons(drink);
             }
         }
 
@@ -219,34 +203,14 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         private void SelectTyrannoteaDrink(object sender, RoutedEventArgs args)
         {
-            flavor = false;
-
-            //Enables Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
-
-            //Displays appropriate special buttons
-            SweetDecafFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.Visibility = Visibility.Visible;
-            HoldIceButton.Visibility = Visibility.Visible;
-
-            //Sets Flavor/Decaf/Sweet Button's Text
-            SweetDecafFlavorText.Text = "Add Sweet";
-            SweetDecafFlavorButton.Background = Brushes.White;
-
-            //Resets Ice Button
-            IceText.Text = "Hold Ice";
-            HoldIceButton.Background = Brushes.LightBlue;
-
-            //Resets Lemon Button
-            LemonText.Text = "Add Lemon";
-            AddLemonButton.Background = Brushes.Yellow;
-
+            
             if (DataContext is Order order)
             {
                 drink = new Tyrannotea();
                 order.Add(drink);
+                flavor = false;
+                EnableSizeButtons();
+                ChangeSpecialButtons(drink);
             }
         }
 
@@ -257,30 +221,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         private void SelectJurassicJavaDrink(object sender, RoutedEventArgs args)
         {
-            flavor = false;
-
-            //Enables Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
-
-            //Displays appropriate special buttons
-            SweetDecafFlavorButton.Visibility = Visibility.Visible;
-            AddLemonButton.Visibility = Visibility.Hidden;
-            HoldIceButton.Visibility = Visibility.Visible;
-
-            //Sets Flavor/Decaf/Sweet Button's Text
-            SweetDecafFlavorText.Text = "Add Decaf";
-            SweetDecafFlavorButton.Background = Brushes.White;
-
-            //Resets Ice Button
-            IceText.Text = "Add Ice";
-            HoldIceButton.Background = Brushes.White;
-
             if (DataContext is Order order)
             {
                 drink = new JurassicJava();
                 order.Add(drink);
+                flavor = false;
+                EnableSizeButtons();
+                ChangeSpecialButtons(drink);
             }
         }
 
@@ -291,30 +238,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         public void SelectWaterDrink(object sender, RoutedEventArgs args)
         {
-            flavor = false;
-
-            //Enables Buttons
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
-
-            //Displays appropriate special buttons
-            SweetDecafFlavorButton.Visibility = Visibility.Hidden;
-            AddLemonButton.Visibility = Visibility.Visible;
-            HoldIceButton.Visibility = Visibility.Visible;
-
-            //Resets Ice Button
-            IceText.Text = "Hold Ice";
-            HoldIceButton.Background = Brushes.LightBlue;
-
-            //Resets Lemon Button
-            LemonText.Text = "Add Lemon";
-            AddLemonButton.Background = Brushes.Yellow;
-
             if (DataContext is Order order)
             {
                 drink = new Water();
                 order.Add(drink);
+                flavor = false;
+                EnableSizeButtons();
+                ChangeSpecialButtons(drink);
             }
         }
 

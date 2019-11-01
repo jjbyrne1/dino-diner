@@ -23,6 +23,7 @@ namespace PointOfSale
     public partial class SideSelection : Page
     {
         private Side side;
+        private CretaceousCombo combo;
         private bool isCombo = false;
         public SideSelection()
         {
@@ -33,9 +34,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.side = side;
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
+            EnableSizeButtons();
 
             FryceritopsButton.IsEnabled = false;
             MeteorMacAndCheeseButton.IsEnabled = false;
@@ -46,9 +45,19 @@ namespace PointOfSale
         public SideSelection(CretaceousCombo combo)
         {
             InitializeComponent();
+            this.combo = combo;
             isCombo = true;
         }
 
+        /// <summary>
+        /// Enables all the size buttons
+        /// </summary>
+        private void EnableSizeButtons()
+        {
+            SmallButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            LargeButton.IsEnabled = true;
+        }
 
         /// <summary>
         /// Event handler for when the Fryceritops Side button is clicked
@@ -57,14 +66,22 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectFryceritopsSide(object sender, RoutedEventArgs args)
         {
-            SmallButton.IsEnabled = true;
-            MediumButton.IsEnabled = true;
-            LargeButton.IsEnabled = true;
-            if(DataContext is Order order)
+             if (DataContext is Order order)
             {
                 side = new Fryceritops();
-                order.Add(side);
+
+                if (isCombo)
+                {
+                    combo.Side = side;
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    order.Add(side);
+                    EnableSizeButtons();
+                }
             }
+            
         }
 
         /// <summary>
@@ -77,15 +94,16 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MeteorMacAndCheese();
-                order.Add(side);
-            }
-
-            if (isCombo) NavigationService.GoBack();
-            else
-            {
-                SmallButton.IsEnabled = true;
-                MediumButton.IsEnabled = true;
-                LargeButton.IsEnabled = true;
+                if (isCombo)
+                {
+                    combo.Side = side;
+                    NavigationService.Navigate(new CustomizeCombo(combo));
+                }
+                else
+                {
+                    order.Add(side);
+                    EnableSizeButtons();
+                }
             }
         }
 
@@ -100,14 +118,8 @@ namespace PointOfSale
             {
                 side = new MezzorellaSticks();
                 order.Add(side);
-            }
-
-            if (isCombo) NavigationService.GoBack();
-            else
-            {
-                SmallButton.IsEnabled = true;
-                MediumButton.IsEnabled = true;
-                LargeButton.IsEnabled = true;
+                if (isCombo) NavigationService.GoBack();
+                else EnableSizeButtons();
             }
         }
 
@@ -122,14 +134,8 @@ namespace PointOfSale
             {
                 side = new Triceritots();
                 order.Add(side);
-            }
-
-            if (isCombo) NavigationService.GoBack();
-            else
-            {
-                SmallButton.IsEnabled = true;
-                MediumButton.IsEnabled = true;
-                LargeButton.IsEnabled = true;
+                if (isCombo) NavigationService.GoBack();
+                else EnableSizeButtons();
             }
         }
 
@@ -143,8 +149,8 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -157,8 +163,8 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -171,8 +177,8 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                NavigationService.Navigate(new MenuCategorySelection());
             }
-            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

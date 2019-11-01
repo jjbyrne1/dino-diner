@@ -63,6 +63,10 @@ namespace PointOfSale
                 NavigationService.Navigate(new DrinkSelection(drink));
                 OrderItems.SelectedItem = drink;
             }
+            else if (OrderItems.SelectedItem is CretaceousCombo combo)
+            {
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            }
             /*else if (OrderItems.SelectedItem is Entree entree)
             {
                 NavigationService.Navigate(new MenuCategorySelection());
