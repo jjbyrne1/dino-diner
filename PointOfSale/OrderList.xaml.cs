@@ -23,6 +23,9 @@ namespace PointOfSale
     {
         public NavigationService NavigationService { get; set; }
 
+        /// <summary>
+        /// Constructor for OrderList
+        /// </summary>
         public OrderList()
         {
             InitializeComponent();

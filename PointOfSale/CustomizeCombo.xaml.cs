@@ -28,6 +28,7 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
+        //Backing Variable
         private CretaceousCombo combo;
 
         /// <summary>
@@ -79,8 +80,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSmall(object sender, RoutedEventArgs args)
         {
-            combo.Side.Size = DinoDiner.Menu.Size.Small;
-            combo.Drink.Size = DinoDiner.Menu.Size.Small;
+            combo.Size = DinoDiner.Menu.Size.Small;
         }
 
         /// <summary>
@@ -90,8 +90,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectMedium(object sender, RoutedEventArgs args)
         {
-            combo.Side.Size = DinoDiner.Menu.Size.Medium;
-            combo.Drink.Size = DinoDiner.Menu.Size.Medium;
+            combo.Size = DinoDiner.Menu.Size.Medium;
         }
 
         /// <summary>
@@ -101,23 +100,33 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectLarge(object sender, RoutedEventArgs args)
         {
-            combo.Side.Size = DinoDiner.Menu.Size.Large;
-            combo.Drink.Size = DinoDiner.Menu.Size.Large;
+            combo.Size = DinoDiner.Menu.Size.Large;
         }
 
+        /// <summary>
+        /// Helper function for changeing the side buttons text
+        /// </summary>
         private void ChangeSideText()
         {
             if(combo.Side is Fryceritops) 
             {
                 SideName.Text = "Fryceritops";
+                combo.Side = new Fryceritops();
             }
-            if (combo.Side is Triceritots)
+            else if (combo.Side is Triceritots)
             {
                 SideName.Text = "Triceritots";
+                combo.Side = new Triceritots();
             }
-            if (combo.Side is MeteorMacAndCheese)
+            else if (combo.Side is MeteorMacAndCheese)
             {
                 SideName.Text = "Meteor Mac And Cheese";
+                combo.Side = new MeteorMacAndCheese();
+            }
+            else if (combo.Side is MezzorellaSticks)
+            {
+                SideName.Text = "Mezzorella Sticks";
+                combo.Side = new MezzorellaSticks();
             }
         }
     }

@@ -23,6 +23,8 @@ namespace PointOfSale.Entree_Customization_Pages
     {
         //Backing Variable
         private CretaceousCombo combo;
+        private PrehistoricPBJ pbj;
+        private bool isCombo;
 
         /// <summary>
         /// Constructor for CustomizePrehistoricPBJ
@@ -31,8 +33,11 @@ namespace PointOfSale.Entree_Customization_Pages
         public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
         {
             InitializeComponent();
-            combo = new CretaceousCombo(pbj);
+            this.pbj = pbj;
+            isCombo = false;
         }
+
+        public CustomizePrehistoricPBJ
 
         /// <summary>
         /// Event handler for Hold Peanut Butter

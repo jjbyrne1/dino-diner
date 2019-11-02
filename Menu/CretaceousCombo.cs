@@ -12,22 +12,24 @@ namespace DinoDiner.Menu
     public class CretaceousCombo : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         //Backing Variables
+        private Entree entree;
         private Size size = Size.Small;
         private Drink drink = new Sodasaurus();
         private Side side = new Triceritots();
 
         /// <summary>
-        /// An event handler for PropertyChanged events for the fields or properties
-        /// description, special, or price
+        /// Property Changed Event
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Event handler for NotifyOfPropertyChanged
+        /// </summary>
+        /// <param name="propertyName"> name of property that changed </param>
         protected void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        private Entree entree;
 
         /// <summary>
         /// Gets or sets the entree

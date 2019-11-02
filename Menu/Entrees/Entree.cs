@@ -1,9 +1,7 @@
 ﻿/*  Entree.cs
  *  Author: Jason Byrne
  */
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
 
 namespace DinoDiner.Menu
@@ -42,11 +40,14 @@ namespace DinoDiner.Menu
         public virtual string[] Special { get;}
 
         /// <summary>
-        /// An event handler for PropertyChanged events for the fields or properties
-        /// description, special, or price
+        /// Property Changed Event
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Event handler for NotifyOfPropertyChanged
+        /// </summary>
+        /// <param name="propertyName"> name of property that changed </param>
         protected void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
