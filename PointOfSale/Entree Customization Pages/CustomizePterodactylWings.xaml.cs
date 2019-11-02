@@ -21,11 +21,27 @@ namespace PointOfSale.Entree_Customization_Pages
     /// </summary>
     public partial class CustomizePterodactylWings : Page
     {
-        private PterodactylWings pw;
+        //Backing variable
+        private CretaceousCombo combo;
+
+        /// <summary>
+        /// Constructor for CustomizePterodactylWings
+        /// </summary>
+        /// <param name="pw"> the Pterodactyl Wings entree </param>
         public CustomizePterodactylWings(PterodactylWings pw)
         {
             InitializeComponent();
-            this.pw = pw;
+            combo = new CretaceousCombo(pw);
+        }
+
+        /// <summary>
+        /// Event handler for SelectDone
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> event arguments </param>
+        private void SelectDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
     }
 }

@@ -21,15 +21,23 @@
         </Grid.ColumnDefinitions>
         <Button Content="Hold Bun"
                 Click="SelectHoldBun"
+                FontSize="25"
+                Grid.Row="0"
                 Grid.Column="0"/>
         <Button Content="Hold Peppers"
                 Click="SelectHoldPeppers"
+                FontSize="25"
+                Grid.Row="0"
                 Grid.Column="1"/>
-        <Button Content="Hold Onions"
-                Click="SelectHoldOnions"
+        <Button Content="Hold Onion"
+                Click="SelectHoldOnion"
+                FontSize="25"
+                Grid.Row="0"
                 Grid.Column="2"/>
         <Button Content="Done"
                 Click="SelectDone"
+                FontSize="30"
+                FontWeight="Bold"
                 Grid.Row="2"
                 Grid.Column="2"/>
     </Grid>

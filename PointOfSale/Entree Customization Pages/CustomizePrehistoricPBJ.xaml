@@ -21,12 +21,18 @@
         </Grid.ColumnDefinitions>
         <Button Content="Hold Peanut Butter"
                 Click="SelectHoldPeanutButter"
+                FontSize="25"
+                Grid.Row="0"
                 Grid.Column="0"/>
         <Button Content="Hold Jelly"
                 Click="SelectHoldJelly"
+                FontSize="25"
+                Grid.Row="0"
                 Grid.Column="1"/>
         <Button Content="Done"
                 Click="SelectDone"
+                FontSize="30"
+                FontWeight="Bold"
                 Grid.Row="2"
                 Grid.Column="2"/>
     </Grid>

@@ -21,11 +21,17 @@ namespace PointOfSale.Entree_Customization_Pages
     /// </summary>
     public partial class CustomizeBrontowurst : Page
     {
-        private Brontowurst bw;
+        //Backing Variable
+        private CretaceousCombo combo;
+
+        /// <summary>
+        /// Constructor for CustomizeBrontowurst
+        /// </summary>
+        /// <param name="bw"> the entree for the combo </param>
         public CustomizeBrontowurst(Brontowurst bw)
         {
             InitializeComponent();
-            this.bw = bw;
+            combo = new CretaceousCombo(bw);
         }
 
         /// <summary>
@@ -35,7 +41,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldBun(object sender, RoutedEventArgs args)
         {
-            bw.HoldBun();
+            if (combo.Entree is Brontowurst bw)
+            {
+                bw.HoldBun();
+            }
         }
 
         /// <summary>
@@ -45,7 +54,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPeppers(object sender, RoutedEventArgs args)
         {
-            bw.HoldPeppers();
+            if (combo.Entree is Brontowurst bw)
+            {
+                bw.HoldPeppers();
+            }
         }
 
         /// <summary>
@@ -53,14 +65,22 @@ namespace PointOfSale.Entree_Customization_Pages
         /// </summary>
         /// <param name="sender"> the object clicked on </param>
         /// <param name="args">  event arguemnts </param>
-        private void SelectHoldOnions(object sender, RoutedEventArgs args)
+        private void SelectHoldOnion(object sender, RoutedEventArgs args)
         {
-            bw.HoldOnion();
+            if (combo.Entree is Brontowurst bw)
+            {
+                bw.HoldOnion();
+            }
         }
 
+        /// <summary>
+        /// Event handler for SelectDone
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            // NavigationService.Navigate(new CustomizeCombo(bw));
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
     }
 }

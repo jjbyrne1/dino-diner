@@ -39,7 +39,7 @@ namespace PointOfSale
             InitializeComponent();
             this.combo = combo;
             EnableSizeButtons();
-            ChangeSidePicture();
+            ChangeSideText();
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace PointOfSale
             combo.Drink.Size = DinoDiner.Menu.Size.Large;
         }
 
-        private void ChangeSidePicture()
+        private void ChangeSideText()
         {
             if(combo.Side is Fryceritops) 
             {

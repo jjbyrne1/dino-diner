@@ -67,21 +67,6 @@ namespace PointOfSale
             {
                 NavigationService.Navigate(new CustomizeCombo(combo));
             }
-            /*else if (OrderItems.SelectedItem is Entree entree)
-            {
-                NavigationService.Navigate(new MenuCategorySelection());
-                OrderItems.SelectedItem = entree;
-            }*/
-            /*if (DataContext is Order order)
-            {
-                for (int i = order.Items.Length - 1; i > 0; i--)
-                {
-                    if (order.Items[i] is Entree e)
-                    {
-                        OrderItems.SelectedItem = order.Items[i];
-                    }
-                }
-            }*/
         }
     }
 }

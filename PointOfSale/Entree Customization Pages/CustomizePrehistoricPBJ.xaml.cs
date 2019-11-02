@@ -22,7 +22,7 @@ namespace PointOfSale.Entree_Customization_Pages
     public partial class CustomizePrehistoricPBJ : Page
     {
         //Backing Variable
-        private PrehistoricPBJ pbj;
+        private CretaceousCombo combo;
 
         /// <summary>
         /// Constructor for CustomizePrehistoricPBJ
@@ -31,7 +31,7 @@ namespace PointOfSale.Entree_Customization_Pages
         public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            combo = new CretaceousCombo(pbj);
         }
 
         /// <summary>
@@ -41,7 +41,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPeanutButter(object sender, RoutedEventArgs args)
         {
-            pbj.HoldPeanutButter();
+            if (combo.Entree is PrehistoricPBJ pbj)
+            {
+                pbj.HoldPeanutButter();
+            }
         }
 
         /// <summary>
@@ -51,12 +54,20 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldJelly(object sender, RoutedEventArgs args)
         {
-            pbj.HoldJelly();
+            if (combo.Entree is PrehistoricPBJ pbj)
+            {
+                pbj.HoldJelly();
+            }
         }
 
+        /// <summary>
+        /// Event handler for SelectDone
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new CustomizeCombo(pbj));
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
     }
 }

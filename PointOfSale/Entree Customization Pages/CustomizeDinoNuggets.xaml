@@ -21,9 +21,13 @@
         </Grid.ColumnDefinitions>
         <Button Content="Add Nugget"
                 Click="SelectAddNugget"
+                FontSize="25"
+                Grid.Row="0"
                 Grid.Column="0"/>
         <Button Content="Done"
                 Click="SelectDone"
+                FontSize="30"
+                FontWeight="Bold"
                 Grid.Row="2"
                 Grid.Column="2"/>
     </Grid>

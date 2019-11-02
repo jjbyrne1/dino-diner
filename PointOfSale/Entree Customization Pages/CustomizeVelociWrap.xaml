@@ -9,6 +9,36 @@
       Title="CustomizeVelociWrap">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Hold Dressing"
+                Click="SelectHoldDressing"
+                FontSize="25"
+                Grid.Row="0"
+                Grid.Column="0"/>
+        <Button Content="Hold Lettuce"
+                Click="SelectHoldLettuce"
+                FontSize="25"
+                Grid.Row="0"
+                Grid.Column="1"/>
+        <Button Content="Hold Cheese"
+                Click="SelectHoldCheese"
+                FontSize="25"
+                Grid.Row="0"
+                Grid.Column="2"/>
+        <Button Content="Done"
+                Click="SelectDone"
+                FontSize="30"
+                FontWeight="Bold"
+                Grid.Row="2"
+                Grid.Column="2"/>
     </Grid>
 </Page>

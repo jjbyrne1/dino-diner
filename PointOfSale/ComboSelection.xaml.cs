@@ -21,7 +21,12 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        //Backing variables
         private CretaceousCombo combo;
+
+        /// <summary>
+        /// Constructor for ComboSelection
+        /// </summary>
         public ComboSelection()
         {
             InitializeComponent();
@@ -36,11 +41,11 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                combo = new CretaceousCombo(new Brontowurst());
+                Brontowurst bw = new Brontowurst();
+                combo = new CretaceousCombo(bw);
                 order.Add(combo);
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(bw));
             }
-            
         }
 
         /// <summary>
@@ -50,7 +55,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectDinoNuggetsCombo(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new CustomizeCombo(new DinoNuggets()));
+            if (DataContext is Order order)
+            {
+                DinoNuggets dn = new DinoNuggets();
+                combo = new CretaceousCombo(dn);
+                order.Add(combo);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeDinoNuggets(dn));
+            }
         }
 
         /// <summary>
@@ -60,7 +71,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSteakosaurusCombo(object sender, RoutedEventArgs args)
         {
-           // NavigationService.Navigate(new CustomizeCombo(new SteakosaurusBurger()));
+            if (DataContext is Order order)
+            {
+                SteakosaurusBurger sb = new SteakosaurusBurger();
+                combo = new CretaceousCombo(sb);
+                order.Add(combo);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeSteakosaurusBurger(sb));
+            }
         }
 
         /// <summary>
@@ -70,7 +87,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectTRexKingBurgerCombo(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new CustomizeCombo(new TRexKingBurger()));
+            if (DataContext is Order order)
+            {
+                TRexKingBurger trex = new TRexKingBurger();
+                combo = new CretaceousCombo(trex);
+                order.Add(combo);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeTRexKingBurger(trex));
+            }
         }
 
         /// <summary>
@@ -80,7 +103,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectPrehistoricPBJCombo(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new CustomizeCombo(new PrehistoricPBJ()));
+            if (DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                combo = new CretaceousCombo(pbj);
+                order.Add(combo);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizePrehistoricPBJ(pbj));
+            }
         }
 
         /// <summary>
@@ -90,7 +119,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectPterodactylWingsCombo(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new CustomizeCombo(new PterodactylWings()));
+            if (DataContext is Order order)
+            {
+                PterodactylWings wings = new PterodactylWings();
+                combo = new CretaceousCombo(wings);
+                order.Add(combo);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizePterodactylWings(wings));
+            }
         }
 
         /// <summary>
@@ -100,7 +135,13 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectVeliciWrapCombo(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new CustomizeCombo(new VelociWrap()));
+            if (DataContext is Order order)
+            {
+                VelociWrap wrap = new VelociWrap();
+                combo = new CretaceousCombo(wrap);
+                order.Add(combo);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(wrap));
+            }
         }
     }
 }

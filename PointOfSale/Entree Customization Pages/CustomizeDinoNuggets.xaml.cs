@@ -21,11 +21,12 @@ namespace PointOfSale.Entree_Customization_Pages
     /// </summary>
     public partial class CustomizeDinoNuggets : Page
     {
-        private DinoNuggets dn;
+        //Backing Variable
+        private CretaceousCombo combo;
         public CustomizeDinoNuggets(DinoNuggets dn)
         {
             InitializeComponent();
-            this.dn = dn;
+            combo = new CretaceousCombo(dn);
         }
 
         /// <summary>
@@ -35,13 +36,20 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectAddNugget(object sender, RoutedEventArgs args)
         {
-            dn.AddNugget();
+            if (combo.Entree is DinoNuggets dn)
+            {
+                dn.AddNugget();
+            }
         }
 
-
+        /// <summary>
+        /// Event handler for SelectDone
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            //NavigationService.Navigate(new CustomizeCombo(dn));
+             NavigationService.Navigate(new CustomizeCombo(combo));
         }
     }
 }

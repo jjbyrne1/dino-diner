@@ -69,7 +69,6 @@ namespace PointOfSale
              if (DataContext is Order order)
             {
                 side = new Fryceritops();
-
                 if (isCombo)
                 {
                     combo.Side = side;
@@ -117,9 +116,16 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MezzorellaSticks();
-                order.Add(side);
-                if (isCombo) NavigationService.GoBack();
-                else EnableSizeButtons();
+                if (isCombo)
+                {
+                    combo.Side = side;
+                    NavigationService.Navigate(new CustomizeCombo(combo));
+                }
+                else
+                {
+                    order.Add(side);
+                    EnableSizeButtons();
+                }
             }
         }
 
@@ -133,9 +139,16 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new Triceritots();
-                order.Add(side);
-                if (isCombo) NavigationService.GoBack();
-                else EnableSizeButtons();
+                if (isCombo)
+                {
+                    combo.Side = side;
+                    NavigationService.Navigate(new CustomizeCombo(combo));
+                }
+                else
+                {
+                    order.Add(side);
+                    EnableSizeButtons();
+                }
             }
         }
 
