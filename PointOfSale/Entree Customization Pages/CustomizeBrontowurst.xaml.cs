@@ -29,7 +29,7 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <summary>
         /// Constructor for CustomizeBrontowurst for entree
         /// </summary>
-        /// <param name="bw"> the entree for the combo </param>
+        /// <param name="bw"> the Brontowurst entree </param>
         public CustomizeBrontowurst(Brontowurst bw)
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <summary>
         /// Constructor for CustomizeBrontowurst for entree
         /// </summary>
-        /// <param name="combo"></param>
+        /// <param name="combo"> the Brontowurst combo </param>
         public CustomizeBrontowurst(CretaceousCombo combo)
         {
             InitializeComponent();
@@ -55,7 +55,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldBun(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is Brontowurst bw) bw.HoldBun();
+            if (isCombo)
+            {
+                if (combo.Entree is Brontowurst bw) bw.HoldBun();
+            }
             else this.bw.HoldBun();
         }
 
@@ -66,7 +69,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPeppers(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is Brontowurst bw) bw.HoldPeppers();
+            if (isCombo)
+            {
+                if (combo.Entree is Brontowurst bw) bw.HoldPeppers();
+            }
             else this.bw.HoldPeppers();
         }
 
@@ -77,7 +83,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldOnion(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is Brontowurst bw) bw.HoldOnion();
+            if (isCombo)
+            {
+                if (combo.Entree is Brontowurst bw) bw.HoldOnion();
+            }
             else this.bw.HoldOnion();
         }
 

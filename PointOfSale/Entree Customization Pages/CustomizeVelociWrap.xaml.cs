@@ -23,15 +23,29 @@ namespace PointOfSale.Entree_Customization_Pages
     {
         //Backing variable
         private CretaceousCombo combo;
+        private VelociWrap vw;
+        private bool isCombo;
 
         /// <summary>
         /// Constructor for CustomizeVelociWrap
         /// </summary>
-        /// <param name="trex"> the VelociWrap entree </param>
+        /// <param name="vw"> the VelociWrap entree </param>
         public CustomizeVelociWrap(VelociWrap vw)
         {
             InitializeComponent();
-            combo = new CretaceousCombo(vw);
+            this.vw = vw;
+            isCombo = false;
+        }
+
+        /// <summary>
+        /// Constructor for CustomizeVelociWrap
+        /// </summary>
+        /// <param name="combo"> the VelociWrap entree </param>
+        public CustomizeVelociWrap(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            isCombo = true;
         }
 
         /// <summary>
@@ -41,10 +55,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldDressing(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is VelociWrap vw)
-            {
-                vw.HoldDressing();
-            }
+            if (combo.Entree is VelociWrap vw) vw.HoldDressing();
+            else this.vw.HoldDressing();
         }
 
         /// <summary>
@@ -54,10 +66,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldLettuce(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is VelociWrap vw)
-            {
-                vw.HoldLettuce();
-            }
+            if (combo.Entree is VelociWrap vw) vw.HoldLettuce();
+            else this.vw.HoldLettuce();
         }
 
         /// <summary>
@@ -67,10 +77,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldCheese(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is VelociWrap vw)
-            {
-                vw.HoldCheese();
-            }
+            if (combo.Entree is VelociWrap vw) vw.HoldCheese();
+            else this.vw.HoldCheese();
         }
 
         /// <summary>
@@ -80,7 +88,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(combo));
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo));
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

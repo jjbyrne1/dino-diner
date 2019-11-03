@@ -64,7 +64,6 @@ namespace PointOfSale
             else if (OrderItems.SelectedItem is Drink drink)
             {
                 NavigationService.Navigate(new DrinkSelection(drink));
-                OrderItems.SelectedItem = drink;
             }
             else if (OrderItems.SelectedItem is CretaceousCombo combo)
             {
