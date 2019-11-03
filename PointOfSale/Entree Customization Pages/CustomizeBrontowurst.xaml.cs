@@ -27,10 +27,9 @@ namespace PointOfSale.Entree_Customization_Pages
         private bool isCombo;
 
         /// <summary>
-        /// Constructor for CustomizeBrontowurst
+        /// Constructor for CustomizeBrontowurst for entree
         /// </summary>
         /// <param name="bw"> the entree for the combo </param>
-        /// <param name="onlyEntree"> determines if its a combo or not </param>
         public CustomizeBrontowurst(Brontowurst bw)
         {
             InitializeComponent();
@@ -38,6 +37,10 @@ namespace PointOfSale.Entree_Customization_Pages
             isCombo = false;
         }
 
+        /// <summary>
+        /// Constructor for CustomizeBrontowurst for entree
+        /// </summary>
+        /// <param name="combo"></param>
         public CustomizeBrontowurst(CretaceousCombo combo)
         {
             InitializeComponent();
@@ -52,16 +55,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldBun(object sender, RoutedEventArgs args)
         {
-            if (isCombo) { 
-                if (combo.Entree is Brontowurst bw)
-                {
-                    bw.HoldBun();
-                }
-            }
-            else
-            {
-                bw.HoldBun();
-            }
+            if (combo.Entree is Brontowurst bw) bw.HoldBun();
+            else this.bw.HoldBun();
         }
 
         /// <summary>
@@ -71,17 +66,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPeppers(object sender, RoutedEventArgs args)
         {
-            if (isCombo)
-            {
-                if (combo.Entree is Brontowurst bw)
-                {
-                    bw.HoldPeppers();
-                }
-            }
-            else
-            {
-                bw.HoldPeppers();
-            }
+            if (combo.Entree is Brontowurst bw) bw.HoldPeppers();
+            else this.bw.HoldPeppers();
         }
 
         /// <summary>
@@ -91,17 +77,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldOnion(object sender, RoutedEventArgs args)
         {
-            if (isCombo)
-            {
-                if (combo.Entree is Brontowurst bw)
-                {
-                    bw.HoldOnion();
-                }
-            }
-            else
-            {
-                bw.HoldOnion();
-            }
+            if (combo.Entree is Brontowurst bw) bw.HoldOnion();
+            else this.bw.HoldOnion();
         }
 
         /// <summary>
@@ -111,7 +88,7 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            if (isCombo) NavigationService.Navigate(combo);
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo));
             else NavigationService.Navigate(new MenuCategorySelection());
         }
     }

@@ -22,9 +22,6 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
-        //Backing Variable
-        private Entree entree;
-
         public EntreeSelection()
         {
             InitializeComponent();
@@ -39,12 +36,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new Brontowurst();
-                order.Add(entree);
-                if (entree is Brontowurst bw)
-                {
-                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(bw));
-                }
+                Brontowurst bw = new Brontowurst();
+                order.Add(bw);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(bw));
             }
         }
 
@@ -57,12 +51,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new DinoNuggets();
-                order.Add(entree);
-                if (entree is DinoNuggets dn)
-                {
-                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeDinoNuggets(dn));
-                }
+                DinoNuggets dn = new DinoNuggets();
+                order.Add(dn);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeDinoNuggets(dn));
             }
         }
 
@@ -75,12 +66,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new SteakosaurusBurger();
-                order.Add(entree);
-                if (entree is SteakosaurusBurger sb)
-                {
-                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeSteakosaurusBurger(sb));
-                }
+                SteakosaurusBurger sb = new SteakosaurusBurger();
+                order.Add(sb);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeSteakosaurusBurger(sb));
             }
         }
 
@@ -93,12 +81,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new TRexKingBurger();
-                order.Add(entree);
-                if (entree is TRexKingBurger trex) 
-                {
-                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeTRexKingBurger(trex));
-                }
+                TRexKingBurger trex = new TRexKingBurger();
+                order.Add(trex);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeTRexKingBurger(trex));
             }
         }
 
@@ -111,12 +96,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new PrehistoricPBJ();
-                order.Add(entree);
-                if (entree is PrehistoricPBJ pbj)
-                {
-                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizePrehistoricPBJ(pbj));
-                }
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizePrehistoricPBJ(pbj));
             }
         }
 
@@ -129,12 +111,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new PterodactylWings();
-                order.Add(entree);
-                if (entree is PterodactylWings pw)
-                {
-                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizePterodactylWings(pw));
-                }
+                PterodactylWings pw = new PterodactylWings();
+                order.Add(pw);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizePterodactylWings(pw));
             }
             
         }
@@ -148,12 +127,9 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                entree = new VelociWrap();
-                order.Add(entree);
-                if (entree is VelociWrap vw)
-                {
-                    NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(vw));
-                }
+                VelociWrap vw = new VelociWrap();
+                order.Add(vw);
+                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(vw));
             }
         }
     }

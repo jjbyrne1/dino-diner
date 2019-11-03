@@ -140,7 +140,7 @@ namespace PointOfSale
                 VelociWrap wrap = new VelociWrap();
                 combo = new CretaceousCombo(wrap);
                 order.Add(combo);
-                NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(combo));
+                //NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(combo));
             }
         }
     }

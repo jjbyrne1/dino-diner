@@ -26,6 +26,10 @@ namespace PointOfSale.Entree_Customization_Pages
         private DinoNuggets dn;
         private bool isCombo;
 
+        /// <summary>
+        /// Custructor for Customize DinoNuggets for combo
+        /// </summary>
+        /// <param name="combo"> the combo </param>
         public CustomizeDinoNuggets(CretaceousCombo combo)
         {
             InitializeComponent();
@@ -33,6 +37,10 @@ namespace PointOfSale.Entree_Customization_Pages
             isCombo = true;
         }
 
+        /// <summary>
+        /// Custructor for Customize DinoNuggets for entree
+        /// </summary>
+        /// <param name="dn"> the dinonuggets entree </param>
         public CustomizeDinoNuggets(DinoNuggets dn)
         {
             InitializeComponent();
@@ -47,17 +55,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectAddNugget(object sender, RoutedEventArgs args)
         {
-            if (isCombo)
-            {
-                if (combo.Entree is DinoNuggets dn)
-                {
-                    dn.AddNugget();
-                }
-            }
-            else
-            {
-                this.dn.AddNugget();
-            }
+            if (combo.Entree is DinoNuggets dn) dn.AddNugget();
+            else this.dn.AddNugget();
         }
 
         /// <summary>
@@ -67,7 +66,7 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            if (isCombo) NavigationService.Navigate(combo);
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo));
             else NavigationService.Navigate(new MenuCategorySelection());
         }
     }

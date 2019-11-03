@@ -27,7 +27,7 @@ namespace PointOfSale.Entree_Customization_Pages
         private bool isCombo;
 
         /// <summary>
-        /// Constructor for CustomizePrehistoricPBJ
+        /// Constructor for CustomizePrehistoricPBJ for entree
         /// </summary>
         /// <param name="pbj"> the prehistoric PBJ entree </param>
         public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
@@ -37,7 +37,16 @@ namespace PointOfSale.Entree_Customization_Pages
             isCombo = false;
         }
 
-        public CustomizePrehistoricPBJ
+        /// <summary>
+        /// Constructor for CustomizePrehistoricPBJ for combo
+        /// </summary>
+        /// <param name="combo"> the combo </param>
+        public CustomizePrehistoricPBJ(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            isCombo = true;
+        }
 
         /// <summary>
         /// Event handler for Hold Peanut Butter
@@ -46,10 +55,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPeanutButter(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is PrehistoricPBJ pbj)
-            {
-                pbj.HoldPeanutButter();
-            }
+            if (combo.Entree is PrehistoricPBJ pbj) pbj.HoldPeanutButter();
+            else this.pbj.HoldPeanutButter();
         }
 
         /// <summary>
@@ -59,10 +66,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldJelly(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is PrehistoricPBJ pbj)
-            {
-                pbj.HoldJelly();
-            }
+            if (combo.Entree is PrehistoricPBJ pbj) pbj.HoldJelly();
+            else this.pbj.HoldJelly();
         }
 
         /// <summary>
@@ -72,7 +77,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(combo));
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo));
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

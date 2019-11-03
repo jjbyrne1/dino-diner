@@ -23,15 +23,29 @@ namespace PointOfSale.Entree_Customization_Pages
     {
         //Backing variable
         private CretaceousCombo combo;
+        private PterodactylWings pw;
+        private bool isCombo;
 
         /// <summary>
-        /// Constructor for CustomizePterodactylWings
+        /// Constructor for CustomizePterodactylWings for entree
         /// </summary>
         /// <param name="pw"> the Pterodactyl Wings entree </param>
         public CustomizePterodactylWings(PterodactylWings pw)
         {
             InitializeComponent();
-            combo = new CretaceousCombo(pw);
+            this.pw = pw;
+            isCombo = false;
+        }
+
+        /// <summary>
+        /// Constructor for CustomizePterodactylWings for combo
+        /// </summary>
+        /// <param name="combo"> the combo </param>
+        public CustomizePterodactylWings(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            isCombo = true;
         }
 
         /// <summary>
@@ -41,7 +55,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(combo));
+            if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo));
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

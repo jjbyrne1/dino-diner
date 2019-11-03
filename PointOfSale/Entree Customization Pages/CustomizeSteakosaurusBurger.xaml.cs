@@ -23,15 +23,29 @@ namespace PointOfSale.Entree_Customization_Pages
     {
         //Backing variable
         private CretaceousCombo combo;
+        private SteakosaurusBurger sb;
+        private bool isCombo;
 
         /// <summary>
         /// Constructor for CustomizeSteakosaurusBurger
         /// </summary>
-        /// <param name="pw"> the Steakosaurus Burger entree </param>
+        /// <param name="sb"> the Steakosaurus Burger entree </param>
         public CustomizeSteakosaurusBurger(SteakosaurusBurger sb)
         {
             InitializeComponent();
-            combo = new CretaceousCombo(sb);
+            this.sb = sb;
+            isCombo = false;
+        }
+
+        /// <summary>
+        /// Constructor for CustomizeSteakosaurusBurger
+        /// </summary>
+        /// <param name="combo"> the Steakosaurus Burger combo </param>
+        public CustomizeSteakosaurusBurger(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            isCombo = true;
         }
 
         /// <summary>
@@ -41,10 +55,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldBun(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is Brontowurst bw)
-            {
-                bw.HoldBun();
-            }
+            if (combo.Entree is Brontowurst bw) sb.HoldBun();
+            else this.sb.HoldBun();
         }
 
         /// <summary>
@@ -54,10 +66,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPickle(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is SteakosaurusBurger sb)
-            {
-                sb.HoldPickle();
-            }
+            if (combo.Entree is SteakosaurusBurger sb) sb.HoldPickle();
+            else this.sb.HoldPickle();
         }
 
         /// <summary>
@@ -67,10 +77,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldKetchup(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is SteakosaurusBurger sb)
-            {
-                sb.HoldKetchup();
-            }
+            if (combo.Entree is SteakosaurusBurger sb) sb.HoldKetchup();
+            else this.sb.HoldKetchup();
         }
 
         /// <summary>
@@ -80,10 +88,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldMustard(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is SteakosaurusBurger sb)
-            {
-                sb.HoldMustard();
-            }
+            if (combo.Entree is SteakosaurusBurger sb) sb.HoldMustard();
+            else this.sb.HoldMustard();
         }
 
         /// <summary>
@@ -93,7 +99,8 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo(combo));
+            if(isCombo) NavigationService.Navigate(new CustomizeCombo(combo));
+            else NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }
