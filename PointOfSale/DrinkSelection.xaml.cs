@@ -285,7 +285,7 @@ namespace PointOfSale
             {
                 if (flavor)
                 {
-                    NavigationService.Navigate(new FlavorSelection());
+                    NavigationService.Navigate(new FlavorSelection(combo));
                 }
                 else if (combo.Drink is Tyrannotea t)
                 {

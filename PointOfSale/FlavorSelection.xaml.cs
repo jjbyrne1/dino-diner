@@ -21,9 +21,26 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
+        //Backing variable
+        private CretaceousCombo combo;
+        private bool isCombo = false;
+
+        /// <summary>
+        /// Default Constructor for FlavorSelection
+        /// </summary>
         public FlavorSelection()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Constructor for FlavorSelection for combo
+        /// </summary>
+        public FlavorSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            isCombo = true;
         }
 
         /// <summary>
@@ -33,11 +50,27 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectCherryFlavor(object sender, RoutedEventArgs args)
         {
-            if (sender is Button button && DataContext is Order order)
+            if (isCombo)
             {
-                if (order.Items[order.Items.Length-1] is Sodasaurus s)
+                if (sender is Button button && DataContext is Order order)
                 {
-                     s.Flavor = SodasaurusFlavor.Cherry;
+                    if (order.Items[order.Items.Length - 1] is CretaceousCombo combo)
+                    {
+                        if (combo.Drink is Sodasaurus s)
+                        {
+                            s.Flavor = SodasaurusFlavor.Cherry;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (sender is Button button && DataContext is Order order)
+                {
+                    if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                    {
+                        s.Flavor = SodasaurusFlavor.Cherry;
+                    }
                 }
             }
             NavigationService.GoBack();
@@ -50,11 +83,27 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectChocolateFlavor(object sender, RoutedEventArgs args)
         {
-            if (sender is Button button && DataContext is Order order)
+            if (isCombo)
             {
-                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                if (sender is Button button && DataContext is Order order)
                 {
-                    s.Flavor = SodasaurusFlavor.Chocolate;
+                    if (order.Items[order.Items.Length - 1] is CretaceousCombo combo)
+                    {
+                        if (combo.Drink is Sodasaurus s)
+                        {
+                            s.Flavor = SodasaurusFlavor.Chocolate;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (sender is Button button && DataContext is Order order)
+                {
+                    if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                    {
+                        s.Flavor = SodasaurusFlavor.Chocolate;
+                    }
                 }
             }
             NavigationService.GoBack();
@@ -67,11 +116,27 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectColaFlavor(object sender, RoutedEventArgs args)
         {
-            if (sender is Button button && DataContext is Order order)
+            if (isCombo)
             {
-                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                if (sender is Button button && DataContext is Order order)
                 {
-                    s.Flavor = SodasaurusFlavor.Cola;
+                    if (order.Items[order.Items.Length - 1] is CretaceousCombo combo)
+                    {
+                        if (combo.Drink is Sodasaurus s)
+                        {
+                            s.Flavor = SodasaurusFlavor.Cola;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (sender is Button button && DataContext is Order order)
+                {
+                    if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                    {
+                        s.Flavor = SodasaurusFlavor.Cola;
+                    }
                 }
             }
             NavigationService.GoBack();
@@ -84,11 +149,27 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectLimeFlavor(object sender, RoutedEventArgs args)
         {
-            if (sender is Button button && DataContext is Order order)
+            if (isCombo)
             {
-                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                if (sender is Button button && DataContext is Order order)
                 {
-                    s.Flavor = SodasaurusFlavor.Lime;
+                    if (order.Items[order.Items.Length - 1] is CretaceousCombo combo)
+                    {
+                        if (combo.Drink is Sodasaurus s)
+                        {
+                            s.Flavor = SodasaurusFlavor.Lime;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (sender is Button button && DataContext is Order order)
+                {
+                    if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                    {
+                        s.Flavor = SodasaurusFlavor.Lime;
+                    }
                 }
             }
             NavigationService.GoBack();
@@ -101,11 +182,27 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectOrangeFlavor(object sender, RoutedEventArgs args)
         {
-            if (sender is Button button && DataContext is Order order)
+            if (isCombo)
             {
-                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                if (sender is Button button && DataContext is Order order)
                 {
-                    s.Flavor = SodasaurusFlavor.Orange;
+                    if (order.Items[order.Items.Length - 1] is CretaceousCombo combo)
+                    {
+                        if (combo.Drink is Sodasaurus s)
+                        {
+                            s.Flavor = SodasaurusFlavor.Orange;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (sender is Button button && DataContext is Order order)
+                {
+                    if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                    {
+                        s.Flavor = SodasaurusFlavor.Orange;
+                    }
                 }
             }
             NavigationService.GoBack();
@@ -118,11 +215,27 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectRootBeerFlavor(object sender, RoutedEventArgs args)
         {
-            if (sender is Button button && DataContext is Order order)
+            if (isCombo)
             {
-                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                if (sender is Button button && DataContext is Order order)
                 {
-                    s.Flavor = SodasaurusFlavor.RootBeer;
+                    if (order.Items[order.Items.Length - 1] is CretaceousCombo combo)
+                    {
+                        if (combo.Drink is Sodasaurus s)
+                        {
+                            s.Flavor = SodasaurusFlavor.RootBeer;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (sender is Button button && DataContext is Order order)
+                {
+                    if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                    {
+                        s.Flavor = SodasaurusFlavor.RootBeer;
+                    }
                 }
             }
             NavigationService.GoBack();
@@ -135,11 +248,27 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectVanillaFlavor(object sender, RoutedEventArgs args)
         {
-            if (sender is Button button && DataContext is Order order)
+            if (isCombo)
             {
-                if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                if (sender is Button button && DataContext is Order order)
                 {
-                    s.Flavor = SodasaurusFlavor.Vanilla;
+                    if (order.Items[order.Items.Length - 1] is CretaceousCombo combo)
+                    {
+                        if (combo.Drink is Sodasaurus s)
+                        {
+                            s.Flavor = SodasaurusFlavor.Vanilla;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (sender is Button button && DataContext is Order order)
+                {
+                    if (order.Items[order.Items.Length - 1] is Sodasaurus s)
+                    {
+                        s.Flavor = SodasaurusFlavor.Vanilla;
+                    }
                 }
             }
             NavigationService.GoBack();
