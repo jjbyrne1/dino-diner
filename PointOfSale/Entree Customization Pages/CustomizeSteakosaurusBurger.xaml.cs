@@ -55,7 +55,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldBun(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is Brontowurst bw) sb.HoldBun();
+            if (isCombo)
+            {
+                if (combo.Entree is Brontowurst bw) sb.HoldBun();
+            }
             else this.sb.HoldBun();
         }
 
@@ -66,7 +69,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPickle(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is SteakosaurusBurger sb) sb.HoldPickle();
+            if (isCombo)
+            {
+                if (combo.Entree is SteakosaurusBurger sb) sb.HoldPickle();
+            }
             else this.sb.HoldPickle();
         }
 
@@ -77,7 +83,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldKetchup(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is SteakosaurusBurger sb) sb.HoldKetchup();
+            if (isCombo)
+            {
+                if (combo.Entree is SteakosaurusBurger sb) sb.HoldKetchup();
+            }
             else this.sb.HoldKetchup();
         }
 
@@ -88,7 +97,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldMustard(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is SteakosaurusBurger sb) sb.HoldMustard();
+            if (isCombo)
+            {
+                if (combo.Entree is SteakosaurusBurger sb) sb.HoldMustard();
+            }
             else this.sb.HoldMustard();
         }
 

@@ -55,7 +55,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectAddNugget(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is DinoNuggets dn) dn.AddNugget();
+            if (isCombo)
+            {
+                if (combo.Entree is DinoNuggets dn) dn.AddNugget();
+            }
             else this.dn.AddNugget();
         }
 

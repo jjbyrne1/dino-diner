@@ -53,7 +53,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldBun(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldBun();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldBun();
+            }
             else this.trex.HoldBun();
         }
 
@@ -64,7 +67,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldLettuce(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldLettuce();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldLettuce();
+            }
             else this.trex.HoldLettuce();
         }
 
@@ -75,7 +81,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldTomato(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldTomato();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldTomato();
+            }
             else this.trex.HoldTomato();
         }
 
@@ -86,7 +95,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldOnion(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldOnion();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldOnion();
+            }
             else this.trex.HoldOnion();
         }
 
@@ -97,7 +109,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPickle(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldPickle();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldPickle();
+            }
             else this.trex.HoldPickle();
         }
 
@@ -108,7 +123,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldKetchup(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldKetchup();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldKetchup();
+            }
             else this.trex.HoldKetchup();
         }
 
@@ -119,7 +137,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldMustard(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldMustard();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldMustard();
+            }
             else this.trex.HoldMustard();
         }
 
@@ -130,7 +151,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldMayo(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is TRexKingBurger trex) trex.HoldMayo();
+            if (isCombo)
+            {
+                if (combo.Entree is TRexKingBurger trex) trex.HoldMayo();
+            }
             else this.trex.HoldMayo();
         }
 

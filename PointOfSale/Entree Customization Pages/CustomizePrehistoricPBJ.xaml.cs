@@ -55,7 +55,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldPeanutButter(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is PrehistoricPBJ pbj) pbj.HoldPeanutButter();
+            if (isCombo)
+            {
+                if (combo.Entree is PrehistoricPBJ pbj) pbj.HoldPeanutButter();
+            }
             else this.pbj.HoldPeanutButter();
         }
 
@@ -66,7 +69,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldJelly(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is PrehistoricPBJ pbj) pbj.HoldJelly();
+            if (isCombo)
+            {
+                if (combo.Entree is PrehistoricPBJ pbj) pbj.HoldJelly();
+            }
             else this.pbj.HoldJelly();
         }
 

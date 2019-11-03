@@ -55,7 +55,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldDressing(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is VelociWrap vw) vw.HoldDressing();
+            if (isCombo)
+            {
+                if (combo.Entree is VelociWrap vw) vw.HoldDressing();
+            }
             else this.vw.HoldDressing();
         }
 
@@ -66,7 +69,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldLettuce(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is VelociWrap vw) vw.HoldLettuce();
+            if (isCombo)
+            {
+                if (combo.Entree is VelociWrap vw) vw.HoldLettuce();
+            }
             else this.vw.HoldLettuce();
         }
 
@@ -77,7 +83,10 @@ namespace PointOfSale.Entree_Customization_Pages
         /// <param name="args">  event arguemnts </param>
         private void SelectHoldCheese(object sender, RoutedEventArgs args)
         {
-            if (combo.Entree is VelociWrap vw) vw.HoldCheese();
+            if (isCombo)
+            {
+                if (combo.Entree is VelociWrap vw) vw.HoldCheese();
+            }
             else this.vw.HoldCheese();
         }
 
