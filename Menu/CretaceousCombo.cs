@@ -56,10 +56,11 @@ namespace DinoDiner.Menu
             set
             {
                 drink = value;
-                NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Drink");
+                drink.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
             }
         }
         

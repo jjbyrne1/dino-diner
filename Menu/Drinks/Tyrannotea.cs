@@ -53,8 +53,6 @@ namespace DinoDiner.Menu
         {
             Price = 0.99;
             Calories = 8;
-            ingredients.Add("Water");
-            ingredients.Add("Tea");
         }
 
         /// <summary>

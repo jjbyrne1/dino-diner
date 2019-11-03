@@ -182,7 +182,6 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         private void SelectSodasurusDrink(object sender, RoutedEventArgs args)
         {
-            
             if (DataContext is Order order)
             {
                 flavor = true;

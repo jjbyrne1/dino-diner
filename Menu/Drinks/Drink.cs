@@ -67,11 +67,11 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
-    /// <summary>
-    /// Gets the item desctiption
-    /// </summary>
-    /// <returns></returns>
-    public virtual string Description { get; }
+        /// <summary>
+        /// Gets the item desctiption
+        /// </summary>
+        /// <returns></returns>
+        public virtual string Description { get; }
 
         /// <summary>
         /// Gets the Special Specifications

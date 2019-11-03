@@ -67,7 +67,13 @@ namespace PointOfSale
             }
             else if (OrderItems.SelectedItem is CretaceousCombo combo)
             {
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                if (combo.Entree is Brontowurst) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(combo));
+                else if (combo.Entree is DinoNuggets) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeDinoNuggets(combo));
+                else if (combo.Entree is PrehistoricPBJ) NavigationService.Navigate(new Entree_Customization_Pages.CustomizePrehistoricPBJ(combo));
+                else if (combo.Entree is PterodactylWings) NavigationService.Navigate(new Entree_Customization_Pages.CustomizePterodactylWings(combo));
+                else if (combo.Entree is SteakosaurusBurger) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeSteakosaurusBurger(combo));
+                else if (combo.Entree is TRexKingBurger) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeTRexKingBurger(combo));
+                else if (combo.Entree is VelociWrap) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(combo));
             }
         }
     }
