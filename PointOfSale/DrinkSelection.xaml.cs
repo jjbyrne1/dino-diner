@@ -25,6 +25,7 @@ namespace PointOfSale
         //Backing Variables
         private Drink drink;
         private CretaceousCombo combo;
+        private DinoDiner.Menu.Size comboSize;
         private bool isCombo = false;
         private bool flavor = false;
 
@@ -51,10 +52,11 @@ namespace PointOfSale
             EnableSizeButtons();
         }
 
-        public DrinkSelection(CretaceousCombo combo)
+        public DrinkSelection(CretaceousCombo combo, DinoDiner.Menu.Size size)
         {
             InitializeComponent();
             this.combo = combo;
+            comboSize = size;
             isCombo = true;
         }
 
@@ -189,6 +191,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Drink = drink;
+                    combo.Size = comboSize;
                     ChangeSpecialButtons(combo.Drink);
                 }
                 else
@@ -215,6 +218,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Drink = drink;
+                    combo.Size = comboSize;
                     ChangeSpecialButtons(combo.Drink);
                 }
                 else
@@ -239,6 +243,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Drink = drink;
+                    combo.Size = comboSize;
                     ChangeSpecialButtons(combo.Drink);
                 }
                 else
@@ -263,6 +268,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Drink = drink;
+                    combo.Size = comboSize;
                     ChangeSpecialButtons(combo.Drink);
                 }
                 else

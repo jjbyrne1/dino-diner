@@ -26,6 +26,7 @@ namespace PointOfSale
         private Side side;
         private CretaceousCombo combo;
         private bool isCombo = false;
+        private DinoDiner.Menu.Size comboSize;
 
         /// <summary>
         /// Default Constructor for SideSelection
@@ -55,11 +56,12 @@ namespace PointOfSale
         /// Constructor for SideSelection for combo
         /// </summary>
         /// <param name="combo"> the combo </param>
-        public SideSelection(CretaceousCombo combo)
+        public SideSelection(CretaceousCombo combo, DinoDiner.Menu.Size size)
         {
             InitializeComponent();
             this.combo = combo;
             isCombo = true;
+            comboSize = size;
         }
 
         /// <summary>
@@ -85,7 +87,8 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    NavigationService.GoBack();
+                    side.Size = comboSize;
+                    NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
                 {
@@ -109,7 +112,8 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    NavigationService.Navigate(new CustomizeCombo(combo));
+                    side.Size = comboSize;
+                    NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
                 {
@@ -132,7 +136,8 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    NavigationService.Navigate(new CustomizeCombo(combo));
+                    side.Size = comboSize;
+                    NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
                 {
@@ -155,7 +160,8 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    NavigationService.Navigate(new CustomizeCombo(combo));
+                    side.Size = comboSize;
+                    NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
                 {

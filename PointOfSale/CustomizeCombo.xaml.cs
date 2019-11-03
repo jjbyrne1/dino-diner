@@ -30,6 +30,7 @@ namespace PointOfSale
     {
         //Backing Variable
         private CretaceousCombo combo;
+        private DinoDiner.Menu.Size comboSize = DinoDiner.Menu.Size.Small;
 
         /// <summary>
         /// Constructor for the CustomizeCombo
@@ -39,6 +40,19 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.combo = combo;
+            EnableSizeButtons();
+            ChangeSideText();
+        }
+
+        /// <summary>
+        /// Constructor for the CustomizeCombo
+        /// </summary>
+        /// <param name="combo"> the updated combo </param>
+        public CustomizeCombo(CretaceousCombo combo, DinoDiner.Menu.Size size)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            comboSize = size;
             EnableSizeButtons();
             ChangeSideText();
         }
@@ -60,7 +74,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection(combo));
+            NavigationService.Navigate(new SideSelection(combo, comboSize));
         }
 
         /// <summary>
@@ -70,7 +84,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection(combo));
+            NavigationService.Navigate(new DrinkSelection(combo, comboSize));
         }
 
         /// <summary>
@@ -81,6 +95,7 @@ namespace PointOfSale
         void SelectSmall(object sender, RoutedEventArgs args)
         {
             combo.Size = DinoDiner.Menu.Size.Small;
+            comboSize = combo.Size;
         }
 
         /// <summary>
@@ -91,6 +106,7 @@ namespace PointOfSale
         void SelectMedium(object sender, RoutedEventArgs args)
         {
             combo.Size = DinoDiner.Menu.Size.Medium;
+            comboSize = combo.Size;
         }
 
         /// <summary>
@@ -101,6 +117,7 @@ namespace PointOfSale
         void SelectLarge(object sender, RoutedEventArgs args)
         {
             combo.Size = DinoDiner.Menu.Size.Large;
+            comboSize = combo.Size;
         }
 
         /// <summary>
