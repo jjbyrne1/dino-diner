@@ -57,7 +57,7 @@ namespace PointOfSale.Entree_Customization_Pages
         {
             if (isCombo)
             {
-                if (combo.Entree is Brontowurst bw) sb.HoldBun();
+                if (combo.Entree is SteakosaurusBurger sb) sb.HoldBun();
             }
             else this.sb.HoldBun();
         }

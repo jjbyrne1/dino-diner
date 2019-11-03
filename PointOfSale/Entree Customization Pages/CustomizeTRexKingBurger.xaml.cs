@@ -33,7 +33,8 @@ namespace PointOfSale.Entree_Customization_Pages
         public CustomizeTRexKingBurger(TRexKingBurger trex)
         {
             InitializeComponent();
-            combo = new CretaceousCombo(trex);
+            this.trex = trex;
+            isCombo = false;
         }
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace PointOfSale.Entree_Customization_Pages
         {
             InitializeComponent();
             this.combo = combo;
+            isCombo = true;
         }
 
         /// <summary>

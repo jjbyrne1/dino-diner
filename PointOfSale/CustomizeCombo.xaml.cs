@@ -70,7 +70,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(combo));
         }
 
         /// <summary>
@@ -111,22 +111,22 @@ namespace PointOfSale
             if(combo.Side is Fryceritops) 
             {
                 SideName.Text = "Fryceritops";
-                combo.Side = new Fryceritops();
+                
             }
             else if (combo.Side is Triceritots)
             {
                 SideName.Text = "Triceritots";
-                combo.Side = new Triceritots();
+                
             }
             else if (combo.Side is MeteorMacAndCheese)
             {
                 SideName.Text = "Meteor Mac And Cheese";
-                combo.Side = new MeteorMacAndCheese();
+                
             }
             else if (combo.Side is MezzorellaSticks)
             {
                 SideName.Text = "Mezzorella Sticks";
-                combo.Side = new MezzorellaSticks();
+                
             }
         }
     }

@@ -25,7 +25,7 @@ namespace PointOfSale
         //Backing Variables
         private Drink drink;
         private CretaceousCombo combo;
-        private bool isCombo;
+        private bool isCombo = false;
         private bool flavor = false;
 
         /// <summary>
@@ -185,14 +185,20 @@ namespace PointOfSale
             
             if (DataContext is Order order)
             {
+                flavor = true;
                 drink = new Sodasaurus();
                 if (isCombo)
+                {
                     combo.Drink = drink;
+                    ChangeSpecialButtons(combo.Drink);
+                }
                 else
+                {
                     order.Add(drink);
-                flavor = true;
-                EnableSizeButtons();
-                ChangeSpecialButtons(drink);
+                    EnableSizeButtons();
+                    ChangeSpecialButtons(drink);
+                }
+                
             }
         }
 
@@ -207,10 +213,17 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Tyrannotea();
-                order.Add(drink);
-                flavor = false;
-                EnableSizeButtons();
-                ChangeSpecialButtons(drink);
+                if (isCombo)
+                {
+                    combo.Drink = drink;
+                    ChangeSpecialButtons(combo.Drink);
+                }
+                else
+                {
+                    order.Add(drink);
+                    EnableSizeButtons();
+                    ChangeSpecialButtons(drink);
+                }
             }
         }
 
@@ -224,10 +237,17 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new JurassicJava();
-                order.Add(drink);
-                flavor = false;
-                EnableSizeButtons();
-                ChangeSpecialButtons(drink);
+                if (isCombo)
+                {
+                    combo.Drink = drink;
+                    ChangeSpecialButtons(combo.Drink);
+                }
+                else
+                {
+                    order.Add(drink);
+                    EnableSizeButtons();
+                    ChangeSpecialButtons(drink);
+                }
             }
         }
 
@@ -241,10 +261,17 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Water();
-                order.Add(drink);
-                flavor = false;
-                EnableSizeButtons();
-                ChangeSpecialButtons(drink);
+                if (isCombo)
+                {
+                    combo.Drink = drink;
+                    ChangeSpecialButtons(combo.Drink);
+                }
+                else
+                {
+                    order.Add(drink);
+                    EnableSizeButtons();
+                    ChangeSpecialButtons(drink);
+                }
             }
         }
 
@@ -255,40 +282,82 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         public void SelectSweetDecafFlavor(object sender, RoutedEventArgs args)
         {
-            if (flavor)
+            if (isCombo)
             {
-                NavigationService.Navigate(new FlavorSelection());
+                if (flavor)
+                {
+                    NavigationService.Navigate(new FlavorSelection());
+                }
+                else if (combo.Drink is Tyrannotea t)
+                {
+                    if (SweetDecafFlavorText.Text == "Add Sweet")
+                    {
+                        SweetDecafFlavorText.Text = "Hold Sweet";
+                        t.AddSweet();
+                        SweetDecafFlavorButton.Background = Brushes.Tan;
+                    }
+                    else
+                    {
+                        SweetDecafFlavorText.Text = "Add Sweet";
+                        t.RemoveSweet();
+                        SweetDecafFlavorButton.Background = Brushes.White;
+                    }
+                }
+                else if (combo.Drink is JurassicJava jj)
+                {
+                    if (SweetDecafFlavorText.Text == "Add Decaf")
+                    {
+                        SweetDecafFlavorText.Text = "Hold Decaf";
+                        jj.Decaf = true;
+                        SweetDecafFlavorButton.Background = Brushes.Brown;
+                        SweetDecafFlavorButton.Foreground = Brushes.White;
+                    }
+                    else
+                    {
+                        SweetDecafFlavorText.Text = "Add Decaf";
+                        jj.Decaf = false;
+                        SweetDecafFlavorButton.Background = Brushes.White;
+                        SweetDecafFlavorButton.Foreground = Brushes.Black;
+                    }
+                }
             }
-            else if (drink is Tyrannotea t)
+            else
             {
-                if (SweetDecafFlavorText.Text == "Add Sweet")
+                if (flavor)
                 {
-                    SweetDecafFlavorText.Text = "Hold Sweet";
-                    t.AddSweet();
-                    SweetDecafFlavorButton.Background = Brushes.Tan;
+                    NavigationService.Navigate(new FlavorSelection());
                 }
-                else
+                else if (drink is Tyrannotea t)
                 {
-                    SweetDecafFlavorText.Text = "Add Sweet";
-                    t.RemoveSweet();
-                    SweetDecafFlavorButton.Background = Brushes.White;
+                    if (SweetDecafFlavorText.Text == "Add Sweet")
+                    {
+                        SweetDecafFlavorText.Text = "Hold Sweet";
+                        t.AddSweet();
+                        SweetDecafFlavorButton.Background = Brushes.Tan;
+                    }
+                    else
+                    {
+                        SweetDecafFlavorText.Text = "Add Sweet";
+                        t.RemoveSweet();
+                        SweetDecafFlavorButton.Background = Brushes.White;
+                    }
                 }
-            }
-            else if (drink is JurassicJava jj)
-            {
-                if (SweetDecafFlavorText.Text == "Add Decaf")
+                else if (drink is JurassicJava jj)
                 {
-                    SweetDecafFlavorText.Text = "Hold Decaf";
-                    jj.Decaf = true;
-                    SweetDecafFlavorButton.Background = Brushes.Brown;
-                    SweetDecafFlavorButton.Foreground = Brushes.White;
-                }
-                else
-                {
-                    SweetDecafFlavorText.Text = "Add Decaf";
-                    jj.Decaf = false;
-                    SweetDecafFlavorButton.Background = Brushes.White;
-                    SweetDecafFlavorButton.Foreground = Brushes.Black;
+                    if (SweetDecafFlavorText.Text == "Add Decaf")
+                    {
+                        SweetDecafFlavorText.Text = "Hold Decaf";
+                        jj.Decaf = true;
+                        SweetDecafFlavorButton.Background = Brushes.Brown;
+                        SweetDecafFlavorButton.Foreground = Brushes.White;
+                    }
+                    else
+                    {
+                        SweetDecafFlavorText.Text = "Add Decaf";
+                        jj.Decaf = false;
+                        SweetDecafFlavorButton.Background = Brushes.White;
+                        SweetDecafFlavorButton.Foreground = Brushes.Black;
+                    }
                 }
             }
         }
@@ -300,21 +369,43 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         public void AddLemon(object sender, RoutedEventArgs args)
         {
-            if (LemonText.Text.CompareTo("Add Lemon") == 0)
+            if (isCombo)
             {
-                LemonText.Text = "Hold Lemon";
-                AddLemonButton.Background = Brushes.White;
-                //lemon = true;
-                if (drink is Tyrannotea t) t.AddLemon();
-                else if (drink is Water w) w.AddLemon();
+                if (LemonText.Text.CompareTo("Add Lemon") == 0)
+                {
+                    LemonText.Text = "Hold Lemon";
+                    AddLemonButton.Background = Brushes.White;
+                    //lemon = true;
+                    if (combo.Drink is Tyrannotea t) t.AddLemon();
+                    else if (combo.Drink is Water w) w.AddLemon();
+                }
+                else
+                {
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                    //lemon = false;
+                    if (combo.Drink is Tyrannotea t) t.Lemon = false;
+                    else if (combo.Drink is Water w) w.Lemon = false;
+                }
             }
             else
             {
-                LemonText.Text = "Add Lemon";
-                AddLemonButton.Background = Brushes.Yellow;
-                //lemon = false;
-                if (drink is Tyrannotea t) t.Lemon = false;
-                else if (drink is Water w) w.Lemon = false;
+                if (LemonText.Text.CompareTo("Add Lemon") == 0)
+                {
+                    LemonText.Text = "Hold Lemon";
+                    AddLemonButton.Background = Brushes.White;
+                    //lemon = true;
+                    if (drink is Tyrannotea t) t.AddLemon();
+                    else if (drink is Water w) w.AddLemon();
+                }
+                else
+                {
+                    LemonText.Text = "Add Lemon";
+                    AddLemonButton.Background = Brushes.Yellow;
+                    //lemon = false;
+                    if (drink is Tyrannotea t) t.Lemon = false;
+                    else if (drink is Water w) w.Lemon = false;
+                }
             }
         }
 
@@ -325,20 +416,39 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         public void HoldIce(object sender, RoutedEventArgs args)
         {
-            
-            if (IceText.Text.CompareTo("Hold Ice") == 0)
+            if (isCombo)
             {
-                IceText.Text = "Add Ice";
-                HoldIceButton.Background = Brushes.White;
-                //ice = false;
-                if (drink is Drink d) d.HoldIce();
+                if (IceText.Text.CompareTo("Hold Ice") == 0)
+                {
+                    IceText.Text = "Add Ice";
+                    HoldIceButton.Background = Brushes.White;
+                    //ice = false;
+                    if (combo.Drink is Drink d) d.HoldIce();
+                }
+                else
+                {
+                    IceText.Text = "Hold Ice";
+                    HoldIceButton.Background = Brushes.LightBlue;
+                    //ice = true;
+                    if (combo.Drink is Drink d) d.AddIce();
+                }
             }
             else
             {
-                IceText.Text = "Hold Ice";
-                HoldIceButton.Background = Brushes.LightBlue;
-                //ice = true;
-                if (drink is Drink d) d.AddIce();
+                if (IceText.Text.CompareTo("Hold Ice") == 0)
+                {
+                    IceText.Text = "Add Ice";
+                    HoldIceButton.Background = Brushes.White;
+                    //ice = false;
+                    if (drink is Drink d) d.HoldIce();
+                }
+                else
+                {
+                    IceText.Text = "Hold Ice";
+                    HoldIceButton.Background = Brushes.LightBlue;
+                    //ice = true;
+                    if (drink is Drink d) d.AddIce();
+                }
             }
         }
 

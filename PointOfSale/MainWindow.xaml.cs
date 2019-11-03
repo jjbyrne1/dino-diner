@@ -21,6 +21,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Constructor for MainWindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -28,6 +31,9 @@ namespace PointOfSale
             OrderInterface.NavigationService = OrderUI.NavigationService;
         }
 
+        /// <summary>
+        /// Passes data content to page
+        /// </summary>
         private void PassDataContentToPage()
         {
             if (OrderUI.Content is Page page)
@@ -36,16 +42,31 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Event handler for OnLoadCompleted
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> teh event args </param>
         private void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
             PassDataContentToPage();
         }
 
+        /// <summary>
+        /// Event handler for OnDataContextChanged
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> teh event args </param>
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             PassDataContentToPage();
         }
 
+        /// <summary>
+        /// Event handler for SelectReturnToCategorySelection
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> teh event args </param>
         public void SelectReturnToCategorySelection(object sender, RoutedEventArgs args)
         {
             OrderUI.NavigationService.Navigate(new MenuCategorySelection());

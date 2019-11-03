@@ -22,14 +22,23 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        //Backing variable
         private Side side;
         private CretaceousCombo combo;
         private bool isCombo = false;
+
+        /// <summary>
+        /// Default Constructor for SideSelection
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor for SideSelection for side
+        /// </summary>
+        /// <param name="side"> the side </param>
         public SideSelection(Side side)
         {
             InitializeComponent();
@@ -42,6 +51,10 @@ namespace PointOfSale
             TriceritotsButton.IsEnabled = false;
         }
 
+        /// <summary>
+        /// Constructor for SideSelection for combo
+        /// </summary>
+        /// <param name="combo"> the combo </param>
         public SideSelection(CretaceousCombo combo)
         {
             InitializeComponent();
@@ -66,7 +79,7 @@ namespace PointOfSale
         /// <param name="args"> event arguements </param>
         void SelectFryceritopsSide(object sender, RoutedEventArgs args)
         {
-             if (DataContext is Order order)
+            if (DataContext is Order order)
             {
                 side = new Fryceritops();
                 if (isCombo)
