@@ -65,6 +65,16 @@ namespace PointOfSale
             {
                 NavigationService.Navigate(new DrinkSelection(drink));
             }
+            else if (OrderItems.SelectedItem is Entree entree)
+            {
+                if (entree is Brontowurst bw) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(bw));
+                else if (entree is DinoNuggets dn) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeDinoNuggets(dn));
+                else if (entree is PrehistoricPBJ pbj) NavigationService.Navigate(new Entree_Customization_Pages.CustomizePrehistoricPBJ(pbj));
+                else if (entree is PterodactylWings pw) NavigationService.Navigate(new Entree_Customization_Pages.CustomizePterodactylWings(pw));
+                else if (entree is SteakosaurusBurger sb) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeSteakosaurusBurger(sb));
+                else if (entree is TRexKingBurger trex) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeTRexKingBurger(trex));
+                else if (entree is VelociWrap vw) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(vw));
+            }
             else if (OrderItems.SelectedItem is CretaceousCombo combo)
             {
                 if (combo.Entree is Brontowurst) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(combo));
