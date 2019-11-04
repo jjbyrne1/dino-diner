@@ -87,7 +87,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    side.Size = comboSize;
+                    combo.Size = comboSize;
                     NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
@@ -112,7 +112,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    side.Size = comboSize;
+                    combo.Size = comboSize;
                     NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
@@ -136,7 +136,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    side.Size = comboSize;
+                    combo.Size = comboSize;
                     NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
@@ -160,7 +160,7 @@ namespace PointOfSale
                 if (isCombo)
                 {
                     combo.Side = side;
-                    side.Size = comboSize;
+                    combo.Size = comboSize;
                     NavigationService.Navigate(new CustomizeCombo(combo, comboSize));
                 }
                 else
