@@ -52,6 +52,11 @@ namespace PointOfSale
             EnableSizeButtons();
         }
 
+        /// <summary>
+        /// Constructor for DrinkSelection for combo
+        /// </summary>
+        /// <param name="combo"> the combo </param>
+        /// <param name="size"> the size of the combo </param>
         public DrinkSelection(CretaceousCombo combo, DinoDiner.Menu.Size size)
         {
             InitializeComponent();
@@ -60,6 +65,11 @@ namespace PointOfSale
             isCombo = true;
         }
 
+        /// <summary>
+        /// Event handles for SelectDone
+        /// </summary>
+        /// <param name="sender"> the object </param>
+        /// <param name="args"> event arguments </param>
         private void SelectDone(object sender, RoutedEventArgs args)
         {
             if (isCombo) NavigationService.Navigate(new CustomizeCombo(combo));

@@ -42,6 +42,7 @@ namespace PointOfSale
             this.combo = combo;
             EnableSizeButtons();
             ChangeSideText();
+            ChangeDrinkText();
         }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace PointOfSale
             comboSize = size;
             EnableSizeButtons();
             ChangeSideText();
+            ChangeDrinkText();
         }
 
         /// <summary>
@@ -121,29 +123,57 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Helper function for changeing the side buttons text
+        /// Helper function for changing the side buttons text
         /// </summary>
         private void ChangeSideText()
         {
             if(combo.Side is Fryceritops) 
             {
                 SideName.Text = "Fryceritops";
-                
+                SideName.FontSize = 20;
             }
             else if (combo.Side is Triceritots)
             {
                 SideName.Text = "Triceritots";
-                
+                SideName.FontSize = 20;
             }
             else if (combo.Side is MeteorMacAndCheese)
             {
                 SideName.Text = "Meteor Mac And Cheese";
+                SideName.FontSize = 15;
                 
             }
             else if (combo.Side is MezzorellaSticks)
             {
                 SideName.Text = "Mezzorella Sticks";
-                
+                SideName.FontSize = 20;
+
+            }
+        }
+
+        /// <summary>
+        /// Helper function for changing the drink buttons text
+        /// </summary>
+        private void ChangeDrinkText()
+        {
+            if (combo.Drink is Sodasaurus)
+            {
+                DrinkName.Text = "Fryceritops";
+            }
+            else if (combo.Drink is Tyrannotea)
+            {
+                DrinkName.Text = "Tyrannotea";
+
+            }
+            else if (combo.Drink is JurassicJava)
+            {
+                DrinkName.Text = "Jurassic Java";
+
+            }
+            else if (combo.Drink is Water)
+            {
+                DrinkName.Text = "Water";
+
             }
         }
     }

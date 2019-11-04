@@ -25,7 +25,7 @@ namespace PointOfSale
         private CretaceousCombo combo;
 
         /// <summary>
-        /// Constructor for ComboSelection
+        /// Default constructor for ComboSelection
         /// </summary>
         public ComboSelection()
         {

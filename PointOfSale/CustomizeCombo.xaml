@@ -10,34 +10,38 @@
 
     <WrapPanel>
         <StackPanel>
-            <Label Margin="140,20,0,0">Side</Label>
-            <Button Width="160" Margin="80,0,0,0" Click="SelectSide">
+            <TextBlock Margin="135,20,0,0" FontSize="15">Side</TextBlock>
+            <Button Width="170" Height="95" Margin="65,0,0,0" Click="SelectSide">
                 <StackPanel>
-                    <Image Name="SideImage" Width="75" Source="Assets/DinoDiner-08.png"/>
-                    <TextBlock Name="SideName" TextAlignment="Center">Friceritops</TextBlock>
+                    <TextBlock Name="SideName"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               FontSize="20">Friceritops</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
         <StackPanel>
-            <Label Margin="140,20,0,0">Drink</Label>
-            <Button Click="SelectDrink" Width="160" Margin="80,0,0,0">
-                <StackPanel>
-                    <Image Width="75" Source="Assets/DinoDiner-14.png"/>
-                    <TextBlock TextAlignment="Center">Sodasaurus</TextBlock>
-                </StackPanel>
+            <TextBlock Margin="140,20,0,0" FontSize="15">Drink</TextBlock>
+            <Button Click="SelectDrink" Width="170" Height="95" Margin="80,0,0,0">
+                <TextBlock Name="DrinkName"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           TextAlignment="Center"
+                           FontSize="20">Sodasaurus</TextBlock>
             </Button>
         </StackPanel>
         <WrapPanel>
-            <Label Margin="-208,190,0,0">Size</Label>
+            <TextBlock Margin="-208,190,0,0" FontSize="15">Size</TextBlock>
         </WrapPanel>
         <WrapPanel>
-            <Button Name="SmallButton" Click="SelectSmall" Width="160" Height="107" Margin="50,0,0,0">
+            <Button Name="SmallButton" Click="SelectSmall" Width="160" Height="107" Margin="50,0,0,0" FontSize="25">
                 <TextBlock>Small</TextBlock>
             </Button>
-            <Button Name="MediumButton" Click="SelectMedium" Width="160" Height="107">
+            <Button Name="MediumButton" Click="SelectMedium" Width="160" Height="107" FontSize="25">
                 <TextBlock>Medium</TextBlock>
             </Button>
-            <Button Name="LargeButton" Click="SelectLarge" Width="160" Height="107">
+            <Button Name="LargeButton" Click="SelectLarge" Width="160" Height="107" FontSize="25">
                 <TextBlock>Large</TextBlock>
             </Button>
         </WrapPanel>
