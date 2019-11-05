@@ -63,6 +63,7 @@ namespace PointOfSale
             this.combo = combo;
             comboSize = size;
             isCombo = true;
+            ChangeSpecialButtons(this.combo.Drink);
         }
 
         /// <summary>

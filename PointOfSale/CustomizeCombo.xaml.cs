@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DinoDiner.Menu;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -41,6 +32,7 @@ namespace PointOfSale
             InitializeComponent();
             this.combo = combo;
             EnableSizeButtons();
+            ChangeEntreeText();
             ChangeSideText();
             ChangeDrinkText();
         }
@@ -67,6 +59,22 @@ namespace PointOfSale
             SmallButton.IsEnabled = true;
             MediumButton.IsEnabled = true;
             LargeButton.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Event handler for when the Entree button is clicked
+        /// </summary>
+        /// <param name="sender"> the object clicked on </param>
+        /// <param name="args"> event arguements </param>
+        void SelectEntreeCustomization(object sender, RoutedEventArgs args)
+        {
+            if (combo.Entree is Brontowurst) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeBrontowurst(combo));
+            else if (combo.Entree is DinoNuggets) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeDinoNuggets(combo));
+            else if (combo.Entree is PrehistoricPBJ) NavigationService.Navigate(new Entree_Customization_Pages.CustomizePrehistoricPBJ(combo));
+            else if (combo.Entree is PterodactylWings) NavigationService.Navigate(new Entree_Customization_Pages.CustomizePterodactylWings(combo));
+            else if (combo.Entree is SteakosaurusBurger) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeSteakosaurusBurger(combo));
+            else if (combo.Entree is TRexKingBurger) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeTRexKingBurger(combo));
+            else if (combo.Entree is VelociWrap) NavigationService.Navigate(new Entree_Customization_Pages.CustomizeVelociWrap(combo));
         }
 
         /// <summary>
@@ -123,30 +131,30 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Helper function for changing the side buttons text
+        /// Helper function for changing the side buttons text and image
         /// </summary>
         private void ChangeSideText()
         {
-            if(combo.Side is Fryceritops) 
+            if (combo.Side is Fryceritops) 
             {
-                SideName.Text = "Fryceritops";
-                SideName.FontSize = 20;
+                SideText.Text = "Fryceritops";
+                SideButton.FontSize = 25;
             }
             else if (combo.Side is Triceritots)
             {
-                SideName.Text = "Triceritots";
-                SideName.FontSize = 20;
+                SideText.Text = "Triceritots";
+                SideButton.FontSize = 25;
             }
             else if (combo.Side is MeteorMacAndCheese)
             {
-                SideName.Text = "Meteor Mac And Cheese";
-                SideName.FontSize = 15;
+                SideText.Text = "Meteor Mac And Cheese";
+                SideButton.FontSize = 15;
                 
             }
             else if (combo.Side is MezzorellaSticks)
             {
-                SideName.Text = "Mezzorella Sticks";
-                SideName.FontSize = 20;
+                SideText.Text = "Mezzorella Sticks";
+                SideButton.FontSize = 25;
 
             }
         }
@@ -158,22 +166,63 @@ namespace PointOfSale
         {
             if (combo.Drink is Sodasaurus)
             {
-                DrinkName.Text = "Fryceritops";
+                DrinkText.Text = "Sodasaurus";
             }
             else if (combo.Drink is Tyrannotea)
             {
-                DrinkName.Text = "Tyrannotea";
+                DrinkText.Text = "Tyrannotea";
 
             }
             else if (combo.Drink is JurassicJava)
             {
-                DrinkName.Text = "Jurassic Java";
+                DrinkText.Text = "Jurassic Java";
 
             }
             else if (combo.Drink is Water)
             {
-                DrinkName.Text = "Water";
+                DrinkText.Text = "Water";
+            }
+        }
 
+        /// <summary>
+        /// Helper function for changing the drink buttons text
+        /// </summary>
+        private void ChangeEntreeText()
+        {
+            if (combo.Entree is Brontowurst bw)
+            {
+                EntreeText.Text = bw.Description;
+                EntreeText.FontSize = 25;
+            }
+            else if (combo.Entree is DinoNuggets dn)
+            {
+                EntreeText.Text = dn.Description;
+                EntreeText.FontSize = 25;
+            }
+            else if (combo.Entree is PrehistoricPBJ pbj)
+            {
+                EntreeText.Text = pbj.Description;
+                EntreeText.FontSize = 25;
+            }
+            else if (combo.Entree is PterodactylWings pw)
+            {
+                EntreeText.Text = pw.Description;
+                EntreeText.FontSize = 20;
+            }
+            else if (combo.Entree is SteakosaurusBurger sb)
+            {
+                EntreeText.Text = sb.Description;
+                EntreeText.FontSize = 20;
+            }
+            else if (combo.Entree is TRexKingBurger trex)
+            {
+                EntreeText.Text = trex.Description;
+                EntreeText.FontSize = 20;
+            }
+            else if (combo.Entree is VelociWrap vw)
+            {
+                EntreeText.Text = vw.Description;
+                EntreeText.FontSize = 25;
             }
         }
     }

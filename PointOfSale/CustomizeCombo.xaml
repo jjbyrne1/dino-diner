@@ -8,42 +8,92 @@
       d:DesignHeight="390" d:DesignWidth="584"
       Title="CustomizeCombo">
 
-    <WrapPanel>
-        <StackPanel>
-            <TextBlock Margin="135,20,0,0" FontSize="15">Side</TextBlock>
-            <Button Width="170" Height="95" Margin="65,0,0,0" Click="SelectSide">
-                <StackPanel>
-                    <TextBlock Name="SideName"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               TextAlignment="Center"
-                               FontSize="20">Friceritops</TextBlock>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-        <StackPanel>
-            <TextBlock Margin="140,20,0,0" FontSize="15">Drink</TextBlock>
-            <Button Click="SelectDrink" Width="170" Height="95" Margin="80,0,0,0">
-                <TextBlock Name="DrinkName"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           TextAlignment="Center"
-                           FontSize="20">Sodasaurus</TextBlock>
-            </Button>
-        </StackPanel>
-        <WrapPanel>
-            <TextBlock Margin="-208,190,0,0" FontSize="15">Size</TextBlock>
-        </WrapPanel>
-        <WrapPanel>
-            <Button Name="SmallButton" Click="SelectSmall" Width="160" Height="107" Margin="50,0,0,0" FontSize="25">
-                <TextBlock>Small</TextBlock>
-            </Button>
-            <Button Name="MediumButton" Click="SelectMedium" Width="160" Height="107" FontSize="25">
-                <TextBlock>Medium</TextBlock>
-            </Button>
-            <Button Name="LargeButton" Click="SelectLarge" Width="160" Height="107" FontSize="25">
-                <TextBlock>Large</TextBlock>
-            </Button>
-        </WrapPanel>
-    </WrapPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Entree"
+                   HorizontalAlignment="Center"
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+        <TextBlock Text="Side"
+                   HorizontalAlignment="Center"
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+        <TextBlock Text="Drink"
+                   HorizontalAlignment="Center"
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Grid.Column="2"/>
+
+        <Button Name="EntreeButton"
+                Click="SelectEntreeCustomization"
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="25">
+            <StackPanel>
+                <TextBlock Text="Customize"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Name="EntreeText"
+                           Text="Brontowurst"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+            
+        </Button>
+        <Button Name="SideButton"
+                Click="SelectSide"
+                Grid.Row="1"
+                Grid.Column="1"
+                FontSize="25">
+            <TextBlock Name="SideText" 
+                       Text="Fryceritops"/>
+        </Button>
+        <Button Name="DrinkButton"
+                Click="SelectDrink"
+                Grid.Row="1"
+                Grid.Column="2"
+                FontSize="25">
+            <TextBlock Name="DrinkText"
+                       Text="Sodasaurus"/>
+        </Button>
+        
+        <TextBlock Text="Size"
+                   HorizontalAlignment="Center"
+                   FontSize="25"
+                   FontWeight="Bold"
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+        <Button Content="Small"
+                Name="SmallButton"
+                Click="SelectSmall"
+                FontSize="25"
+                Grid.Row="3"
+                Grid.Column="0"/>
+        <Button Content="Medium"
+                Name="MediumButton"
+                Click="SelectMedium"
+                FontSize="25"
+                Grid.Row="3"
+                Grid.Column="1"/>
+        <Button Content="Large"
+                Name="LargeButton"
+                Click="SelectLarge"
+                FontSize="25"
+                Grid.Row="3"
+                Grid.Column="2"/>
+    </Grid>
 </Page>

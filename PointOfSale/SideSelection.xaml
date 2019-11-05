@@ -43,7 +43,7 @@
                     Click="SelectMeteorMacAndCheeseSide"
                     Width="292"
                     Height="120">
-                <StackPanel Margin="0,0,0,0">
+                <StackPanel>
                     <Image Source="Assets/DinoDiner-09.png"
                            Width="90"/>
                     <TextBlock Text="Meteor Mac and Cheese"
