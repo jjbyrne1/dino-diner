@@ -159,9 +159,9 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Overrides the ToString method to retrun the name of the item
+        /// Overrides the ToString method to return the name of the item
         /// </summary>
-        /// <returns></returns>
+        /// <returns> string of menu items </returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
