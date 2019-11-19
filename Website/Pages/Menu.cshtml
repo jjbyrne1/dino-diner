@@ -14,7 +14,7 @@
         <ul>@item.Entree.ToString()</ul>
         <ul>@item.Side.ToString()</ul>
         <ul>@item.Drink.ToString()</ul>
-        <p>Price: $@item.Price Calories: $@item.Calories </p>
+        <p>Price: $@item.Price Calories: @item.Calories </p>
         <p> Ingredients </p>
         @foreach (var ingredients in item.Ingredients)
         {
@@ -28,7 +28,7 @@
 {
     <div class="menu-item">
         <p>@item.ToString()</p>
-        <p>Price: $@item.Price Calories: $@item.Calories </p>
+        <p>Price: $@item.Price Calories: @item.Calories </p>
         <p> Ingredients </p>
         @foreach (var ingredients in item.Ingredients)
         {
@@ -41,7 +41,7 @@
 {
     <div class="menu-item">
         <p>@item.ToString()</p>
-        <p>Price: $@item.Price Calories: $@item.Calories </p>
+        <p>Price: $@item.Price Calories: @item.Calories </p>
         <p> Ingredients </p>
         @foreach (var ingredients in item.Ingredients)
         {
@@ -55,7 +55,7 @@
 {
     <div class="menu-item">
         <p>@item.ToString()</p>
-        <p>Price: $@item.Price Calories: $@item.Calories </p>
+        <p>Price: $@item.Price Calories: @item.Calories </p>
         <p> Ingredients </p>
         @foreach (var ingredients in item.Ingredients)
         {
