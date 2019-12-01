@@ -109,5 +109,160 @@ namespace DinoDiner.Menu
             }
             return sb.ToString();
         }
+
+        /// <summary>
+        /// List of every menu item available
+        /// </summary>
+        public List<IMenuItem> All { get { return AvailableMenuItems; } }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="searchString"></param>
+        /// <returns></returns>
+        public List<IMenuItem> Search(List<IMenuItem> items, string searchString)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach(IMenuItem item in items)
+            {
+                if (item is Entree e)
+                {
+                    if (e.Description.Contains(searchString))
+                    {
+                        results.Add(e);
+                    }
+                }
+
+                if (item is CretaceousCombo c)
+                {
+                    if (c.Description.Contains(searchString))
+                    {
+                        results.Add(c);
+                    }
+                }
+
+                if (item is Drink d)
+                {
+                    if (d.Description.Contains(searchString))
+                    {
+                        results.Add(d);
+                    }
+                }
+
+                if (item is Side s)
+                {
+                    if (s.Description.Contains(searchString))
+                    {
+                        results.Add(s);
+                    }
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="minPrice"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterByMinPrice(List<IMenuItem> items, float minPrice)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem item in items)
+            {
+                if (minPrice <= item.Price)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="maxPrice"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterByMaxPrice(List<IMenuItem> items, float maxPrice)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem item in items)
+            {
+                if (maxPrice >= item.Price)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="items"> list of menu items </param>
+        /// <param name="categories"> list of categories to search for </param>
+        /// <returns> List of menu items in the specified search categories </returns>
+        public List<IMenuItem> FilterByCategory(List<IMenuItem> items, List<string> categories)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem item in items)
+            {
+                if (categories.Contains("combo"))
+                {
+                    if (item is CretaceousCombo c)
+                    {
+                        results.Add(c);
+                    }
+                }
+                else if (categories.Contains("entree"))
+                {
+                    if(item is Entree e)
+                    {
+                        results.Add(e);
+                    }
+                }
+                else if(categories.Contains("drink"))
+                {
+                    if (item is Drink d)
+                    {
+                        results.Add(d);
+                    }
+                }
+                else if (categories.Contains("side"))
+                {
+                    if (item is Side s)
+                    {
+                        results.Add(s);
+                    }
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="ingredients"></param>
+        /// <returns></returns>
+        public List<IMenuItem> FilterByIngredients(List<IMenuItem> items, List<string> ingredients)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem item in items)
+            {
+                foreach(string ingredient in ingredients)
+                {
+                    if(item.Ingredients.Contains(ingredient))
+                    {
+                        results.Add(item);
+                        break;
+                    }
+                }
+            }
+            return results;
+        }
     }
 }
