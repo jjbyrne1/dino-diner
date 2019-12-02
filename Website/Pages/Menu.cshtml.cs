@@ -18,13 +18,16 @@ namespace Website.Pages
         public string search { get; set; }
 
         [BindProperty]
-        public List<string> categories { get; set; } = new List<string>();
+        public List<string> menuCategory { get; set; } = new List<string>();
 
         [BindProperty]
-        public float? minPrice { get; set; }
+        public float? minimumPrice { get; set; }
 
         [BindProperty]
-        public float? maxPrice { get; set; }
+        public float? maximumPrice { get; set; }
+
+        [BindProperty]
+        public List<string> ingredients { get; set; } = new List<string>();
 
         public void OnGet()
         {
@@ -39,19 +42,23 @@ namespace Website.Pages
                 items = m.Search(items, search);
             }
 
-            if (categories.Count != 0)
+            if (menuCategory.Count != 0)
             {
-                items = m.FilterByCategory(items, categories);
+                items = m.FilterByCategory(items, menuCategory);
             }
 
-            if (minPrice != null)
+            if (minimumPrice != null)
             {
-                items = m.FilterByMinPrice(items, (float)minPrice);
+                items = m.FilterByMinPrice(items, (float)minimumPrice);
             }
 
-            if (maxPrice != null)
+            if (maximumPrice != null)
             {
-                items = m.FilterByMaxPrice(items, (float)maxPrice);
+                items = m.FilterByMaxPrice(items, (float)maximumPrice);
+            }
+
+            if(ingredients.Count != 0) {
+                items = m.FilterByIngredients(items, ingredients);
             }
         }
     }

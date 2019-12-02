@@ -28,6 +28,11 @@ body {
     flex-direction: row;
 }
 
+.exclude-ingredient {
+    display: flex;
+    flex-direction: column;
+}
+
 form {
     width: 300px;
     background-color: lightgray;
@@ -35,5 +40,9 @@ form {
     padding: 50px;
 }
 
+.price {
+    display: flex;
+    flex-direction: column;
+}
 
 

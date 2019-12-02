@@ -22,6 +22,7 @@ namespace DinoDiner.Menu
                 menuItems.AddRange(AvailableEntrees);
                 menuItems.AddRange(AvailableSides);
                 menuItems.AddRange(AvailableDrinks);
+                menuItems.AddRange(AvailableCombos);
                 return menuItems;
             }
         }
@@ -116,43 +117,40 @@ namespace DinoDiner.Menu
         public List<IMenuItem> All { get { return AvailableMenuItems; } }
 
         /// <summary>
-        /// 
+        /// Filters and Searches for a specific string in a list of menu items and returns the filtered list
         /// </summary>
-        /// <param name="items"></param>
-        /// <param name="searchString"></param>
-        /// <returns></returns>
+        /// <param name="items">list of menu items</param>
+        /// <param name="searchString"> string that is being searched for </param>
+        /// <returns> filtered list of menu items that contain the specified string</returns>
         public List<IMenuItem> Search(List<IMenuItem> items, string searchString)
         {
             List<IMenuItem> results = new List<IMenuItem>();
-            foreach(IMenuItem item in items)
+            foreach (IMenuItem item in items)
             {
                 if (item is Entree e)
                 {
-                    if (e.Description.Contains(searchString))
+                    if (item.ToString().Contains(searchString))
                     {
                         results.Add(e);
                     }
                 }
-
-                if (item is CretaceousCombo c)
+                else if (item is CretaceousCombo c)
                 {
-                    if (c.Description.Contains(searchString))
+                    if (item.ToString().Contains(searchString))
                     {
                         results.Add(c);
                     }
                 }
-
-                if (item is Drink d)
+                else if (item is Drink d)
                 {
-                    if (d.Description.Contains(searchString))
+                    if (item.ToString().Contains(searchString))
                     {
                         results.Add(d);
                     }
                 }
-
-                if (item is Side s)
+                else if (item is Side s)
                 {
-                    if (s.Description.Contains(searchString))
+                    if (item.ToString().Contains(searchString))
                     {
                         results.Add(s);
                     }
@@ -162,11 +160,11 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Filters a list of menu items by its min price
         /// </summary>
-        /// <param name="items"></param>
-        /// <param name="minPrice"></param>
-        /// <returns></returns>
+        /// <param name="items">list of menu items</param>
+        /// <param name="minPrice"> min price for a menu item</param>
+        /// <returns>list of menu items that has been filtered by its price</returns>
         public List<IMenuItem> FilterByMinPrice(List<IMenuItem> items, float minPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
@@ -181,11 +179,11 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Filters a list of menu items by its max price
         /// </summary>
-        /// <param name="items"></param>
-        /// <param name="maxPrice"></param>
-        /// <returns></returns>
+        /// <param name="items">list of menu items</param>
+        /// <param name="maxPrice"> max price for a menu item</param>
+        /// <returns> list of menu items that has been filtered by its price</returns>
         public List<IMenuItem> FilterByMaxPrice(List<IMenuItem> items, float maxPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
@@ -200,7 +198,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Filters a list of menu items by its category
         /// </summary>
         /// <param name="items"> list of menu items </param>
         /// <param name="categories"> list of categories to search for </param>
@@ -210,28 +208,28 @@ namespace DinoDiner.Menu
             List<IMenuItem> results = new List<IMenuItem>();
             foreach (IMenuItem item in items)
             {
-                if (categories.Contains("combo"))
+                if (categories.Contains("Combo"))
                 {
                     if (item is CretaceousCombo c)
                     {
                         results.Add(c);
                     }
                 }
-                else if (categories.Contains("entree"))
+                else if (categories.Contains("Entree"))
                 {
-                    if(item is Entree e)
+                    if (item is Entree e)
                     {
                         results.Add(e);
                     }
                 }
-                else if(categories.Contains("drink"))
+                else if (categories.Contains("Drink"))
                 {
                     if (item is Drink d)
                     {
                         results.Add(d);
                     }
                 }
-                else if (categories.Contains("side"))
+                else if (categories.Contains("Side"))
                 {
                     if (item is Side s)
                     {
@@ -243,26 +241,50 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Filters a list of menu items by excluding specified ingredients
         /// </summary>
-        /// <param name="items"></param>
-        /// <param name="ingredients"></param>
-        /// <returns></returns>
+        /// <param name="items"> list of menu items </param>
+        /// <param name="ingredients"> list of ingredients to search for</param>
+        /// <returns> list of menu items that has been filtered by its ingredients </returns>
         public List<IMenuItem> FilterByIngredients(List<IMenuItem> items, List<string> ingredients)
         {
             List<IMenuItem> results = new List<IMenuItem>();
             foreach (IMenuItem item in items)
             {
-                foreach(string ingredient in ingredients)
+                bool addflag = true;
+                foreach (string ingredient in ingredients)
                 {
-                    if(item.Ingredients.Contains(ingredient))
+                    if (item.Ingredients.Contains(ingredient))
                     {
-                        results.Add(item);
+                        addflag = false;
                         break;
                     }
                 }
+                if (addflag) results.Add(item);
             }
             return results;
+        }
+
+        /// <summary>
+        /// Gets a list of all possible ingredients from all menu items
+        /// </summary>
+        public List<string> PossibleIngredients 
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                foreach (IMenuItem item in All)
+                {
+                    foreach (string ingredient in item.Ingredients)
+                    {
+                        if (!ingredients.Contains(ingredient))
+                        {
+                            ingredients.Add(ingredient);
+                        }
+                    }
+                }
+                return ingredients;
+            }
         }
     }
 }
