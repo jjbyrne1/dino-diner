@@ -14,12 +14,29 @@
             @if (item is DinoDiner.Menu.CretaceousCombo c)
             {
                 <div class="menu-item">
-
                     <p>@c.Description</p>
-                    <ul>@c.Entree.Description</ul>
-                    <ul>@c.Side.Description</ul>
-                    <ul>@c.Drink.Description</ul>
-                    <p>Price: $@c.Price Calories: @c.Calories </p>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>@(c.Size = DinoDiner.Menu.Size.Small)</td>
+                            <td>$@c.Price</td>
+                            <td>@c.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>@(c.Size = DinoDiner.Menu.Size.Medium)</td>
+                            <td>$@c.Price</td>
+                            <td>@c.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>@(c.Size = DinoDiner.Menu.Size.Large)</td>
+                            <td>$@c.Price</td>
+                            <td>@c.Calories</td>
+                        </tr>
+                    </table>
                     <p> Ingredients </p>
                     @foreach (var ingredients in c.Ingredients)
                     {
@@ -52,8 +69,29 @@
             @if (item is DinoDiner.Menu.Side s)
             {
                 <div class="menu-item">
-                    <p>@s.ToString()</p>
-                    <p>Price: $@s.Price Calories: @s.Calories </p>
+                    <p>@s.Name</p>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>@(s.Size = DinoDiner.Menu.Size.Small)</td>
+                            <td>$@s.Price</td>
+                            <td>@s.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>@(s.Size = DinoDiner.Menu.Size.Medium)</td>
+                            <td>$@s.Price</td>
+                            <td>@s.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>@(s.Size = DinoDiner.Menu.Size.Large)</td>
+                            <td>$@s.Price</td>
+                            <td>@s.Calories</td>
+                        </tr>
+                    </table>
                     <p> Ingredients </p>
                     @foreach (var ingredients in s.Ingredients)
                     {
@@ -69,9 +107,30 @@
             @if (item is DinoDiner.Menu.Drink d)
             {
                 <div class="menu-item">
-                    <p>@d.ToString()</p>
-                    <p>Price: $@d.Price Calories: @d.Calories </p>
-                    <p> Ingredients </p>
+                    <p>@d.Name</p>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>@(d.Size = DinoDiner.Menu.Size.Small)</td>
+                            <td>$@d.Price</td>
+                            <td>@d.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>@(d.Size = DinoDiner.Menu.Size.Medium)</td>
+                            <td>$@d.Price</td>
+                            <td>@d.Calories</td>
+                        </tr>
+                        <tr>
+                            <td>@(d.Size = DinoDiner.Menu.Size.Large)</td>
+                            <td>$@d.Price</td>
+                            <td>@d.Calories</td>
+                        </tr>
+                    </table>
+                    <p> Ingredients:</p>
                     @foreach (var ingredients in d.Ingredients)
                     {
                         <ul>@ingredients</ul>

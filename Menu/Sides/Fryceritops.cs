@@ -79,6 +79,12 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Simply returns the name of the item
+        /// </summary>
+        /// <returns> Name of Item</returns>
+        public override string Name { get { return "Fryceritops"; } }
+
+        /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
         public override string Description

@@ -23,5 +23,10 @@ namespace DinoDiner.Menu
         /// Gets the ingredients list
         /// </summary>
         List<string> Ingredients { get; }
+
+        /// <summary>
+        /// Gets the name of the item
+        /// </summary>
+        string Name { get;}
     }
 }

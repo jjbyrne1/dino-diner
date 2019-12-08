@@ -153,6 +153,11 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets the name of the item
+        /// </summary>
+        public override string Name { get { return "Tyrannotea"; } }
+
+        /// <summary>
         /// Property that gets the menu item's name
         /// </summary>
         public override string Description

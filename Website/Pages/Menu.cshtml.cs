@@ -12,7 +12,7 @@ namespace Website.Pages
     {
         public Menu m = new Menu();
 
-        public List<IMenuItem> items;
+        public IEnumerable<IMenuItem> items;
 
         [BindProperty]
         public string search { get; set; }
@@ -39,26 +39,51 @@ namespace Website.Pages
             items = m.All;
             if (search != null)
             {
-                items = m.Search(items, search);
+                items = items.Where(item => item.Name.Contains(search, StringComparison.OrdinalIgnoreCase));
+                //items = m.Search(items, search);
             }
 
             if (menuCategory.Count != 0)
             {
-                items = m.FilterByCategory(items, menuCategory);
+                List<IMenuItem> itemList = new List<IMenuItem>();
+                if (menuCategory.Contains("Combo"))
+                {
+                    itemList.AddRange(items.OfType<CretaceousCombo>());
+                }
+                if (menuCategory.Contains("Entree"))
+                {
+                    itemList.AddRange(items.OfType<Entree>());
+                }
+                if (menuCategory.Contains("Drink"))
+                {
+                    itemList.AddRange(items.OfType<Drink>());
+                }
+                if (menuCategory.Contains("Side"))
+                {
+                    itemList.AddRange(items.OfType<Side>());
+                }
+                items = itemList;
+                //items = m.FilterByCategory(items, menuCategory);
             }
 
             if (minimumPrice != null)
             {
-                items = m.FilterByMinPrice(items, (float)minimumPrice);
+                items = items.Where(item => item.Price >= minimumPrice);
+                //items = m.FilterByMinPrice(items, (float)minimumPrice);
             }
 
             if (maximumPrice != null)
             {
-                items = m.FilterByMaxPrice(items, (float)maximumPrice);
+                items = items.Where(item => item.Price >= maximumPrice);
+                //items = m.FilterByMaxPrice(items, (float)maximumPrice);
             }
 
             if(ingredients.Count != 0) {
-                items = m.FilterByIngredients(items, ingredients);
+                foreach(string ingredient in ingredients)
+                {
+                    items = items.Where(item => !item.Ingredients.Contains(ingredient));
+                }
+                //items = m.FilterByIngredients(items, ingredients);
             }
         }
     }

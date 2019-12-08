@@ -79,10 +79,15 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Property that gets an array of all the special instructions for the
-        /// specific entree
+        /// Gets the name of the item
         /// </summary>
-        public override string[] Special
+        public override string Name { get { return Description; } }
+
+    /// <summary>
+    /// Property that gets an array of all the special instructions for the
+    /// specific entree
+    /// </summary>
+    public override string[] Special
         {
             get
             {

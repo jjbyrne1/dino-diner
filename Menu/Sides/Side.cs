@@ -53,6 +53,11 @@ namespace DinoDiner.Menu
         public virtual string Description { get; }
 
         /// <summary>
+        /// Simply returns the name of the item
+        /// </summary>
+        public abstract string Name { get; }
+
+        /// <summary>
         /// Gets the Special Specifications
         /// </summary>
         /// <returns></returns>

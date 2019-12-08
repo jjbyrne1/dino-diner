@@ -162,6 +162,11 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets the name of the item
+        /// </summary>
+        public string Name { get { return Description; } }
+
+        /// <summary>
         /// Property that gets an array of all the special demands for the
         /// specific combo
         /// </summary>
